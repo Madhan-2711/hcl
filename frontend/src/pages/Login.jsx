@@ -19,12 +19,20 @@ export default function Login() {
     setSuccess('')
     setLoading(true)
     try {
+      const redirectTo = `${window.location.origin}/dashboard`
       if (mode === 'magic') {
-        const { error } = await supabase.auth.signInWithOtp({ email })
+        const { error } = await supabase.auth.signInWithOtp({
+          email,
+          options: { emailRedirectTo: redirectTo },
+        })
         if (error) throw error
         setSuccess('Check your email for a magic link!')
       } else if (mode === 'signup') {
-        const { error } = await supabase.auth.signUp({ email, password })
+        const { error } = await supabase.auth.signUp({
+          email,
+          password,
+          options: { emailRedirectTo: redirectTo },
+        })
         if (error) throw error
         setSuccess('Account created! Check your email to confirm.')
       } else {
