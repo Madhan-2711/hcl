@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..800;1,9..144,600..700&family=Nunito:ital,wght@0,400..800;1,400..700&display=swap');
+@import "tailwindcss";
+
+/* ============================================================
+   ORGANIC / NATURAL DESIGN SYSTEM TOKENS
+   Wabi-sabi: Warmth, softness, tactile paper texture & earthy palette
+   ============================================================ */
+:root {
+  /* Colors */
+  --bg-primary:            #FDFCF8;  /* Rice Paper */
+  --bg-secondary:          #F7F5EE;  /* Warm Linen */
+  --bg-card:               #FEFEFA;  /* Near-white Beige */
+  --bg-card-hover:         #FFFFFF;
+  --foreground:            #2C2C24;  /* Deep Loam / Charcoal */
+  
+  --primary:               #5D7052;  /* Moss Green */
+  --primary-foreground:    #F3F4F1;  /* Pale Mist */
+  --primary-hover:         #4D5E43;
+  
+  --secondary:             #C18C5D;  /* Terracotta / Clay */
+  --secondary-foreground:  #FFFFFF;
+  --secondary-hover:       #B07C4E;
+  
+  --accent:                #E6DCCD;  /* Sand / Beige */
+  --accent-foreground:     #4A4A40;  /* Bark */
+  --accent-hover:          #DACFBD;
+  
+  --muted:                 #F0EBE5;  /* Stone */
+  --muted-foreground:      #78786C;  /* Dried Grass */
+  
+  --border:                #DED8CF;  /* Raw Timber */
+  --border-subtle:         rgba(222, 216, 207, 0.6);
+  --border-focus:          rgba(93, 112, 82, 0.4);
+  
+  --destructive:           #A85448;  /* Burnt Sienna */
+  --destructive-foreground:#FFFFFF;
+  
+  /* Semantic Accent Accents for Badges */
+  --accent-blue:           #5D7052;  /* Mapped to Moss Green */
+  --accent-purple:         #7C6A59;  /* Mapped to Earth Umber */
+  --accent-cyan:           #587B7F;  /* Mapped to River Slate */
+  --accent-green:          #5D7052;  /* Mapped to Moss Green */
+  --accent-amber:          #C18C5D;  /* Mapped to Terracotta */
+  --accent-pink:           #A85448;  /* Mapped to Burnt Sienna */
+
+  --text-primary:          #2C2C24;  /* Deep Loam */
+  --text-secondary:        #57574C;  /* Warm Soil */
+  --text-muted:            #78786C;  /* Dried Grass */
+
+  /* Radius Scale */
+  --radius-sm:             12px;
+  --radius-md:             16px;
+  --radius-lg:             24px;
+  --radius-xl:             32px;
+  --radius-full:           9999px;
+
+  /* Shadows (Soft & Color-Tinted) */
+  --shadow-soft:           0 4px 20px -2px rgba(93, 112, 82, 0.12);
+  --shadow-soft-hover:     0 8px 28px -4px rgba(93, 112, 82, 0.20);
+  --shadow-float:          0 10px 40px -10px rgba(193, 140, 93, 0.18);
+  --shadow-card:           0 4px 24px -4px rgba(93, 112, 82, 0.08);
+}
+
+/* ============================================================
+   BASE & TYPOGRAPHY
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--foreground);
+}
+
+body {
+  font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Global Subtle Paper Grain Texture Overlay (3.5% opacity) */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+  line-height: 1.25;
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: #DED8CF; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #C18C5D; }
+
+/* ============================================================
+   TACTILE CARDS / CONTAINERS (Wabi-Sabi Softness)
+   ============================================================ */
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: var(--border);
+  box-shadow: var(--shadow-soft-hover);
+  transform: translateY(-2px);
+}
+
+/* Asymmetric Organic Card Shapes */
+.card-organic-1 {
+  border-radius: 2rem 1.25rem 2rem 1.25rem;
+}
+.card-organic-2 {
+  border-radius: 1.25rem 2rem 1.25rem 2rem;
+}
+.card-organic-3 {
+  border-radius: 2.5rem 1.25rem 1.5rem 2rem;
+}
+
+/* ============================================================
+   ORGANIC BLOBS & COLOR-WASH BACKGROUNDS
+   ============================================================ */
+.blob-shape-1 {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+.blob-shape-2 {
+  border-radius: 40% 60% 70% 30% / 40% 40% 60% 55%;
+}
+.blob-shape-3 {
+  border-radius: 70% 30% 50% 50% / 30% 60% 40% 70%;
+}
+
+.hero-bg {
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse at 15% 20%, rgba(93, 112, 82, 0.08) 0%, transparent 65%),
+    radial-gradient(ellipse at 85% 75%, rgba(193, 140, 93, 0.09) 0%, transparent 65%),
+    radial-gradient(ellipse at 50% 50%, rgba(230, 220, 205, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ============================================================
+   GRADIENT & ACCENT TEXT
+   ============================================================ */
+.gradient-text {
+  background: linear-gradient(135deg, #5D7052 0%, #C18C5D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-green {
+  background: linear-gradient(135deg, #5D7052 0%, #587B7F 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================================
+   PILL BUTTONS (Tactile & Organic)
+   ============================================================ */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--primary-hover);
+  transform: scale(1.03) translateY(-1px);
+  box-shadow: var(--shadow-soft-hover);
+}
+.btn-primary:active:not(:disabled) {
+  transform: scale(0.97);
+}
+.btn-primary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background: transparent;
+  color: var(--secondary);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: 2px solid var(--secondary);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+.btn-secondary:hover:not(:disabled) {
+  background: rgba(193, 140, 93, 0.08);
+  transform: scale(1.03) translateY(-1px);
+  box-shadow: 0 4px 16px rgba(193, 140, 93, 0.15);
+}
+.btn-secondary:active:not(:disabled) {
+  transform: scale(0.97);
+}
+.btn-secondary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.25rem;
+  background: transparent;
+  color: var(--primary);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.btn-ghost:hover {
+  background: rgba(93, 112, 82, 0.08);
+  border-color: var(--primary);
+  color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   FORM ELEMENTS (Pill & Translucent Timber)
+   ============================================================ */
+.input-field {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 0.85rem 1.25rem;
+  color: var(--foreground);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  outline: none;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+.input-field::placeholder { color: var(--text-muted); opacity: 0.8; }
+.input-field:focus {
+  border-color: var(--primary);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(93, 112, 82, 0.2), 0 2px 8px rgba(93, 112, 82, 0.06);
+}
+.input-field:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.textarea-field {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.25rem;
+  color: var(--foreground);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  resize: vertical;
+  min-height: 120px;
+  transition: all 0.25s ease;
+  outline: none;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+.textarea-field::placeholder { color: var(--text-muted); opacity: 0.8; }
+.textarea-field:focus {
+  border-color: var(--primary);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(93, 112, 82, 0.2), 0 2px 8px rgba(93, 112, 82, 0.06);
+}
+
+/* ============================================================
+   SOFT TINTED PILL BADGES
+   ============================================================ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: all 0.2s ease;
+}
+
+.badge-blue   { background: rgba(93, 112, 82, 0.12);  color: #44533C; border: 1px solid rgba(93, 112, 82, 0.25); }
+.badge-green  { background: rgba(93, 112, 82, 0.12);  color: #384531; border: 1px solid rgba(93, 112, 82, 0.25); }
+.badge-purple { background: rgba(124, 106, 89, 0.12); color: #57483B; border: 1px solid rgba(124, 106, 89, 0.25); }
+.badge-amber  { background: rgba(193, 140, 93, 0.14); color: #8F5B2F; border: 1px solid rgba(193, 140, 93, 0.28); }
+.badge-cyan   { background: rgba(88, 123, 127, 0.14); color: #365054; border: 1px solid rgba(88, 123, 127, 0.28); }
+.badge-pink   { background: rgba(168, 84, 72, 0.12);  color: #7B332A; border: 1px solid rgba(168, 84, 72, 0.25); }
+
+/* Status Badges */
+.status-not_started { background: rgba(120, 120, 108, 0.12); color: #57574C; border: 1px solid rgba(120, 120, 108, 0.25); }
+.status-in_progress { background: rgba(193, 140, 93, 0.14);  color: #8F5B2F; border: 1px solid rgba(193, 140, 93, 0.28); }
+.status-completed   { background: rgba(93, 112, 82, 0.14);   color: #384531; border: 1px solid rgba(93, 112, 82, 0.28); }
+
+/* ============================================================
+   ORGANIC ANIMATIONS & TRANSITIONS
+   ============================================================ */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 4px 16px rgba(93, 112, 82, 0.15); }
+  50%      { box-shadow: 0 8px 30px rgba(93, 112, 82, 0.35); }
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%      { transform: translateY(-6px); }
+}
+
+.fade-in { animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.pulse-glow { animation: pulse-glow 2.5s ease-in-out infinite; }
+.float { animation: float 4s ease-in-out infinite; }
+
+/* ============================================================
+   LOADING SPINNER
+   ============================================================ */
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 2.5px solid rgba(93, 112, 82, 0.2);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin-slow 0.8s linear infinite;
+}
+
+/* ============================================================
+   LAYOUT CONTAINERS
+   ============================================================ */
+.page-container {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.content-area {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+.section-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 1.25rem;
+}
+
+/* ============================================================
+   ICON CONTAINERS (Hover Transition)
+   ============================================================ */
+.icon-pill {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: rgba(93, 112, 82, 0.1);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.icon-pill:hover {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  transform: scale(1.05);
+}
+
+/* ============================================================
+   RECHARTS OVERRIDES
+   ============================================================ */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: rgba(222, 216, 207, 0.6) !important;
+}
+.recharts-text { fill: var(--text-muted) !important; font-family: 'Nunito', sans-serif !important; }
+.recharts-tooltip-wrapper .recharts-default-tooltip {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-float) !important;
+  color: var(--foreground) !important;
+}
