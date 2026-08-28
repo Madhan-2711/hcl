@@ -191,8 +191,23 @@ export default function AIAssistantPanel() {
   )
 }
 
+function formatChatText(text) {
+  if (!text) return ''
+  return text
+    .replace(/^\|[^\n]+\|$/gm, '')
+    .replace(/\|[-:\s|]+\|/g, '')
+    .replace(/\|/g, '')
+    .replace(/\*\*/g, '')
+    .replace(/\*/g, '')
+    .replace(/^#{1,6}\s+/gm, '')
+    .replace(/[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1FA00}-\u{1FAFF}]/gu, '')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim()
+}
+
 function MessageBubble({ msg }) {
   const isUser = msg.role === 'user'
+  const text = formatChatText(msg.content)
   return (
     <div style={{
       display: 'flex', gap: '0.65rem',
@@ -210,8 +225,8 @@ function MessageBubble({ msg }) {
         {isUser ? <User size={15} /> : <Bot size={15} />}
       </div>
       <div style={{
-        maxWidth: '78%',
-        padding: '0.75rem 1.15rem',
+        maxWidth: '82%',
+        padding: '0.85rem 1.15rem',
         borderRadius: isUser ? '18px 18px 4px 18px' : '18px 18px 18px 4px',
         background: isUser ? 'var(--muted)' : '#FFFFFF',
         border: `1.5px solid ${isUser ? 'rgba(193, 140, 93, 0.3)' : 'var(--border)'}`,
@@ -221,7 +236,7 @@ function MessageBubble({ msg }) {
         whiteSpace: 'pre-wrap',
         boxShadow: '0 2px 6px rgba(0, 0, 0, 0.02)',
       }}>
-        {msg.content}
+        {text}
       </div>
     </div>
   )
