@@ -48,14 +48,24 @@ export default function Dashboard() {
       }
       setProfile(profileData)
 
-      const { data: skillsData } = await supabase
-        .from('learner_skills')
-        .select('*, skills(name)')
-        .eq('learner_id', userId)
-      setSkills((skillsData || []).map(s => ({
-        ...s,
-        skill_name: s.skills?.name || `Skill ${s.skill_id}`,
-      })))
+      const [{ data: allSkills }, { data: skillsData }] = await Promise.all([
+        supabase.from('skills').select('*'),
+        supabase.from('learner_skills').select('*, skills(name)').eq('learner_id', userId),
+      ])
+
+      const skillMap = {}
+      for (const s of allSkills || []) {
+        skillMap[s.id] = s.name
+      }
+
+      setSkills((skillsData || []).map(s => {
+        const nestedName = Array.isArray(s.skills) ? s.skills[0]?.name : s.skills?.name
+        const skill_name = nestedName || skillMap[s.skill_id] || `Skill ${s.skill_id}`
+        return {
+          ...s,
+          skill_name,
+        }
+      }))
 
       const { data: paths } = await supabase
         .from('learning_paths')

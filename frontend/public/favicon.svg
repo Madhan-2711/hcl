@@ -1,39 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
-  <!-- Organic Knowledge Tree & Open Book Brand Logo -->
-  <g fill="#316843" stroke="#316843" stroke-linecap="round" stroke-linejoin="round">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="10 14 100 96" fill="none">
+  <!-- Organic Knowledge Tree & Open Book Brand Logo — Bold Favicon -->
+  <g fill="#2D633E" stroke="#2D633E" stroke-linecap="round" stroke-linejoin="round">
     <!-- Canopy Connecting Struts / Network Branches -->
-    <path d="M60 22 L36 34 L18 55 L38 60 L60 48 L82 60 L102 55 L84 34 Z" fill="none" stroke-width="3.5"/>
-    <path d="M60 22 L60 62" stroke-width="4.5"/>
-    <path d="M60 22 L45 44" stroke-width="3.5"/>
-    <path d="M60 22 L75 44" stroke-width="3.5"/>
-    <path d="M36 34 L60 62 L84 34" fill="none" stroke-width="3.5"/>
-    <path d="M45 44 L60 62 L75 44" fill="none" stroke-width="3.5"/>
-    <path d="M18 55 L42 66 L60 62 L78 66 L102 55" fill="none" stroke-width="3.5"/>
-    <path d="M38 60 C38 60 28 64 36 67 C44 70 54 66 60 74 C66 66 76 70 84 67 C92 64 82 60 82 60" fill="none" stroke-width="3.5"/>
+    <path d="M60 22 L36 34 L18 55 L38 60 L60 48 L82 60 L102 55 L84 34 Z" fill="none" stroke-width="4.5"/>
+    <path d="M60 22 L60 62" stroke-width="5.5"/>
+    <path d="M60 22 L45 44" stroke-width="4.5"/>
+    <path d="M60 22 L75 44" stroke-width="4.5"/>
+    <path d="M36 34 L60 62 L84 34" fill="none" stroke-width="4.5"/>
+    <path d="M45 44 L60 62 L75 44" fill="none" stroke-width="4.5"/>
+    <path d="M18 55 L42 66 L60 62 L78 66 L102 55" fill="none" stroke-width="4.5"/>
+    <path d="M38 60 C38 60 28 64 36 67 C44 70 54 66 60 74 C66 66 76 70 84 67 C92 64 82 60 82 60" fill="none" stroke-width="4.5"/>
 
-    <!-- Network Canopy Nodes (Circles) -->
+    <!-- Network Canopy Nodes (Prominent Circles) -->
     <!-- Top Center Node -->
-    <circle cx="60" cy="22" r="5.5" stroke="none" fill="#316843"/>
+    <circle cx="60" cy="22" r="7" stroke="none" fill="#2D633E"/>
     <!-- Upper Left Node -->
-    <circle cx="36" cy="34" r="5.5" stroke="none" fill="#316843"/>
+    <circle cx="36" cy="34" r="6.5" stroke="none" fill="#2D633E"/>
     <!-- Upper Right Node -->
-    <circle cx="84" cy="34" r="5.5" stroke="none" fill="#316843"/>
+    <circle cx="84" cy="34" r="6.5" stroke="none" fill="#2D633E"/>
     <!-- Mid Left Inner Node -->
-    <circle cx="45" cy="44" r="5" stroke="none" fill="#316843"/>
+    <circle cx="45" cy="44" r="6" stroke="none" fill="#2D633E"/>
     <!-- Mid Right Inner Node -->
-    <circle cx="75" cy="44" r="5" stroke="none" fill="#316843"/>
+    <circle cx="75" cy="44" r="6" stroke="none" fill="#2D633E"/>
     <!-- Outer Far Left Node -->
-    <circle cx="18" cy="55" r="5.5" stroke="none" fill="#316843"/>
+    <circle cx="18" cy="55" r="7" stroke="none" fill="#2D633E"/>
     <!-- Outer Far Right Node -->
-    <circle cx="102" cy="55" r="5.5" stroke="none" fill="#316843"/>
+    <circle cx="102" cy="55" r="7" stroke="none" fill="#2D633E"/>
 
     <!-- Trunk Growing from Open Book -->
-    <path d="M60 62 C58 72 52 78 48 88 C54 86 58 84 60 82 C62 84 66 86 72 88 C68 78 62 72 60 62 Z" stroke="none" fill="#316843"/>
+    <path d="M60 62 C58 72 52 78 48 88 C54 86 58 84 60 82 C62 84 66 86 72 88 C68 78 62 72 60 62 Z" stroke="none" fill="#2D633E"/>
 
     <!-- Open Book Base (Upper Page Curve) -->
-    <path d="M20 86 C32 86 46 88 57 93 L60 94 L63 93 C74 88 88 86 100 86 C88 90 74 92 63 96 L60 97 L57 96 C46 92 32 90 20 86 Z" stroke="none" fill="#316843"/>
+    <path d="M16 86 C30 86 45 88 57 93 L60 94 L63 93 C75 88 90 86 104 86 C90 90 75 92 63 96 L60 97 L57 96 C45 92 30 90 16 86 Z" stroke="none" fill="#2D633E"/>
 
     <!-- Open Book Base (Lower Page Curve) -->
-    <path d="M18 94 C32 94 46 96 57 101 L60 102 L63 101 C74 96 88 94 102 94 C88 98 74 100 63 104 L60 105 L57 104 C46 100 32 98 18 94 Z" stroke="none" fill="#316843"/>
+    <path d="M14 94 C30 94 45 96 57 101 L60 102 L63 101 C75 96 90 94 106 94 C90 98 75 100 63 104 L60 105 L57 104 C45 100 30 98 14 94 Z" stroke="none" fill="#2D633E"/>
   </g>
 </svg>
