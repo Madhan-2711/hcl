@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from '../lib/supabaseClient'
 import { BookOpen, Mail, Lock, ArrowRight, Eye, EyeOff, Sparkles, Compass } from 'lucide-react'
+import LogoIcon from '../components/LogoIcon'
 
 export default function Login() {
   const navigate = useNavigate()
@@ -104,20 +105,21 @@ export default function Login() {
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div
             style={{
-              width: 58,
-              height: 58,
+              width: 64,
+              height: 64,
               margin: '0 auto 1.25rem',
-              background: 'var(--primary)',
+              background: 'rgba(93, 112, 82, 0.12)',
+              border: '1.5px solid var(--border)',
               borderRadius: '50%',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               boxShadow: 'var(--shadow-soft)',
-              color: 'var(--primary-foreground)',
+              color: 'var(--primary)',
             }}
             className="float"
           >
-            <Compass size={30} />
+            <LogoIcon size={38} color="var(--primary)" />
           </div>
           <h1 style={{
             fontSize: '2rem',

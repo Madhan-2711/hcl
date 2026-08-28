@@ -1,0 +1,45 @@
+import React from 'react'
+
+export default function LogoIcon({ size = 28, color = 'currentColor', className = '' }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 120 120"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      style={{ display: 'inline-block', verticalAlign: 'middle' }}
+    >
+      <g fill={color} stroke={color} strokeLinecap="round" strokeLinejoin="round">
+        {/* Canopy Connecting Struts / Network Branches */}
+        <path d="M60 22 L36 34 L18 55 L38 60 L60 48 L82 60 L102 55 L84 34 Z" fill="none" strokeWidth="3.5"/>
+        <path d="M60 22 L60 62" strokeWidth="4.5"/>
+        <path d="M60 22 L45 44" strokeWidth="3.5"/>
+        <path d="M60 22 L75 44" strokeWidth="3.5"/>
+        <path d="M36 34 L60 62 L84 34" fill="none" strokeWidth="3.5"/>
+        <path d="M45 44 L60 62 L75 44" fill="none" strokeWidth="3.5"/>
+        <path d="M18 55 L42 66 L60 62 L78 66 L102 55" fill="none" strokeWidth="3.5"/>
+        <path d="M38 60 C38 60 28 64 36 67 C44 70 54 66 60 74 C66 66 76 70 84 67 C92 64 82 60 82 60" fill="none" strokeWidth="3.5"/>
+
+        {/* Network Canopy Nodes (Circles) */}
+        <circle cx="60" cy="22" r="5.5" stroke="none" fill={color}/>
+        <circle cx="36" cy="34" r="5.5" stroke="none" fill={color}/>
+        <circle cx="84" cy="34" r="5.5" stroke="none" fill={color}/>
+        <circle cx="45" cy="44" r="5" stroke="none" fill={color}/>
+        <circle cx="75" cy="44" r="5" stroke="none" fill={color}/>
+        <circle cx="18" cy="55" r="5.5" stroke="none" fill={color}/>
+        <circle cx="102" cy="55" r="5.5" stroke="none" fill={color}/>
+
+        {/* Trunk Growing from Open Book */}
+        <path d="M60 62 C58 72 52 78 48 88 C54 86 58 84 60 82 C62 84 66 86 72 88 C68 78 62 72 60 62 Z" stroke="none" fill={color}/>
+
+        {/* Open Book Base (Upper Page Curve) */}
+        <path d="M20 86 C32 86 46 88 57 93 L60 94 L63 93 C74 88 88 86 100 86 C88 90 74 92 63 96 L60 97 L57 96 C46 92 32 90 20 86 Z" stroke="none" fill={color}/>
+
+        {/* Open Book Base (Lower Page Curve) */}
+        <path d="M18 94 C32 94 46 96 57 101 L60 102 L63 101 C74 96 88 94 102 94 C88 98 74 100 63 104 L60 105 L57 104 C46 100 32 98 18 94 Z" stroke="none" fill={color}/>
+      </g>
+    </svg>
+  )
+}

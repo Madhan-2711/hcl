@@ -5,6 +5,7 @@ import { useAuth } from '../App'
 import {
   LayoutDashboard, BookOpen, LogOut, Menu, X, Sparkles, User
 } from 'lucide-react'
+import LogoIcon from './LogoIcon'
 
 export default function Navbar() {
   const { session } = useAuth()
@@ -61,16 +62,17 @@ export default function Navbar() {
             <div style={{
               width: 38,
               height: 38,
-              background: 'var(--primary)',
+              background: 'rgba(93, 112, 82, 0.12)',
+              border: '1.5px solid var(--border)',
               borderRadius: '50%',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               boxShadow: 'var(--shadow-soft)',
-              color: 'var(--primary-foreground)',
+              color: 'var(--primary)',
               transition: 'transform 0.3s ease',
             }}>
-              <BookOpen size={19} />
+              <LogoIcon size={24} color="var(--primary)" />
             </div>
             <span style={{
               fontFamily: 'Fraunces, Georgia, serif',
