@@ -37,17 +37,26 @@ export const api = {
 
   /** Fetch a specific learning path with items (direct Supabase query) */
   getPath: async (pathId) => {
-    const { data: path, error: pathErr } = await supabase
-      .from('learning_paths').select('*').eq('id', pathId).maybeSingle()
+    const [{ data: path, error: pathErr }, { data: allCourses }, { data: items, error: itemsErr }] = await Promise.all([
+      supabase.from('learning_paths').select('*').eq('id', pathId).maybeSingle(),
+      supabase.from('courses').select('*'),
+      supabase.from('path_items').select('*, courses(*)').eq('path_id', pathId).order('order_index'),
+    ])
     if (pathErr) throw new Error(pathErr.message)
-
-    const { data: items, error: itemsErr } = await supabase
-      .from('path_items').select('*, courses(*)').eq('path_id', pathId).order('order_index')
     if (itemsErr) throw new Error(itemsErr.message)
+
+    const courseMap = {}
+    for (const c of allCourses || []) {
+      courseMap[c.id] = c
+    }
 
     return {
       ...path,
-      items: (items ?? []).map((item) => ({ ...item, course: item.courses || null })),
+      items: (items ?? []).map((item) => {
+        const nestedCourse = Array.isArray(item.courses) ? item.courses[0] : item.courses
+        const course = nestedCourse || courseMap[item.course_id] || {}
+        return { ...item, course }
+      }),
     }
   },
 

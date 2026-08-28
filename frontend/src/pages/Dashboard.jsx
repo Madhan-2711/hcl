@@ -68,16 +68,24 @@ export default function Dashboard() {
         const path = paths[0]
         setLatestPath(path)
 
-        const { data: items } = await supabase
-          .from('path_items')
-          .select('*, courses(*)')
-          .eq('path_id', path.id)
-          .order('order_index')
+        const [{ data: allCourses }, { data: items }] = await Promise.all([
+          supabase.from('courses').select('*'),
+          supabase.from('path_items').select('*, courses(*)').eq('path_id', path.id).order('order_index'),
+        ])
 
-        setPathItems((items || []).map(item => ({
-          ...item,
-          course: item.courses || null,
-        })))
+        const courseMap = {}
+        for (const c of allCourses || []) {
+          courseMap[c.id] = c
+        }
+
+        setPathItems((items || []).map(item => {
+          const nestedCourse = Array.isArray(item.courses) ? item.courses[0] : item.courses
+          const course = nestedCourse || courseMap[item.course_id] || {}
+          return {
+            ...item,
+            course,
+          }
+        }))
       }
     } catch (err) {
       console.error('Dashboard load error:', err)

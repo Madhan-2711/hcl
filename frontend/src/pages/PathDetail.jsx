@@ -20,20 +20,23 @@ export default function PathDetail() {
   const loadPath = async () => {
     setLoading(true)
     try {
-      const { data: pathData } = await supabase
-        .from('learning_paths')
-        .select('*')
-        .eq('id', pathId)
-        .single()
+      const [{ data: pathData }, { data: allCourses }, { data: itemsData }] = await Promise.all([
+        supabase.from('learning_paths').select('*').eq('id', pathId).single(),
+        supabase.from('courses').select('*'),
+        supabase.from('path_items').select('*, courses(*)').eq('path_id', pathId).order('order_index'),
+      ])
       setPath(pathData)
 
-      const { data: itemsData } = await supabase
-        .from('path_items')
-        .select('*, courses(*)')
-        .eq('path_id', pathId)
-        .order('order_index')
+      const courseMap = {}
+      for (const c of allCourses || []) {
+        courseMap[c.id] = c
+      }
 
-      setItems((itemsData || []).map(item => ({ ...item, course: item.courses })))
+      setItems((itemsData || []).map(item => {
+        const nestedCourse = Array.isArray(item.courses) ? item.courses[0] : item.courses
+        const course = nestedCourse || courseMap[item.course_id] || {}
+        return { ...item, course }
+      }))
     } catch (err) {
       console.error(err)
     } finally {
