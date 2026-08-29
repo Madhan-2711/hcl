@@ -2,12 +2,44 @@
  * get-recommendations/index.ts — Supabase Edge Function
  * Replaces: POST /recommendations
  *
- * Safe similarity search + skill-gap scoring → top-k results.
+ * Computes semantic similarity + track alignment + skill-gap scoring.
  */
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { handleCors, jsonResponse, errorResponse } from "../_shared/cors.ts";
 import { computeGapScore } from "../_shared/skillGap.ts";
+
+function computeTrackSimilarity(goal: string, track: string | null): number {
+  if (!track) return 0.2;
+  const g = goal.toLowerCase();
+  const t = track.toLowerCase();
+  if (g.includes("machine learning") || g.includes("ml") || g.includes("ai") || g.includes("deep learning")) {
+    if (t === "ml_engineer") return 0.95;
+    if (t === "data_scientist") return 0.8;
+  }
+  if (g.includes("data scientist") || g.includes("analytics") || g.includes("data analyst") || g.includes("statistics")) {
+    if (t === "data_scientist") return 0.95;
+    if (t === "ml_engineer") return 0.75;
+  }
+  if (g.includes("backend") || g.includes("api") || g.includes("database") || g.includes("server") || g.includes("sql")) {
+    if (t === "backend") return 0.95;
+  }
+  if (g.includes("frontend") || g.includes("web") || g.includes("react") || g.includes("ui")) {
+    if (t === "frontend") return 0.95;
+  }
+  return 0.35;
+}
+
+function computeKeywordSimilarity(goal: string, course: any): number {
+  const words = goal.toLowerCase().split(/\s+/).filter((w) => w.length > 3);
+  if (!words.length) return 0.5;
+  const target = `${course.title || ""} ${course.description || ""}`.toLowerCase();
+  let matches = 0;
+  for (const w of words) {
+    if (target.includes(w)) matches++;
+  }
+  return Math.min(matches / words.length, 1.0);
+}
 
 serve(async (req: Request) => {
   const corsRes = handleCors(req);
@@ -58,32 +90,6 @@ serve(async (req: Request) => {
       return jsonResponse({ recommendations: [] });
     }
 
-    let candidateSimilarities: Record<number, number> = {};
-
-    try {
-      // @ts-ignore Supabase global
-      if (typeof Supabase !== "undefined" && Supabase.ai) {
-        // @ts-ignore
-        const aiSession = new Supabase.ai.Session("gte-small");
-        const embeddingOutput = await aiSession.run(careerGoal, {
-          mean_pool: true,
-          normalize: true,
-        });
-        const embedding: number[] = Array.from(embeddingOutput.data as Float32Array);
-        const vecStr = `[${embedding.map((v: number) => v.toFixed(6)).join(",")}]`;
-
-        const { data: rpcData } = await admin.rpc("search_courses_by_embedding", {
-          query_embedding: vecStr,
-          match_count: 20,
-        });
-        for (const c of rpcData ?? []) {
-          candidateSimilarities[c.id ?? c.course_id] = c.similarity ?? 0;
-        }
-      }
-    } catch (e) {
-      console.warn("[get-recommendations] embedding search fallback:", e);
-    }
-
     // Build course_skill_map
     const { data: csRows } = await admin
       .from("course_skills").select("course_id, skill_id, is_prerequisite");
@@ -94,17 +100,21 @@ serve(async (req: Request) => {
       else courseSkillMap[r.course_id].taught.push(r.skill_id);
     }
 
-    // Fetch skill name map for gap_skills
+    // Fetch skill name map
     const { data: skillNameRows } = await admin.from("skills").select("id, name");
     const skillNameMap: Record<number, string> = {};
     for (const s of skillNameRows ?? []) skillNameMap[s.id] = s.name;
 
-    // Score candidates
+    // Score candidates with track correlation + keyword similarity + skill-gap score
     const scored = coursesList.map((c: any) => {
       const cid: number = c.id ?? c.course_id;
       const skillInfo = courseSkillMap[cid] ?? { taught: [], prereqs: [] };
       const [gapScore, gapSkillIds] = computeGapScore(learnerSkills, skillInfo.taught);
-      const sim: number = candidateSimilarities[cid] ?? 0;
+      
+      const trackSim = computeTrackSimilarity(careerGoal, c.track);
+      const kwSim = computeKeywordSimilarity(careerGoal, c);
+      const sim = Math.min(0.65 * trackSim + 0.35 * kwSim + (c.difficulty === "beginner" ? 0.05 : 0), 1.0);
+      
       const finalScore = 0.6 * sim + 0.4 * gapScore;
 
       return {

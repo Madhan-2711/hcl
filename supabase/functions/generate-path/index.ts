@@ -2,12 +2,7 @@
  * generate-path/index.ts — Supabase Edge Function
  * Replaces: POST /paths/generate
  *
- * Greedy topological path builder:
- * 1. Safe embedding (with fallback)
- * 2. Repeatedly pick best unlockable course using pgvector + skill-gap scoring
- * 3. Simulate skill progression
- * 4. Generate Groq explanations for each course
- * 5. Insert learning_paths + path_items records
+ * Greedy topological path builder with track alignment and skill-gap closure.
  */
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
@@ -28,9 +23,7 @@ const MILESTONE_LABELS = [
   "Capstone",
 ];
 
-const EXPLAIN_SYSTEM = `You are a learning advisor. In 2-3 sentences, explain to the learner why this course
-was recommended, referencing their specific goal, what they already know, and the skills this course teaches.
-Be concrete and specific, not generic.`;
+const EXPLAIN_SYSTEM = `You are an encouraging AI learning advisor. In 2 concise sentences, explain to the learner why this specific course was recommended for their goal, referencing their background and what competencies this course teaches.`;
 
 function assignMilestone(orderIndex: number, total: number): string {
   if (total <= 1) return MILESTONE_LABELS[0];
@@ -39,18 +32,54 @@ function assignMilestone(orderIndex: number, total: number): string {
   return MILESTONE_LABELS[Math.min(idx, MILESTONE_LABELS.length - 1)];
 }
 
+function computeTrackSimilarity(goal: string, track: string | null): number {
+  if (!track) return 0.2;
+  const g = goal.toLowerCase();
+  const t = track.toLowerCase();
+  if (g.includes("machine learning") || g.includes("ml") || g.includes("ai") || g.includes("deep learning")) {
+    if (t === "ml_engineer") return 0.95;
+    if (t === "data_scientist") return 0.8;
+  }
+  if (g.includes("data scientist") || g.includes("analytics") || g.includes("data analyst") || g.includes("statistics")) {
+    if (t === "data_scientist") return 0.95;
+    if (t === "ml_engineer") return 0.75;
+  }
+  if (g.includes("backend") || g.includes("api") || g.includes("database") || g.includes("server") || g.includes("sql")) {
+    if (t === "backend") return 0.95;
+  }
+  if (g.includes("frontend") || g.includes("web") || g.includes("react") || g.includes("ui")) {
+    if (t === "frontend") return 0.95;
+  }
+  return 0.35;
+}
+
+function computeKeywordSimilarity(goal: string, course: any): number {
+  const words = goal.toLowerCase().split(/\s+/).filter((w) => w.length > 3);
+  if (!words.length) return 0.5;
+  const target = `${course.title || ""} ${course.description || ""}`.toLowerCase();
+  let matches = 0;
+  for (const w of words) {
+    if (target.includes(w)) matches++;
+  }
+  return Math.min(matches / words.length, 1.0);
+}
+
 function scoreCourses(
   candidates: any[],
+  careerGoal: string,
   learnerSkills: SkillMap,
   courseSkillMap: Record<number, { taught: number[]; prereqs: number[] }>,
-  courseMap: Record<number, any>,
-  candidateSimilarities: Record<number, number>
+  courseMap: Record<number, any>
 ): any[] {
   return candidates.map((c) => {
     const cid: number = c.id;
     const skillInfo = courseSkillMap[cid] ?? { taught: [], prereqs: [] };
     const [gapScore, gapSkillIds] = computeGapScore(learnerSkills, skillInfo.taught);
-    const sim: number = candidateSimilarities[cid] ?? 0;
+    
+    const trackSim = computeTrackSimilarity(careerGoal, c.track);
+    const kwSim = computeKeywordSimilarity(careerGoal, c);
+    const sim = Math.min(0.65 * trackSim + 0.35 * kwSim + (c.difficulty === "beginner" ? 0.05 : 0), 1.0);
+    
     const finalScore = 0.6 * sim + 0.4 * gapScore;
     const full = courseMap[cid] ?? c;
 
@@ -104,7 +133,7 @@ serve(async (req: Request) => {
     const { data: profile } = await admin
       .from("learner_profiles").select("*").eq("id", user.id).maybeSingle();
     
-    const careerGoal: string = profile?.career_goal || "Software Engineering";
+    const careerGoal: string = profile?.career_goal || "Machine Learning Engineer";
 
     // Fetch learner skills
     const { data: skillRows } = await admin
@@ -141,32 +170,6 @@ serve(async (req: Request) => {
       else courseSkillMap[r.course_id].taught.push(r.skill_id);
     }
 
-    // Try embedding with Supabase AI if available, otherwise graceful fallback
-    const candidateSimilarities: Record<number, number> = {};
-    try {
-      // @ts-ignore Supabase global
-      if (typeof Supabase !== "undefined" && Supabase.ai) {
-        // @ts-ignore
-        const aiSession = new Supabase.ai.Session("gte-small");
-        const embeddingOutput = await aiSession.run(careerGoal, {
-          mean_pool: true,
-          normalize: true,
-        });
-        const goalEmbedding: number[] = Array.from(embeddingOutput.data as Float32Array);
-        const vecStr = `[${goalEmbedding.map((v: number) => v.toFixed(6)).join(",")}]`;
-
-        const { data: simData } = await admin.rpc("search_courses_by_embedding", {
-          query_embedding: vecStr,
-          match_count: allCourses.length || 100,
-        });
-        for (const c of simData ?? []) {
-          candidateSimilarities[c.id ?? c.course_id] = c.similarity ?? 0;
-        }
-      }
-    } catch (e) {
-      console.warn("[generate-path] Embedding search fallback:", e);
-    }
-
     // Greedy path building loop
     const path: any[] = [];
     const usedCourseIds = new Set<number>();
@@ -182,7 +185,7 @@ serve(async (req: Request) => {
           )
       );
 
-      // If no strictly unlockable course remains, relax prereqs
+      // If no strictly unlockable course remains, relax prerequisites
       if (!unlockable.length) {
         unlockable = allCourses.filter((c) => !usedCourseIds.has(c.id));
       }
@@ -191,10 +194,10 @@ serve(async (req: Request) => {
 
       const scored = scoreCourses(
         unlockable,
+        careerGoal,
         currentSkills,
         courseSkillMap,
-        courseMap,
-        candidateSimilarities
+        courseMap
       );
 
       if (!scored.length) break;
@@ -234,16 +237,15 @@ serve(async (req: Request) => {
           const userMsg = `Learner's goal: ${careerGoal}
 Learner currently knows: ${knownSkillNames.join(", ") || "basics"}
 Course: ${item.title}
-Skill gaps this course closes: ${gapSkillNames.join(", ") || "core domain knowledge"}
+Skill gaps this course closes: ${gapSkillNames.join(", ") || "core competencies"}
 Write 2 sentences explaining why this course was chosen.`;
 
           try {
             item.explanation = await groqChat(
               [{ role: "system", content: EXPLAIN_SYSTEM }, { role: "user", content: userMsg }],
-              { temperature: 0.4, maxTokens: 150 }
+              { temperature: 0.3, maxTokens: 150 }
             );
           } catch (e) {
-            console.warn(`[generate-path] Fallback explanation for course ${item.course_id}:`, e);
             item.explanation = `This course builds key competencies in ${gapSkillNames.join(", ") || "the curriculum"} directly aligned with becoming a ${careerGoal}.`;
           }
         })
