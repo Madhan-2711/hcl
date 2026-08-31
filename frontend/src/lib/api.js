@@ -60,16 +60,11 @@ export const api = {
     }
   },
 
-  /** Update status of a path item (not_started | in_progress | completed) */
-  updateItemStatus: async (pathId, itemId, status) => {
-    const { error } = await supabase
-      .from('path_items')
-      .update({ status })
-      .eq('id', itemId)
-      .eq('path_id', pathId)
-    if (error) throw new Error(error.message)
-    return { updated: true, status }
-  },
+  /** Update status of a path item (not_started | in_progress | completed).
+   *  Routed through an Edge Function because completing a course also boosts
+   *  the learner's skill proficiency and re-scores the remaining path items. */
+  updateItemStatus: (pathId, itemId, status) =>
+    invokeFunction('update-progress', { path_id: pathId, item_id: itemId, status }),
 
   /** Remove a path item */
   removePathItem: async (itemId) => {
@@ -83,6 +78,12 @@ export const api = {
 
   /** Generate/return explanation for a path item */
   explain: (path_item_id) => invokeFunction('explain-path-item', { path_item_id }),
+
+  /** Generate a 3-question verification quiz for a skill */
+  generateQuiz: (skill_id) => invokeFunction('generate-quiz', { skill_id }),
+
+  /** Submit answers for a quiz attempt; passing marks the skill as 'assessed' */
+  submitQuiz: (attempt_id, answers) => invokeFunction('submit-quiz', { attempt_id, answers }),
 
   /** Ask the AI assistant a question */
   ask: (question) => invokeFunction('ask-assistant', { question }),

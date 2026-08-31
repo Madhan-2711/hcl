@@ -49,7 +49,9 @@ create table if not exists courses (
   duration_hours int,
   track          text,          -- 'data_scientist' | 'ml_engineer' | 'backend' | 'frontend'
   url            text,          -- optional external URL
-  embedding      vector(384)    -- sentence-transformers all-MiniLM-L6-v2
+  embedding      vector(384)    -- local hashing-trick text embedding (see _shared/embeddings.ts);
+                                 -- self-healing backfill: generate-path/get-recommendations compute
+                                 -- and persist it on first use if a course row has none yet
 );
 
 -- ============================================================

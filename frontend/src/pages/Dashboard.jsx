@@ -9,6 +9,7 @@ import ProgressBar from '../components/ProgressBar'
 import MilestoneTimeline from '../components/MilestoneTimeline'
 import RecommendationCard from '../components/RecommendationCard'
 import AIAssistantPanel from '../components/AIAssistantPanel'
+import SkillQuizModal from '../components/SkillQuizModal'
 import {
   Brain, TrendingUp, Zap, BookOpen, ArrowRight,
   Sparkles, BarChart2, MessageCircle, Map, RefreshCw,
@@ -31,6 +32,7 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true)
   const [recsLoading, setRecsLoading] = useState(false)
   const [isEditingPath, setIsEditingPath] = useState(false)
+  const [quizSkill, setQuizSkill] = useState(null)
 
   useEffect(() => {
     if (userId) loadDashboard()
@@ -192,10 +194,16 @@ export default function Dashboard() {
 
   const handleStatusChange = async (itemId, newStatus) => {
     if (!latestPath) return
-    await api.updateItemStatus(latestPath.id, itemId, newStatus)
-    setPathItems(prev => prev.map(item =>
-      item.id === itemId ? { ...item, status: newStatus } : item
-    ))
+    const res = await api.updateItemStatus(latestPath.id, itemId, newStatus)
+    if (res?.skills_updated) {
+      // Completing a course boosts skill proficiency server-side; reload so
+      // the radar chart and remaining recommendation scores reflect it.
+      await loadDashboard(selectedPathId)
+    } else {
+      setPathItems(prev => prev.map(item =>
+        item.id === itemId ? { ...item, status: newStatus } : item
+      ))
+    }
   }
 
   const handleRemoveItem = async (itemId) => {
@@ -588,6 +596,15 @@ export default function Dashboard() {
                       <span className={`badge ${skill.source === 'assessed' ? 'badge-blue' : skill.source === 'inferred' ? 'badge-purple' : 'badge-cyan'}`}>
                         {skill.source}
                       </span>
+                      {skill.source !== 'assessed' && (
+                        <button
+                          onClick={() => setQuizSkill(skill)}
+                          className="btn-ghost"
+                          style={{ padding: '0.3rem 0.75rem', fontSize: '0.78rem', flexShrink: 0 }}
+                        >
+                          Verify
+                        </button>
+                      )}
                     </div>
                   ))}
                   {skills.length === 0 && (
@@ -648,6 +665,14 @@ export default function Dashboard() {
           )}
         </div>
       </div>
+      {quizSkill && (
+        <SkillQuizModal
+          skillId={quizSkill.skill_id}
+          skillName={quizSkill.skill_name}
+          onClose={() => setQuizSkill(null)}
+          onVerified={() => loadDashboard(selectedPathId)}
+        />
+      )}
     </div>
   )
 }

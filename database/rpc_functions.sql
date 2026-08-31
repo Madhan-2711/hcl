@@ -1,6 +1,8 @@
 -- ============================================================
 -- Supabase RPC: search_courses_by_embedding
--- Call this from the FastAPI backend for pgvector similarity search
+-- Optional direct pgvector ANN lookup (edge functions currently score
+-- in-process instead, since the full course catalog fits in memory, but
+-- this RPC is available for a "find similar courses" style query).
 -- Apply this in the Supabase SQL Editor AFTER schema.sql
 -- ============================================================
 

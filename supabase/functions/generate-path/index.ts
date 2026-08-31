@@ -14,6 +14,8 @@ import {
   simulateCourseCompletion,
   SkillMap,
 } from "../_shared/skillGap.ts";
+import { embedText } from "../_shared/embeddings.ts";
+import { backfillEmbeddings, computeOverallSimilarity } from "../_shared/scoring.ts";
 
 const MILESTONE_LABELS = [
   "Foundations",
@@ -32,54 +34,23 @@ function assignMilestone(orderIndex: number, total: number): string {
   return MILESTONE_LABELS[Math.min(idx, MILESTONE_LABELS.length - 1)];
 }
 
-function computeTrackSimilarity(goal: string, track: string | null): number {
-  if (!track) return 0.2;
-  const g = goal.toLowerCase();
-  const t = track.toLowerCase();
-  if (g.includes("machine learning") || g.includes("ml") || g.includes("ai") || g.includes("deep learning")) {
-    if (t === "ml_engineer") return 0.95;
-    if (t === "data_scientist") return 0.8;
-  }
-  if (g.includes("data scientist") || g.includes("analytics") || g.includes("data analyst") || g.includes("statistics")) {
-    if (t === "data_scientist") return 0.95;
-    if (t === "ml_engineer") return 0.75;
-  }
-  if (g.includes("backend") || g.includes("api") || g.includes("database") || g.includes("server") || g.includes("sql")) {
-    if (t === "backend") return 0.95;
-  }
-  if (g.includes("frontend") || g.includes("web") || g.includes("react") || g.includes("ui")) {
-    if (t === "frontend") return 0.95;
-  }
-  return 0.35;
-}
-
-function computeKeywordSimilarity(goal: string, course: any): number {
-  const words = goal.toLowerCase().split(/\s+/).filter((w) => w.length > 3);
-  if (!words.length) return 0.5;
-  const target = `${course.title || ""} ${course.description || ""}`.toLowerCase();
-  let matches = 0;
-  for (const w of words) {
-    if (target.includes(w)) matches++;
-  }
-  return Math.min(matches / words.length, 1.0);
-}
-
 function scoreCourses(
   candidates: any[],
   careerGoal: string,
+  goalEmbedding: number[],
   learnerSkills: SkillMap,
   courseSkillMap: Record<number, { taught: number[]; prereqs: number[] }>,
-  courseMap: Record<number, any>
+  courseMap: Record<number, any>,
+  newlyComputedEmbeddings: Array<{ id: number; embedding: number[] }>
 ): any[] {
   return candidates.map((c) => {
     const cid: number = c.id;
     const skillInfo = courseSkillMap[cid] ?? { taught: [], prereqs: [] };
     const [gapScore, gapSkillIds] = computeGapScore(learnerSkills, skillInfo.taught);
-    
-    const trackSim = computeTrackSimilarity(careerGoal, c.track);
-    const kwSim = computeKeywordSimilarity(careerGoal, c);
-    const sim = Math.min(0.65 * trackSim + 0.35 * kwSim + (c.difficulty === "beginner" ? 0.05 : 0), 1.0);
-    
+
+    const { sim, embedding, wasComputed } = computeOverallSimilarity(goalEmbedding, careerGoal, c);
+    if (wasComputed) newlyComputedEmbeddings.push({ id: cid, embedding });
+
     const finalScore = 0.6 * sim + 0.4 * gapScore;
     const full = courseMap[cid] ?? c;
 
@@ -170,6 +141,11 @@ serve(async (req: Request) => {
       else courseSkillMap[r.course_id].taught.push(r.skill_id);
     }
 
+    // Goal embedding computed once; courses without a stored embedding get one
+    // derived locally and queued for a self-healing backfill into pgvector.
+    const goalEmbedding = embedText(`${careerGoal} ${knownSkillNames.join(" ")}`);
+    const newlyComputedEmbeddings: Array<{ id: number; embedding: number[] }> = [];
+
     // Greedy path building loop
     const path: any[] = [];
     const usedCourseIds = new Set<number>();
@@ -195,9 +171,11 @@ serve(async (req: Request) => {
       const scored = scoreCourses(
         unlockable,
         careerGoal,
+        goalEmbedding,
         currentSkills,
         courseSkillMap,
-        courseMap
+        courseMap,
+        newlyComputedEmbeddings
       );
 
       const validScored = scored.filter(c => c.final_score > 0.15);
@@ -218,6 +196,8 @@ serve(async (req: Request) => {
     if (!path.length) {
       return errorResponse("Could not generate a path. Please refine your goal.", 422);
     }
+
+    await backfillEmbeddings(admin, newlyComputedEmbeddings);
 
     // Assign milestones
     const total = path.length;
