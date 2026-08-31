@@ -326,6 +326,16 @@ Return ONLY valid JSON matching this schema:
     return { updated: true, status };
   },
 
+  /** Remove a path item from learning path */
+  removePathItem: async (itemId) => {
+    const { error } = await supabase
+      .from('path_items')
+      .delete()
+      .eq('id', itemId);
+    if (error) throw new Error(error.message);
+    return { deleted: true };
+  },
+
   /** Generate explanation for a path item */
   explain: (path_item_id) => invokeFunction('explain-path-item', { path_item_id }),
 
