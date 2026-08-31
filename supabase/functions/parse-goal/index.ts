@@ -10,79 +10,16 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { handleCors, jsonResponse, errorResponse } from "../_shared/cors.ts";
 import { groqJson } from "../_shared/groq.ts";
 
-const CANONICAL_SKILLS = [
-  "Python", "Statistics", "NumPy", "Pandas", "Machine Learning",
-  "Deep Learning", "SQL", "MLOps", "Data Visualization", "Communication",
-  "Git", "Cloud Basics", "Linear Algebra", "Neural Networks", "Model Deployment"
-];
-
-const SKILL_ALIASES: Record<string, string> = {
-  "python": "Python",
-  "py": "Python",
-  "stats": "Statistics",
-  "probability": "Statistics",
-  "data analysis": "Statistics",
-  "numpy": "NumPy",
-  "pandas": "Pandas",
-  "dataframes": "Pandas",
-  "machine learning": "Machine Learning",
-  "ml": "Machine Learning",
-  "scikit-learn": "Machine Learning",
-  "sklearn": "Machine Learning",
-  "deep learning": "Deep Learning",
-  "dl": "Deep Learning",
-  "pytorch": "Deep Learning",
-  "tensorflow": "Deep Learning",
-  "keras": "Deep Learning",
-  "sql": "SQL",
-  "postgres": "SQL",
-  "postgresql": "SQL",
-  "database": "SQL",
-  "mlops": "MLOps",
-  "ml pipelines": "MLOps",
-  "data visualization": "Data Visualization",
-  "visualization": "Data Visualization",
-  "matplotlib": "Data Visualization",
-  "seaborn": "Data Visualization",
-  "plotly": "Data Visualization",
-  "communication": "Communication",
-  "presentation": "Communication",
-  "git": "Git",
-  "github": "Git",
-  "version control": "Git",
-  "cloud": "Cloud Basics",
-  "cloud basics": "Cloud Basics",
-  "aws": "Cloud Basics",
-  "gcp": "Cloud Basics",
-  "azure": "Cloud Basics",
-  "docker": "Cloud Basics",
-  "linear algebra": "Linear Algebra",
-  "matrices": "Linear Algebra",
-  "vectors": "Linear Algebra",
-  "math": "Linear Algebra",
-  "neural networks": "Neural Networks",
-  "ann": "Neural Networks",
-  "cnn": "Neural Networks",
-  "rnn": "Neural Networks",
-  "transformers": "Neural Networks",
-  "llm": "Neural Networks",
-  "model deployment": "Model Deployment",
-  "fastapi": "Model Deployment",
-  "api": "Model Deployment",
-  "serving": "Model Deployment",
-  "production": "Model Deployment",
-};
-
-const SYSTEM_PROMPT = `You are an expert AI curriculum advisor and career goal parser.
+const getSystemPrompt = (skillsList: string[]) => `You are an expert AI curriculum advisor and career goal parser.
 Analyze the user's free-text description of their background, aspirations, and goals.
 
 You MUST map their mentioned competencies ONLY to this canonical list of skills where applicable:
-${JSON.stringify(CANONICAL_SKILLS)}
+${JSON.stringify(skillsList)}
 
 Instructions:
-1. "goal": A clear, standard career title (e.g. "Machine Learning Engineer", "Data Scientist", "Data Analyst", "Backend Developer", "Frontend Developer", "Full Stack Developer", "AI Engineer", "MLOps Engineer").
+1. "goal": A clear, standard career title (e.g. "Machine Learning Engineer", "Data Scientist", "Data Analyst", "Backend Developer", "Frontend Developer", "Full Stack Developer", "AI Engineer", "MLOps Engineer", "UI/UX Designer", "Mobile Developer", "DevOps Engineer").
 2. "known_skills": Array of canonical skill names the learner explicitly or implicitly knows or has experience with.
-3. "weak_skills": Array of canonical skill names the learner needs to learn, lacks, struggles with, or wants to improve.
+3. "weak_skills": Array of canonical skill names the learner needs to learn, lacks, struggles with, or wants to improve. If none are specified, infer 4-6 essential skills for their goal.
 4. "experience_level": One of "beginner", "intermediate", "advanced" based on what they already know.
 5. "timeframe_months": Estimated target months (default 6 if not specified).
 
@@ -95,43 +32,41 @@ Return ONLY a valid JSON object matching this schema:
   "timeframe_months": number
 }`;
 
-function matchCanonicalSkill(raw: string): string | null {
-  const clean = raw.trim().toLowerCase();
-  if (SKILL_ALIASES[clean]) return SKILL_ALIASES[clean];
-  for (const [alias, canonical] of Object.entries(SKILL_ALIASES)) {
-    if (clean.includes(alias) || alias.includes(clean)) return canonical;
-  }
-  return null;
-}
-
-function keywordFallback(text: string) {
+function keywordFallback(text: string, skillsList: string[]) {
   const lower = text.toLowerCase();
-  const known = new Set<string>();
-  const weak = new Set<string>();
-
-  for (const [alias, canonical] of Object.entries(SKILL_ALIASES)) {
-    if (lower.includes(alias)) {
-      if (["weak", "don't know", "learning", "need", "lack", "want to learn", "improve", "struggling", "new to"].some((n) => lower.includes(n))) {
-        weak.add(canonical);
-      } else {
-        known.add(canonical);
-      }
-    }
-  }
-
+  
   let level = "intermediate";
   if (["beginner", "new", "just started", "no experience", "basics"].some((w) => lower.includes(w))) level = "beginner";
   else if (["advanced", "expert", "senior", "years of", "experienced"].some((w) => lower.includes(w))) level = "advanced";
 
-  let goal = "Machine Learning Engineer";
+  let goal = "Frontend Engineer";
   for (const role of [
     "data scientist", "machine learning engineer", "ml engineer", "data analyst",
-    "backend developer", "frontend developer", "full stack developer", "ai engineer", "devops", "cloud engineer"
+    "backend developer", "frontend developer", "full stack developer", "ai engineer", "devops", "cloud engineer",
+    "game developer", "mobile developer", "blockchain developer", "ui/ux designer", "qa tester"
   ]) {
     if (lower.includes(role)) {
       goal = role.replace(/\b\w/g, (c) => c.toUpperCase());
       break;
     }
+  }
+
+  // Very rough fallback mapping for known skills
+  const known = new Set<string>();
+  const weak = new Set<string>();
+  for (const skill of skillsList) {
+    if (lower.includes(skill.toLowerCase())) {
+        if (["weak", "don't know", "learning", "need", "lack", "want to learn", "improve", "struggling", "new to"].some((n) => lower.includes(n))) {
+            weak.add(skill);
+        } else {
+            known.add(skill);
+        }
+    }
+  }
+
+  // Pick some default weak skills if none found
+  if (weak.size === 0) {
+      skillsList.slice(0, 5).forEach(s => weak.add(s));
   }
 
   return {
@@ -163,26 +98,48 @@ serve(async (req: Request) => {
     const { text } = await req.json();
     if (!text || text.trim().length < 5) return errorResponse("Goal text too short", 400);
 
+    // Use admin client for DB persistence & fetching skills
+    const admin = createClient(
+      Deno.env.get("SUPABASE_URL")!,
+      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
+    );
+
+    // Fetch skills dynamically
+    const { data: skillRows } = await admin.from("skills").select("id, name");
+    const skillMap: Record<string, number> = {};
+    const skillNames: string[] = [];
+    for (const s of skillRows ?? []) {
+      skillMap[s.name.toLowerCase()] = s.id;
+      skillMap[s.name] = s.id;
+      skillNames.push(s.name);
+    }
+
     // Parse with Groq LLM
     let parsed: any;
     try {
-      parsed = await groqJson(SYSTEM_PROMPT, text, { temperature: 0.1 });
+      parsed = await groqJson(getSystemPrompt(skillNames), text, { temperature: 0.1 });
     } catch (e) {
       console.warn("[parse-goal] LLM JSON parsing failed, using keyword fallback:", e);
-      parsed = keywordFallback(text);
+      parsed = keywordFallback(text, skillNames);
     }
 
-    // Normalize extracted skills to canonical database set
+    // Normalize extracted skills to canonical database set (case insensitive matching)
     const normalizedKnown = new Set<string>();
     for (const s of parsed.known_skills ?? []) {
-      const match = matchCanonicalSkill(String(s));
-      if (match) normalizedKnown.add(match);
+        const id = skillMap[String(s)] || skillMap[String(s).toLowerCase()];
+        if (id) {
+           const match = skillRows?.find(r => r.id === id);
+           if (match) normalizedKnown.add(match.name);
+        }
     }
 
     const normalizedWeak = new Set<string>();
     for (const s of parsed.weak_skills ?? []) {
-      const match = matchCanonicalSkill(String(s));
-      if (match) normalizedWeak.add(match);
+        const id = skillMap[String(s)] || skillMap[String(s).toLowerCase()];
+        if (id) {
+           const match = skillRows?.find(r => r.id === id);
+           if (match) normalizedWeak.add(match.name);
+        }
     }
 
     // If no weak skills were explicitly identified, infer complementary skills for the career goal
@@ -190,15 +147,21 @@ serve(async (req: Request) => {
       const lowerGoal = (parsed.goal || "").toLowerCase();
       if (lowerGoal.includes("data scientist") || lowerGoal.includes("analyst")) {
         ["Statistics", "Pandas", "SQL", "Data Visualization"].forEach((s) => {
-          if (!normalizedKnown.has(s)) normalizedWeak.add(s);
+          if (!normalizedKnown.has(s) && skillMap[s]) normalizedWeak.add(s);
         });
       } else if (lowerGoal.includes("machine learning") || lowerGoal.includes("ml") || lowerGoal.includes("ai")) {
         ["Machine Learning", "Deep Learning", "Neural Networks", "MLOps"].forEach((s) => {
-          if (!normalizedKnown.has(s)) normalizedWeak.add(s);
+          if (!normalizedKnown.has(s) && skillMap[s]) normalizedWeak.add(s);
+        });
+      } else if (lowerGoal.includes("frontend") || lowerGoal.includes("ui") || lowerGoal.includes("ux")) {
+        ["React", "HTML", "CSS", "Figma", "TypeScript"].forEach((s) => {
+            // Find roughly matching skills we added
+            const found = skillNames.find(sn => sn.toLowerCase().includes(s.toLowerCase()));
+            if (found && !normalizedKnown.has(found)) normalizedWeak.add(found);
         });
       } else {
-        ["Python", "Git", "SQL"].forEach((s) => {
-          if (!normalizedKnown.has(s)) normalizedWeak.add(s);
+        ["Git", "SQL"].forEach((s) => {
+          if (!normalizedKnown.has(s) && skillMap[s]) normalizedWeak.add(s);
         });
       }
     }
@@ -210,19 +173,6 @@ serve(async (req: Request) => {
       experience_level: parsed.experience_level || "beginner",
       timeframe_months: parsed.timeframe_months || 6,
     };
-
-    // Use admin client for DB persistence
-    const admin = createClient(
-      Deno.env.get("SUPABASE_URL")!,
-      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
-    );
-
-    // Fetch skills name -> id
-    const { data: skillRows } = await admin.from("skills").select("id, name");
-    const skillMap: Record<string, number> = {};
-    for (const s of skillRows ?? []) {
-      skillMap[s.name] = s.id;
-    }
 
     // Upsert learner_profiles
     await admin.from("learner_profiles").upsert({

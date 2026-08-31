@@ -138,7 +138,7 @@ export default function Onboarding() {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', alignItems: 'start' }}>
               <SkillSection title="Known Skills" skills={parsed.known_skills} badgeClass="badge-green" />
               <SkillSection title="Skills to Improve" skills={parsed.weak_skills} badgeClass="badge-amber" />
             </div>
