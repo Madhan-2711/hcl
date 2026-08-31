@@ -24,6 +24,8 @@ export default function Dashboard() {
   const [skills, setSkills] = useState([])
   const [pathItems, setPathItems] = useState([])
   const [latestPath, setLatestPath] = useState(null)
+  const [allPaths, setAllPaths] = useState([]) // Store all learning paths
+  const [selectedPathId, setSelectedPathId] = useState(null) // Currently selected path
   const [recommendations, setRecommendations] = useState([])
   const [activeTab, setActiveTab] = useState('overview') // overview | path | skills | recs | chat
   const [loading, setLoading] = useState(true)
@@ -33,7 +35,7 @@ export default function Dashboard() {
     if (userId) loadDashboard()
   }, [userId])
 
-  const loadDashboard = async () => {
+  const loadDashboard = async (preferredPathId = null) => {
     setLoading(true)
     try {
       const { data: profileData } = await supabase
@@ -67,20 +69,25 @@ export default function Dashboard() {
         }
       }))
 
+      // Load ALL paths for this learner
       const { data: paths } = await supabase
         .from('learning_paths')
         .select('*')
         .eq('learner_id', userId)
         .order('created_at', { ascending: false })
-        .limit(1)
 
       if (paths?.length > 0) {
-        const path = paths[0]
-        setLatestPath(path)
+        setAllPaths(paths) // Store all paths
+
+        const activePathId = preferredPathId || selectedPathId || paths[0].id
+        const pathToLoad = paths.find(p => p.id === activePathId) || paths[0]
+
+        setLatestPath(pathToLoad)
+        setSelectedPathId(pathToLoad.id)
 
         const [{ data: allCourses }, { data: items }] = await Promise.all([
           supabase.from('courses').select('*'),
-          supabase.from('path_items').select('*, courses(*)').eq('path_id', path.id).order('order_index'),
+          supabase.from('path_items').select('*, courses(*)').eq('path_id', pathToLoad.id).order('order_index'),
         ])
 
         const courseMap = {}
@@ -96,6 +103,11 @@ export default function Dashboard() {
             course,
           }
         }))
+      } else {
+        setAllPaths([])
+        setLatestPath(null)
+        setSelectedPathId(null)
+        setPathItems([])
       }
     } catch (err) {
       console.error('Dashboard load error:', err)
@@ -113,6 +125,67 @@ export default function Dashboard() {
       console.error('Recs error:', err)
     } finally {
       setRecsLoading(false)
+    }
+  }
+
+  const handlePathChange = async (pathId) => {
+    setSelectedPathId(pathId)
+    const selectedPath = allPaths.find(p => p.id === pathId)
+    if (!selectedPath) return
+
+    setLatestPath(selectedPath)
+
+    try {
+      const [{ data: allCourses }, { data: items }] = await Promise.all([
+        supabase.from('courses').select('*'),
+        supabase.from('path_items').select('*, courses(*)').eq('path_id', pathId).order('order_index'),
+      ])
+
+      const courseMap = {}
+      for (const c of allCourses || []) {
+        courseMap[c.id] = c
+      }
+
+      setPathItems((items || []).map(item => {
+        const nestedCourse = Array.isArray(item.courses) ? item.courses[0] : item.courses
+        const course = nestedCourse || courseMap[item.course_id] || {}
+        return {
+          ...item,
+          course,
+        }
+      }))
+    } catch (err) {
+      console.error('Error loading path:', err)
+    }
+  }
+
+  const handleDeletePath = async (pathId) => {
+    const target = allPaths.find(path => path.id === pathId)
+    if (!target) return
+
+    const confirmed = window.confirm(`Remove "${target.goal_text || 'Untitled Goal'}"? This will delete the learning path and its course plan.`)
+    if (!confirmed) return
+
+    const { error } = await supabase.from('learning_paths').delete().eq('id', pathId)
+    if (error) {
+      console.error('Delete path error:', error)
+      return
+    }
+
+    const remainingPaths = allPaths.filter(path => path.id !== pathId)
+    if (remainingPaths.length === 0) {
+      setAllPaths([])
+      setLatestPath(null)
+      setSelectedPathId(null)
+      setPathItems([])
+      return
+    }
+
+    setAllPaths(remainingPaths)
+    const nextPathId = selectedPathId === pathId ? remainingPaths[0].id : selectedPathId
+    if (selectedPathId === pathId) {
+      setSelectedPathId(nextPathId)
+      await handlePathChange(nextPathId)
     }
   }
 
@@ -181,15 +254,77 @@ export default function Dashboard() {
                 <span>Learning Dashboard</span>
               </div>
               <h1 style={{ fontSize: '2.4rem', margin: '0 0 0.4rem', lineHeight: 1.2 }}>
-                {profile?.career_goal ? (
+                {latestPath?.goal_text ? (
+                  <>Path to <span style={{ color: 'var(--primary)', fontStyle: 'italic' }}>{latestPath.goal_text}</span></>
+                ) : profile?.career_goal ? (
                   <>Path to <span style={{ color: 'var(--primary)', fontStyle: 'italic' }}>{profile.career_goal}</span></>
                 ) : (
                   'Your Learning Journey'
                 )}
               </h1>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', margin: 0 }}>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', margin: '0.5rem 0 0' }}>
                 {session?.user?.email} · {skills.length} skills tracked · {totalItems} courses curated
               </p>
+              
+              {/* Goal Selector - Show if multiple paths exist */}
+              {allPaths.length > 0 && (
+                <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                  <label style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                    Saved Goals
+                  </label>
+                  <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
+                    {allPaths.map((path) => (
+                      <div
+                        key={path.id}
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '0.35rem',
+                          padding: '0.45rem 0.75rem',
+                          borderRadius: 'var(--radius-md)',
+                          border: selectedPathId === path.id ? '2px solid var(--primary)' : '1px solid var(--border)',
+                          background: selectedPathId === path.id ? 'rgba(93, 112, 82, 0.1)' : 'var(--background)',
+                          color: selectedPathId === path.id ? 'var(--primary)' : 'var(--text-secondary)',
+                          fontSize: '0.85rem',
+                          fontWeight: selectedPathId === path.id ? 600 : 500,
+                        }}
+                      >
+                        <button
+                          type="button"
+                          onClick={() => handlePathChange(path.id)}
+                          style={{
+                            border: 'none',
+                            background: 'transparent',
+                            color: 'inherit',
+                            padding: 0,
+                            font: 'inherit',
+                            cursor: 'pointer',
+                          }}
+                        >
+                          {path.goal_text || 'Untitled Goal'}
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => handleDeletePath(path.id)}
+                          aria-label={`Delete ${path.goal_text || 'Untitled Goal'}`}
+                          style={{
+                            border: 'none',
+                            background: 'transparent',
+                            color: 'inherit',
+                            opacity: 0.8,
+                            fontSize: '1rem',
+                            lineHeight: 1,
+                            cursor: 'pointer',
+                            padding: 0,
+                          }}
+                        >
+                          ×
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
             <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
               <Link to="/onboarding" className="btn-secondary" style={{ padding: '0.6rem 1.4rem', fontSize: '0.88rem' }}>
@@ -337,12 +472,6 @@ export default function Dashboard() {
                       )}
                       <span className="badge badge-purple">{nextItem.milestone_label || 'Core'}</span>
                     </div>
-                    <button
-                      className="btn-primary"
-                      onClick={() => handleStatusChange(nextItem.id, 'in_progress')}
-                    >
-                      <PlayCircle size={17} /> Start Course <ArrowRight size={15} />
-                    </button>
                   </div>
                 )}
 
