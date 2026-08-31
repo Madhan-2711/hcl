@@ -3,7 +3,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { supabase } from '../lib/supabaseClient'
 import { useAuth } from '../App'
 import {
-  LayoutDashboard, BookOpen, LogOut, Menu, X, Sparkles, User, Brain
+  LayoutDashboard, BookOpen, LogOut, Menu, X, Sparkles, User, Award
 } from 'lucide-react'
 import LogoIcon from './LogoIcon'
 
@@ -29,8 +29,9 @@ export default function Navbar() {
 
   const navLinks = [
     { to: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { to: '/skill-gap', label: 'SkillGap', icon: Brain },
-    { to: '/onboarding', label: 'New Goal', icon: Sparkles },
+    { to: '/assessment', label: 'Skill Test (MCQ)', icon: Award },
+    { to: '/skills', label: 'Skill Gap', icon: BookOpen },
+    { to: '/onboarding', label: 'Resume & Goal', icon: Sparkles },
   ]
 
   const isActive = (path) => location.pathname.startsWith(path)

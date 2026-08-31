@@ -8,8 +8,38 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { handleCors, jsonResponse, errorResponse } from "../_shared/cors.ts";
 import { computeGapScore } from "../_shared/skillGap.ts";
-import { embedText } from "../_shared/embeddings.ts";
-import { backfillEmbeddings, computeOverallSimilarity } from "../_shared/scoring.ts";
+
+function computeTrackSimilarity(goal: string, track: string | null): number {
+  if (!track) return 0.2;
+  const g = goal.toLowerCase();
+  const t = track.toLowerCase();
+  if (g.includes("machine learning") || g.includes("ml") || g.includes("ai") || g.includes("deep learning")) {
+    if (t === "ml_engineer") return 0.95;
+    if (t === "data_scientist") return 0.8;
+  }
+  if (g.includes("data scientist") || g.includes("analytics") || g.includes("data analyst") || g.includes("statistics")) {
+    if (t === "data_scientist") return 0.95;
+    if (t === "ml_engineer") return 0.75;
+  }
+  if (g.includes("backend") || g.includes("api") || g.includes("database") || g.includes("server") || g.includes("sql")) {
+    if (t === "backend") return 0.95;
+  }
+  if (g.includes("frontend") || g.includes("web") || g.includes("react") || g.includes("ui")) {
+    if (t === "frontend") return 0.95;
+  }
+  return 0.35;
+}
+
+function computeKeywordSimilarity(goal: string, course: any): number {
+  const words = goal.toLowerCase().split(/\s+/).filter((w) => w.length > 3);
+  if (!words.length) return 0.5;
+  const target = `${course.title || ""} ${course.description || ""}`.toLowerCase();
+  let matches = 0;
+  for (const w of words) {
+    if (target.includes(w)) matches++;
+  }
+  return Math.min(matches / words.length, 1.0);
+}
 
 serve(async (req: Request) => {
   const corsRes = handleCors(req);
@@ -75,18 +105,16 @@ serve(async (req: Request) => {
     const skillNameMap: Record<number, string> = {};
     for (const s of skillNameRows ?? []) skillNameMap[s.id] = s.name;
 
-    // Score candidates with track correlation + vector similarity + skill-gap score
-    const goalEmbedding = embedText(careerGoal);
-    const newlyComputedEmbeddings: Array<{ id: number; embedding: number[] }> = [];
-
+    // Score candidates with track correlation + keyword similarity + skill-gap score
     const scored = coursesList.map((c: any) => {
       const cid: number = c.id ?? c.course_id;
       const skillInfo = courseSkillMap[cid] ?? { taught: [], prereqs: [] };
       const [gapScore, gapSkillIds] = computeGapScore(learnerSkills, skillInfo.taught);
-
-      const { sim, embedding, wasComputed } = computeOverallSimilarity(goalEmbedding, careerGoal, c);
-      if (wasComputed) newlyComputedEmbeddings.push({ id: cid, embedding });
-
+      
+      const trackSim = computeTrackSimilarity(careerGoal, c.track);
+      const kwSim = computeKeywordSimilarity(careerGoal, c);
+      const sim = Math.min(0.65 * trackSim + 0.35 * kwSim + (c.difficulty === "beginner" ? 0.05 : 0), 1.0);
+      
       const finalScore = 0.6 * sim + 0.4 * gapScore;
 
       return {
@@ -106,11 +134,8 @@ serve(async (req: Request) => {
       };
     });
 
-    await backfillEmbeddings(admin, newlyComputedEmbeddings);
-
-    const validScored = scored.filter(c => c.final_score > 0.15);
-    validScored.sort((a, b) => b.final_score - a.final_score);
-    const recommendations = validScored.slice(0, Math.min(top_k, 20));
+    scored.sort((a, b) => b.final_score - a.final_score);
+    const recommendations = scored.slice(0, Math.min(top_k, 20));
 
     return jsonResponse({ recommendations });
   } catch (err) {

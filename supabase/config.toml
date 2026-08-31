@@ -42,30 +42,3 @@ enable_confirmations = false
 enabled = true
 policy = "oneshot"
 inspector_port = 8083
-
-# Explicit per-function JWT verification, so it's version-controlled instead
-# of depending on remembering a --verify-jwt / --no-verify-jwt CLI flag at
-# deploy time (a previous --no-verify-jwt deploy otherwise sticks silently).
-[functions.parse-goal]
-verify_jwt = true
-
-[functions.generate-path]
-verify_jwt = true
-
-[functions.get-recommendations]
-verify_jwt = true
-
-[functions.update-progress]
-verify_jwt = true
-
-[functions.generate-quiz]
-verify_jwt = true
-
-[functions.submit-quiz]
-verify_jwt = true
-
-[functions.ask-assistant]
-verify_jwt = true
-
-[functions.explain-path-item]
-verify_jwt = true

@@ -1,5 +1,5 @@
 import React from 'react'
-import { CheckCircle2, Circle, Clock, Tag, Trash2 } from 'lucide-react'
+import { CheckCircle2, Circle, Clock, Tag } from 'lucide-react'
 
 const MILESTONE_COLORS = {
   'Foundations': 'var(--primary)',
@@ -9,7 +9,7 @@ const MILESTONE_COLORS = {
   'Capstone': 'var(--accent-pink)',
 }
 
-export default function MilestoneTimeline({ items = [], onStatusChange, onRemoveItem }) {
+export default function MilestoneTimeline({ items = [], onStatusChange }) {
   const grouped = items.reduce((acc, item) => {
     const label = item.milestone_label || 'Foundations'
     if (!acc[label]) acc[label] = []
@@ -86,7 +86,6 @@ export default function MilestoneTimeline({ items = [], onStatusChange, onRemove
                   color={color}
                   isLast={idx === group.length - 1}
                   onStatusChange={onStatusChange}
-                  onRemoveItem={onRemoveItem}
                 />
               ))}
             </div>
@@ -97,7 +96,7 @@ export default function MilestoneTimeline({ items = [], onStatusChange, onRemove
   )
 }
 
-function TimelineItem({ item, color, onStatusChange, onRemoveItem }) {
+function TimelineItem({ item, color, onStatusChange }) {
   const course = item.course || {}
   const status = item.status || 'not_started'
 
@@ -173,24 +172,6 @@ function TimelineItem({ item, color, onStatusChange, onRemoveItem }) {
               <option value="in_progress">In Progress</option>
               <option value="completed">Completed</option>
             </select>
-          )}
-          
-          {onRemoveItem && (
-            <button
-              onClick={() => onRemoveItem(item.id)}
-              style={{
-                background: 'rgba(168, 84, 72, 0.05)',
-                border: '1px solid rgba(168, 84, 72, 0.2)',
-                borderRadius: '9999px',
-                padding: '0.35rem',
-                color: 'var(--destructive)',
-                cursor: 'pointer',
-                display: 'flex', alignItems: 'center', justifyContent: 'center'
-              }}
-              title="Remove from path"
-            >
-              <Trash2 size={15} />
-            </button>
           )}
         </div>
       </div>

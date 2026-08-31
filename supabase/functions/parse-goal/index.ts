@@ -2,7 +2,7 @@
  * parse-goal/index.ts — Supabase Edge Function
  * Replaces: POST /goals/parse
  *
- * Parses a free-text learner goal using Groq LLM, maps extracted competencies
+ * Parses a free-text learner goal or uploaded resume using Groq LLM, maps extracted competencies
  * directly to canonical database skills, and upserts learner_profiles + learner_skills.
  */
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
@@ -11,7 +11,7 @@ import { handleCors, jsonResponse, errorResponse } from "../_shared/cors.ts";
 import { groqJson } from "../_shared/groq.ts";
 
 const getSystemPrompt = (skillsList: string[]) => `You are an expert AI curriculum advisor and career goal parser.
-Analyze the user's free-text description of their background, aspirations, and goals.
+Analyze the user's free-text description of their background, aspirations, or uploaded resume.
 
 You MUST map their mentioned competencies ONLY to this canonical list of skills where applicable:
 ${JSON.stringify(skillsList)}
@@ -19,7 +19,7 @@ ${JSON.stringify(skillsList)}
 Instructions:
 1. "goal": A clear, standard career title (e.g. "Machine Learning Engineer", "Data Scientist", "Data Analyst", "Backend Developer", "Frontend Developer", "Full Stack Developer", "AI Engineer", "MLOps Engineer", "UI/UX Designer", "Mobile Developer", "DevOps Engineer").
 2. "known_skills": Array of canonical skill names the learner explicitly or implicitly knows or has experience with.
-3. "weak_skills": Array of canonical skill names the learner explicitly needs to learn, lacks, or wants to improve. If none are explicitly specified in the text, leave this array EMPTY. Do NOT guess or infer skills.
+3. "weak_skills": Array of canonical skill names the learner needs to learn, lacks, struggles with, or wants to improve. If none are specified, infer 4-6 essential skills for their goal.
 4. "experience_level": One of "beginner", "intermediate", "advanced" based on what they already know.
 5. "timeframe_months": Estimated target months (default 6 if not specified).
 
@@ -64,8 +64,10 @@ function keywordFallback(text: string, skillsList: string[]) {
     }
   }
 
-  // We rely on downstream logic to inject default weak skills if none found
-
+  // Pick some default weak skills if none found
+  if (weak.size === 0) {
+      skillsList.slice(0, 5).forEach(s => weak.add(s));
+  }
 
   return {
     goal,
@@ -93,8 +95,11 @@ serve(async (req: Request) => {
     const { data: { user }, error: authErr } = await supabase.auth.getUser();
     if (authErr || !user) return errorResponse("Unauthorized", 401);
 
-    const { text } = await req.json();
-    if (!text || text.trim().length < 5) return errorResponse("Goal text too short", 400);
+    const body = await req.json();
+    const text = body.text;
+    const resumeMetadata = body.resume_metadata || null;
+
+    if (!text || text.trim().length < 5) return errorResponse("Goal or resume text too short", 400);
 
     // Use admin client for DB persistence & fetching skills
     const admin = createClient(
@@ -119,6 +124,11 @@ serve(async (req: Request) => {
     } catch (e) {
       console.warn("[parse-goal] LLM JSON parsing failed, using keyword fallback:", e);
       parsed = keywordFallback(text, skillNames);
+    }
+
+    // Merge extracted heuristic skills if present
+    if (resumeMetadata?.skills?.length) {
+      parsed.known_skills = Array.from(new Set([...(parsed.known_skills || []), ...resumeMetadata.skills]));
     }
 
     // Normalize extracted skills to canonical database set (case insensitive matching)
@@ -153,47 +163,10 @@ serve(async (req: Request) => {
         });
       } else if (lowerGoal.includes("frontend") || lowerGoal.includes("ui") || lowerGoal.includes("ux")) {
         ["React", "HTML", "CSS", "Figma", "TypeScript"].forEach((s) => {
-            // Find roughly matching skills we added
             const found = skillNames.find(sn => sn.toLowerCase().includes(s.toLowerCase()));
             if (found && !normalizedKnown.has(found)) normalizedWeak.add(found);
         });
-      } else if (lowerGoal.includes("doctor") || lowerGoal.includes("medic") || lowerGoal.includes("health") || lowerGoal.includes("nurs")) {
-        ["Anatomy", "Patient Care", "Medical Ethics", "Physiology"].forEach((s) => {
-            const found = skillNames.find(sn => sn.toLowerCase() === s.toLowerCase());
-            if (found && !normalizedKnown.has(found)) normalizedWeak.add(found);
-        });
-      } else if (lowerGoal.includes("law") || lowerGoal.includes("attorney") || lowerGoal.includes("legal")) {
-        ["Criminal Law", "Contract Law", "Legal Research", "Negotiation"].forEach((s) => {
-            const found = skillNames.find(sn => sn.toLowerCase() === s.toLowerCase());
-            if (found && !normalizedKnown.has(found)) normalizedWeak.add(found);
-        });
-      } else if (lowerGoal.includes("civil") || lowerGoal.includes("mechanical") || lowerGoal.includes("engineer")) {
-        ["AutoCAD", "Structural Analysis", "Thermodynamics", "Project Management"].forEach((s) => {
-            const found = skillNames.find(sn => sn.toLowerCase() === s.toLowerCase());
-            if (found && !normalizedKnown.has(found)) normalizedWeak.add(found);
-        });
-      } else if (lowerGoal.includes("forensic") || lowerGoal.includes("investigat")) {
-        ["Crime Scene Investigation", "DNA Analysis", "Forensic Pathology", "Criminalistics"].forEach((s) => {
-            const found = skillNames.find(sn => sn.toLowerCase() === s.toLowerCase());
-            if (found && !normalizedKnown.has(found)) normalizedWeak.add(found);
-        });
-      } else if (lowerGoal.includes("psychology") || lowerGoal.includes("therap") || lowerGoal.includes("counsel")) {
-        ["Cognitive Psychology", "Counseling", "Behavioral Analysis"].forEach((s) => {
-            const found = skillNames.find(sn => sn.toLowerCase() === s.toLowerCase());
-            if (found && !normalizedKnown.has(found)) normalizedWeak.add(found);
-        });
-      } else if (lowerGoal.includes("market") || lowerGoal.includes("creator") || lowerGoal.includes("social")) {
-        ["Digital Marketing", "SEO", "Content Creation", "Social Media Strategy"].forEach((s) => {
-            const found = skillNames.find(sn => sn.toLowerCase() === s.toLowerCase());
-            if (found && !normalizedKnown.has(found)) normalizedWeak.add(found);
-        });
-      } else if (lowerGoal.includes("business") || lowerGoal.includes("financ") || lowerGoal.includes("entrepren")) {
-        ["Entrepreneurship", "Personal Finance", "Investing"].forEach((s) => {
-            const found = skillNames.find(sn => sn.toLowerCase() === s.toLowerCase());
-            if (found && !normalizedKnown.has(found)) normalizedWeak.add(found);
-        });
       } else {
-        // Fallback for generic tech roles
         ["Git", "SQL"].forEach((s) => {
           if (!normalizedKnown.has(s) && skillMap[s]) normalizedWeak.add(s);
         });
@@ -206,6 +179,7 @@ serve(async (req: Request) => {
       weak_skills: Array.from(normalizedWeak),
       experience_level: parsed.experience_level || "beginner",
       timeframe_months: parsed.timeframe_months || 6,
+      ...(resumeMetadata || {}),
     };
 
     // Upsert learner_profiles

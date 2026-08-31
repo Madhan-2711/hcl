@@ -45,15 +45,10 @@ export default function PathDetail() {
   }
 
   const handleStatusChange = async (itemId, newStatus) => {
-    const res = await api.updateItemStatus(pathId, itemId, newStatus)
-    if (res?.skills_updated) {
-      // Completing a course re-scores the remaining items server-side.
-      await loadPath()
-    } else {
-      setItems(prev => prev.map(item =>
-        item.id === itemId ? { ...item, status: newStatus } : item
-      ))
-    }
+    await api.updateItemStatus(pathId, itemId, newStatus)
+    setItems(prev => prev.map(item =>
+      item.id === itemId ? { ...item, status: newStatus } : item
+    ))
   }
 
   const completed = items.filter(i => i.status === 'completed').length
