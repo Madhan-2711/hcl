@@ -3,7 +3,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { supabase } from '../lib/supabaseClient'
 import { useAuth } from '../App'
 import {
-  LayoutDashboard, BookOpen, LogOut, Menu, X, Sparkles, User
+  LayoutDashboard, BookOpen, LogOut, Menu, X, Sparkles, User, Brain
 } from 'lucide-react'
 import LogoIcon from './LogoIcon'
 
@@ -29,6 +29,7 @@ export default function Navbar() {
 
   const navLinks = [
     { to: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
+    { to: '/skill-gap', label: 'SkillGap', icon: Brain },
     { to: '/onboarding', label: 'New Goal', icon: Sparkles },
   ]
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { api } from '../lib/api'
 import Navbar from '../components/Navbar'
 import {
@@ -16,8 +16,9 @@ const EXAMPLE_GOALS = [
 
 export default function Onboarding() {
   const navigate = useNavigate()
+  const location = useLocation()
   const [step, setStep] = useState(1) // 1: input, 2: parsing, 3: confirm, 4: generating
-  const [goalText, setGoalText] = useState('')
+  const [goalText, setGoalText] = useState(location.state?.skillGapPrompt || '')
   const [parsed, setParsed] = useState(null)
   const [error, setError] = useState('')
 

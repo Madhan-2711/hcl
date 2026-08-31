@@ -6,6 +6,7 @@ import Onboarding from './pages/Onboarding'
 import Dashboard from './pages/Dashboard'
 import PathDetail from './pages/PathDetail'
 import CourseDetail from './pages/CourseDetail'
+import SkillGapAnalyzer from './pages/SkillGapAnalyzer'
 
 export const AuthContext = createContext(null)
 
@@ -50,6 +51,7 @@ export default function App() {
           <Route path="/login" element={session && !loading ? <Navigate to="/dashboard" replace /> : <Login />} />
           <Route path="/onboarding" element={<ProtectedRoute><Onboarding /></ProtectedRoute>} />
           <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+          <Route path="/skill-gap" element={<ProtectedRoute><SkillGapAnalyzer /></ProtectedRoute>} />
           <Route path="/paths/:pathId" element={<ProtectedRoute><PathDetail /></ProtectedRoute>} />
           <Route path="/courses/:courseId" element={<ProtectedRoute><CourseDetail /></ProtectedRoute>} />
           <Route path="*" element={<Navigate to="/dashboard" replace />} />

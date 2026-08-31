@@ -1,0 +1,4482 @@
+{
+  "Backend Developer": {
+    "Skills": [
+      "Mobile Development",
+      "DevOps Practices",
+      "Machine Learning",
+      "Testing and Debugging",
+      "Database Management",
+      "JavaScript",
+      "Team Collaboration",
+      "Version Control (Git)",
+      "Cybersecurity Fundamentals",
+      "API Integration"
+    ],
+    "Abilities": [
+      "Decision Making",
+      "Oral Expression",
+      "Attention to Detail",
+      "Analytical Thinking",
+      "Time Management"
+    ],
+    "WorkStyles": [
+      "Initiative",
+      "Cooperation",
+      "Stress Tolerance",
+      "Independence",
+      "Integrity"
+    ]
+  },
+  "Frontend Developer": {
+    "Skills": [
+      "Mobile Development",
+      "Machine Learning",
+      "Cybersecurity Fundamentals",
+      "Communication",
+      "Problem Solving",
+      "API Integration",
+      "JavaScript",
+      "Agile Methodology",
+      "System Architecture",
+      "Critical Thinking"
+    ],
+    "Abilities": [
+      "Written Comprehension",
+      "Attention to Detail",
+      "Oral Expression",
+      "Decision Making",
+      "Creativity"
+    ],
+    "WorkStyles": [
+      "Initiative",
+      "Stress Tolerance",
+      "Integrity",
+      "Persistence",
+      "Innovation"
+    ]
+  },
+  "Full Stack Developer": {
+    "Skills": [
+      "Team Collaboration",
+      "Python Programming",
+      "Linux Administration",
+      "Cybersecurity Fundamentals",
+      "Communication",
+      "Database Management",
+      "Machine Learning",
+      "DevOps Practices",
+      "Cloud Computing",
+      "Mobile Development"
+    ],
+    "Abilities": [
+      "Analytical Thinking",
+      "Creativity",
+      "Decision Making",
+      "System Evaluation",
+      "Logical Reasoning"
+    ],
+    "WorkStyles": [
+      "Persistence",
+      "Initiative",
+      "Independence",
+      "Dependability",
+      "Leadership"
+    ]
+  },
+  "Mobile App Developer": {
+    "Skills": [
+      "Linux Administration",
+      "DevOps Practices",
+      "Cybersecurity Fundamentals",
+      "API Integration",
+      "Communication",
+      "Critical Thinking",
+      "Python Programming",
+      "Cloud Computing",
+      "UI/UX Design",
+      "Data Analysis"
+    ],
+    "Abilities": [
+      "Written Comprehension",
+      "Analytical Thinking",
+      "Oral Expression",
+      "System Evaluation",
+      "Attention to Detail"
+    ],
+    "WorkStyles": [
+      "Stress Tolerance",
+      "Innovation",
+      "Independence",
+      "Cooperation",
+      "Initiative"
+    ]
+  },
+  "Desktop Application Developer": {
+    "Skills": [
+      "Cybersecurity Fundamentals",
+      "Team Collaboration",
+      "Python Programming",
+      "Communication",
+      "System Architecture",
+      "Version Control (Git)",
+      "DevOps Practices",
+      "JavaScript",
+      "Problem Solving",
+      "Testing and Debugging"
+    ],
+    "Abilities": [
+      "Learning Strategies",
+      "Time Management",
+      "System Evaluation",
+      "Logical Reasoning",
+      "Written Comprehension"
+    ],
+    "WorkStyles": [
+      "Independence",
+      "Persistence",
+      "Innovation",
+      "Integrity",
+      "Initiative"
+    ]
+  },
+  "Software Engineer": {
+    "Skills": [
+      "Python Programming",
+      "System Architecture",
+      "Problem Solving",
+      "Version Control (Git)",
+      "Critical Thinking",
+      "Database Management",
+      "Team Collaboration",
+      "Linux Administration",
+      "Data Analysis",
+      "Testing and Debugging"
+    ],
+    "Abilities": [
+      "Decision Making",
+      "Written Comprehension",
+      "Attention to Detail",
+      "Time Management",
+      "Learning Strategies"
+    ],
+    "WorkStyles": [
+      "Stress Tolerance",
+      "Leadership",
+      "Innovation",
+      "Cooperation",
+      "Adaptability"
+    ]
+  },
+  "System Software Developer": {
+    "Skills": [
+      "Linux Administration",
+      "Agile Methodology",
+      "Machine Learning",
+      "Python Programming",
+      "Data Analysis",
+      "JavaScript",
+      "UI/UX Design",
+      "Testing and Debugging",
+      "Version Control (Git)",
+      "DevOps Practices"
+    ],
+    "Abilities": [
+      "System Evaluation",
+      "Oral Expression",
+      "Learning Strategies",
+      "Attention to Detail",
+      "Time Management"
+    ],
+    "WorkStyles": [
+      "Initiative",
+      "Innovation",
+      "Dependability",
+      "Persistence",
+      "Leadership"
+    ]
+  },
+  "API Developer": {
+    "Skills": [
+      "Python Programming",
+      "Cloud Computing",
+      "UI/UX Design",
+      "Mobile Development",
+      "Data Analysis",
+      "System Architecture",
+      "API Integration",
+      "Critical Thinking",
+      "Linux Administration",
+      "Testing and Debugging"
+    ],
+    "Abilities": [
+      "Attention to Detail",
+      "Learning Strategies",
+      "Creativity",
+      "Oral Expression",
+      "Logical Reasoning"
+    ],
+    "WorkStyles": [
+      "Integrity",
+      "Independence",
+      "Leadership",
+      "Cooperation",
+      "Stress Tolerance"
+    ]
+  },
+  "Frontend Web Developer": {
+    "Skills": [
+      "Cloud Computing",
+      "System Architecture",
+      "Database Management",
+      "Agile Methodology",
+      "Problem Solving",
+      "Testing and Debugging",
+      "Python Programming",
+      "Version Control (Git)",
+      "Team Collaboration",
+      "DevOps Practices"
+    ],
+    "Abilities": [
+      "Decision Making",
+      "Oral Expression",
+      "Written Comprehension",
+      "Logical Reasoning",
+      "Learning Strategies"
+    ],
+    "WorkStyles": [
+      "Innovation",
+      "Persistence",
+      "Initiative",
+      "Integrity",
+      "Cooperation"
+    ]
+  },
+  "Backend Web Developer": {
+    "Skills": [
+      "Agile Methodology",
+      "Machine Learning",
+      "Cloud Computing",
+      "Python Programming",
+      "Testing and Debugging",
+      "Data Analysis",
+      "Database Management",
+      "Communication",
+      "Team Collaboration",
+      "DevOps Practices"
+    ],
+    "Abilities": [
+      "Analytical Thinking",
+      "System Evaluation",
+      "Logical Reasoning",
+      "Written Comprehension",
+      "Attention to Detail"
+    ],
+    "WorkStyles": [
+      "Initiative",
+      "Leadership",
+      "Persistence",
+      "Independence",
+      "Stress Tolerance"
+    ]
+  },
+  "Full Stack Web Developer": {
+    "Skills": [
+      "API Integration",
+      "Version Control (Git)",
+      "Database Management",
+      "Critical Thinking",
+      "Machine Learning",
+      "Agile Methodology",
+      "DevOps Practices",
+      "Problem Solving",
+      "Communication",
+      "JavaScript"
+    ],
+    "Abilities": [
+      "Creativity",
+      "Written Comprehension",
+      "Oral Expression",
+      "Analytical Thinking",
+      "Logical Reasoning"
+    ],
+    "WorkStyles": [
+      "Initiative",
+      "Leadership",
+      "Innovation",
+      "Cooperation",
+      "Independence"
+    ]
+  },
+  "Web Application Developer": {
+    "Skills": [
+      "Mobile Development",
+      "Cybersecurity Fundamentals",
+      "Machine Learning",
+      "Cloud Computing",
+      "Data Analysis",
+      "Communication",
+      "UI/UX Design",
+      "Testing and Debugging",
+      "Database Management",
+      "System Architecture"
+    ],
+    "Abilities": [
+      "Oral Expression",
+      "Written Comprehension",
+      "Decision Making",
+      "Creativity",
+      "Analytical Thinking"
+    ],
+    "WorkStyles": [
+      "Adaptability",
+      "Initiative",
+      "Integrity",
+      "Leadership",
+      "Stress Tolerance"
+    ]
+  },
+  "Web UI Engineer": {
+    "Skills": [
+      "UI/UX Design",
+      "Machine Learning",
+      "Linux Administration",
+      "Cybersecurity Fundamentals",
+      "API Integration",
+      "Cloud Computing",
+      "Agile Methodology",
+      "Communication",
+      "Critical Thinking",
+      "Team Collaboration"
+    ],
+    "Abilities": [
+      "Learning Strategies",
+      "Attention to Detail",
+      "Decision Making",
+      "Time Management",
+      "Analytical Thinking"
+    ],
+    "WorkStyles": [
+      "Persistence",
+      "Adaptability",
+      "Stress Tolerance",
+      "Innovation",
+      "Leadership"
+    ]
+  },
+  "WordPress Developer": {
+    "Skills": [
+      "DevOps Practices",
+      "Data Analysis",
+      "Linux Administration",
+      "Agile Methodology",
+      "Testing and Debugging",
+      "Problem Solving",
+      "Version Control (Git)",
+      "Machine Learning",
+      "Database Management",
+      "UI/UX Design"
+    ],
+    "Abilities": [
+      "Written Comprehension",
+      "System Evaluation",
+      "Learning Strategies",
+      "Decision Making",
+      "Logical Reasoning"
+    ],
+    "WorkStyles": [
+      "Persistence",
+      "Initiative",
+      "Adaptability",
+      "Innovation",
+      "Dependability"
+    ]
+  },
+  "JavaScript Developer": {
+    "Skills": [
+      "Problem Solving",
+      "System Architecture",
+      "Testing and Debugging",
+      "Team Collaboration",
+      "Machine Learning",
+      "Mobile Development",
+      "Linux Administration",
+      "Agile Methodology",
+      "JavaScript",
+      "Communication"
+    ],
+    "Abilities": [
+      "Attention to Detail",
+      "System Evaluation",
+      "Decision Making",
+      "Creativity",
+      "Analytical Thinking"
+    ],
+    "WorkStyles": [
+      "Cooperation",
+      "Stress Tolerance",
+      "Persistence",
+      "Innovation",
+      "Initiative"
+    ]
+  },
+  "Web Performance Engineer": {
+    "Skills": [
+      "DevOps Practices",
+      "Testing and Debugging",
+      "Problem Solving",
+      "Team Collaboration",
+      "Data Analysis",
+      "UI/UX Design",
+      "Version Control (Git)",
+      "Communication",
+      "System Architecture",
+      "Mobile Development"
+    ],
+    "Abilities": [
+      "Creativity",
+      "Time Management",
+      "Analytical Thinking",
+      "Logical Reasoning",
+      "Written Comprehension"
+    ],
+    "WorkStyles": [
+      "Cooperation",
+      "Integrity",
+      "Initiative",
+      "Adaptability",
+      "Innovation"
+    ]
+  },
+  "iOS Developer": {
+    "Skills": [
+      "Critical Thinking",
+      "Testing and Debugging",
+      "Team Collaboration",
+      "Database Management",
+      "Cloud Computing",
+      "UI/UX Design",
+      "Python Programming",
+      "Linux Administration",
+      "Communication",
+      "Mobile Development"
+    ],
+    "Abilities": [
+      "Analytical Thinking",
+      "Decision Making",
+      "Creativity",
+      "System Evaluation",
+      "Logical Reasoning"
+    ],
+    "WorkStyles": [
+      "Adaptability",
+      "Integrity",
+      "Leadership",
+      "Cooperation",
+      "Innovation"
+    ]
+  },
+  "Android Developer": {
+    "Skills": [
+      "System Architecture",
+      "DevOps Practices",
+      "Data Analysis",
+      "Version Control (Git)",
+      "UI/UX Design",
+      "Linux Administration",
+      "JavaScript",
+      "Cybersecurity Fundamentals",
+      "Critical Thinking",
+      "Communication"
+    ],
+    "Abilities": [
+      "Decision Making",
+      "System Evaluation",
+      "Creativity",
+      "Attention to Detail",
+      "Analytical Thinking"
+    ],
+    "WorkStyles": [
+      "Independence",
+      "Innovation",
+      "Adaptability",
+      "Leadership",
+      "Cooperation"
+    ]
+  },
+  "Cross-platform Mobile Developer": {
+    "Skills": [
+      "System Architecture",
+      "Problem Solving",
+      "Agile Methodology",
+      "Cloud Computing",
+      "Critical Thinking",
+      "Testing and Debugging",
+      "Cybersecurity Fundamentals",
+      "Python Programming",
+      "UI/UX Design",
+      "DevOps Practices"
+    ],
+    "Abilities": [
+      "Oral Expression",
+      "Written Comprehension",
+      "Attention to Detail",
+      "Logical Reasoning",
+      "System Evaluation"
+    ],
+    "WorkStyles": [
+      "Dependability",
+      "Innovation",
+      "Adaptability",
+      "Cooperation",
+      "Leadership"
+    ]
+  },
+  "Flutter Developer": {
+    "Skills": [
+      "Database Management",
+      "Communication",
+      "JavaScript",
+      "Cybersecurity Fundamentals",
+      "Mobile Development",
+      "Problem Solving",
+      "API Integration",
+      "Linux Administration",
+      "Version Control (Git)",
+      "Cloud Computing"
+    ],
+    "Abilities": [
+      "System Evaluation",
+      "Time Management",
+      "Decision Making",
+      "Creativity",
+      "Oral Expression"
+    ],
+    "WorkStyles": [
+      "Cooperation",
+      "Independence",
+      "Adaptability",
+      "Stress Tolerance",
+      "Dependability"
+    ]
+  },
+  "React Native Developer": {
+    "Skills": [
+      "UI/UX Design",
+      "Version Control (Git)",
+      "Cloud Computing",
+      "Communication",
+      "JavaScript",
+      "Team Collaboration",
+      "DevOps Practices",
+      "Cybersecurity Fundamentals",
+      "Mobile Development",
+      "Machine Learning"
+    ],
+    "Abilities": [
+      "Attention to Detail",
+      "Logical Reasoning",
+      "Learning Strategies",
+      "Oral Expression",
+      "System Evaluation"
+    ],
+    "WorkStyles": [
+      "Adaptability",
+      "Dependability",
+      "Cooperation",
+      "Integrity",
+      "Stress Tolerance"
+    ]
+  },
+  "Mobile UI Developer": {
+    "Skills": [
+      "Agile Methodology",
+      "Machine Learning",
+      "Problem Solving",
+      "Cloud Computing",
+      "Database Management",
+      "Version Control (Git)",
+      "UI/UX Design",
+      "Testing and Debugging",
+      "Critical Thinking",
+      "Communication"
+    ],
+    "Abilities": [
+      "Attention to Detail",
+      "Time Management",
+      "Analytical Thinking",
+      "Learning Strategies",
+      "Oral Expression"
+    ],
+    "WorkStyles": [
+      "Dependability",
+      "Persistence",
+      "Integrity",
+      "Adaptability",
+      "Stress Tolerance"
+    ]
+  },
+  "Mobile App Tester": {
+    "Skills": [
+      "Problem Solving",
+      "API Integration",
+      "Agile Methodology",
+      "Data Analysis",
+      "Version Control (Git)",
+      "System Architecture",
+      "Communication",
+      "Team Collaboration",
+      "Testing and Debugging",
+      "Cybersecurity Fundamentals"
+    ],
+    "Abilities": [
+      "Time Management",
+      "Oral Expression",
+      "Written Comprehension",
+      "System Evaluation",
+      "Analytical Thinking"
+    ],
+    "WorkStyles": [
+      "Stress Tolerance",
+      "Cooperation",
+      "Initiative",
+      "Leadership",
+      "Integrity"
+    ]
+  },
+  "App Store Optimization Specialist": {
+    "Skills": [
+      "DevOps Practices",
+      "Version Control (Git)",
+      "System Architecture",
+      "UI/UX Design",
+      "Python Programming",
+      "Data Analysis",
+      "Linux Administration",
+      "Cybersecurity Fundamentals",
+      "Agile Methodology",
+      "Communication"
+    ],
+    "Abilities": [
+      "Logical Reasoning",
+      "Analytical Thinking",
+      "Attention to Detail",
+      "Time Management",
+      "Learning Strategies"
+    ],
+    "WorkStyles": [
+      "Initiative",
+      "Persistence",
+      "Stress Tolerance",
+      "Adaptability",
+      "Independence"
+    ]
+  },
+  "Game Programmer": {
+    "Skills": [
+      "Testing and Debugging",
+      "Python Programming",
+      "Machine Learning",
+      "Data Analysis",
+      "UI/UX Design",
+      "JavaScript",
+      "DevOps Practices",
+      "Database Management",
+      "System Architecture",
+      "Mobile Development"
+    ],
+    "Abilities": [
+      "Oral Expression",
+      "Decision Making",
+      "System Evaluation",
+      "Logical Reasoning",
+      "Attention to Detail"
+    ],
+    "WorkStyles": [
+      "Cooperation",
+      "Initiative",
+      "Dependability",
+      "Leadership",
+      "Stress Tolerance"
+    ]
+  },
+  "Game Designer": {
+    "Skills": [
+      "UI/UX Design",
+      "Version Control (Git)",
+      "Testing and Debugging",
+      "Machine Learning",
+      "Database Management",
+      "Cybersecurity Fundamentals",
+      "Team Collaboration",
+      "Python Programming",
+      "Mobile Development",
+      "Data Analysis"
+    ],
+    "Abilities": [
+      "Time Management",
+      "Analytical Thinking",
+      "Learning Strategies",
+      "Oral Expression",
+      "Attention to Detail"
+    ],
+    "WorkStyles": [
+      "Independence",
+      "Persistence",
+      "Dependability",
+      "Stress Tolerance",
+      "Innovation"
+    ]
+  },
+  "3D Artist": {
+    "Skills": [
+      "Testing and Debugging",
+      "Cloud Computing",
+      "Cybersecurity Fundamentals",
+      "API Integration",
+      "Database Management",
+      "Python Programming",
+      "System Architecture",
+      "Linux Administration",
+      "Version Control (Git)",
+      "Critical Thinking"
+    ],
+    "Abilities": [
+      "Time Management",
+      "Logical Reasoning",
+      "Creativity",
+      "Decision Making",
+      "Analytical Thinking"
+    ],
+    "WorkStyles": [
+      "Innovation",
+      "Adaptability",
+      "Persistence",
+      "Independence",
+      "Integrity"
+    ]
+  },
+  "Unity Developer": {
+    "Skills": [
+      "Machine Learning",
+      "Version Control (Git)",
+      "Critical Thinking",
+      "UI/UX Design",
+      "DevOps Practices",
+      "Communication",
+      "Cloud Computing",
+      "System Architecture",
+      "Cybersecurity Fundamentals",
+      "API Integration"
+    ],
+    "Abilities": [
+      "Learning Strategies",
+      "Attention to Detail",
+      "Written Comprehension",
+      "System Evaluation",
+      "Logical Reasoning"
+    ],
+    "WorkStyles": [
+      "Cooperation",
+      "Adaptability",
+      "Initiative",
+      "Persistence",
+      "Dependability"
+    ]
+  },
+  "Unreal Engine Developer": {
+    "Skills": [
+      "Mobile Development",
+      "System Architecture",
+      "UI/UX Design",
+      "Critical Thinking",
+      "Cloud Computing",
+      "Agile Methodology",
+      "Version Control (Git)",
+      "Communication",
+      "Problem Solving",
+      "Cybersecurity Fundamentals"
+    ],
+    "Abilities": [
+      "Decision Making",
+      "Learning Strategies",
+      "Logical Reasoning",
+      "Oral Expression",
+      "Time Management"
+    ],
+    "WorkStyles": [
+      "Integrity",
+      "Adaptability",
+      "Independence",
+      "Innovation",
+      "Dependability"
+    ]
+  },
+  "Game Animator": {
+    "Skills": [
+      "Linux Administration",
+      "Communication",
+      "Database Management",
+      "Critical Thinking",
+      "API Integration",
+      "JavaScript",
+      "UI/UX Design",
+      "Cloud Computing",
+      "Version Control (Git)",
+      "Testing and Debugging"
+    ],
+    "Abilities": [
+      "Decision Making",
+      "Time Management",
+      "Analytical Thinking",
+      "Written Comprehension",
+      "Attention to Detail"
+    ],
+    "WorkStyles": [
+      "Integrity",
+      "Leadership",
+      "Cooperation",
+      "Stress Tolerance",
+      "Persistence"
+    ]
+  },
+  "Gameplay Engineer": {
+    "Skills": [
+      "Cloud Computing",
+      "Cybersecurity Fundamentals",
+      "Machine Learning",
+      "Critical Thinking",
+      "Data Analysis",
+      "API Integration",
+      "Testing and Debugging",
+      "Communication",
+      "Agile Methodology",
+      "Python Programming"
+    ],
+    "Abilities": [
+      "Learning Strategies",
+      "Analytical Thinking",
+      "Time Management",
+      "Decision Making",
+      "Oral Expression"
+    ],
+    "WorkStyles": [
+      "Leadership",
+      "Adaptability",
+      "Independence",
+      "Innovation",
+      "Stress Tolerance"
+    ]
+  },
+  "Game Tester": {
+    "Skills": [
+      "Python Programming",
+      "Machine Learning",
+      "Critical Thinking",
+      "Mobile Development",
+      "Cybersecurity Fundamentals",
+      "Data Analysis",
+      "JavaScript",
+      "Agile Methodology",
+      "UI/UX Design",
+      "Linux Administration"
+    ],
+    "Abilities": [
+      "System Evaluation",
+      "Creativity",
+      "Learning Strategies",
+      "Logical Reasoning",
+      "Analytical Thinking"
+    ],
+    "WorkStyles": [
+      "Cooperation",
+      "Adaptability",
+      "Integrity",
+      "Stress Tolerance",
+      "Dependability"
+    ]
+  },
+  "UI Designer": {
+    "Skills": [
+      "DevOps Practices",
+      "Machine Learning",
+      "Linux Administration",
+      "Cloud Computing",
+      "UI/UX Design",
+      "Mobile Development",
+      "Cybersecurity Fundamentals",
+      "Critical Thinking",
+      "Team Collaboration",
+      "Communication"
+    ],
+    "Abilities": [
+      "Time Management",
+      "Written Comprehension",
+      "Decision Making",
+      "Attention to Detail",
+      "System Evaluation"
+    ],
+    "WorkStyles": [
+      "Dependability",
+      "Stress Tolerance",
+      "Cooperation",
+      "Innovation",
+      "Independence"
+    ]
+  },
+  "UX Designer": {
+    "Skills": [
+      "Cybersecurity Fundamentals",
+      "Linux Administration",
+      "Mobile Development",
+      "Data Analysis",
+      "UI/UX Design",
+      "DevOps Practices",
+      "Critical Thinking",
+      "Agile Methodology",
+      "Cloud Computing",
+      "Version Control (Git)"
+    ],
+    "Abilities": [
+      "Analytical Thinking",
+      "Written Comprehension",
+      "Logical Reasoning",
+      "System Evaluation",
+      "Time Management"
+    ],
+    "WorkStyles": [
+      "Initiative",
+      "Innovation",
+      "Cooperation",
+      "Adaptability",
+      "Integrity"
+    ]
+  },
+  "Interaction Designer": {
+    "Skills": [
+      "Communication",
+      "Database Management",
+      "Linux Administration",
+      "Agile Methodology",
+      "Testing and Debugging",
+      "Problem Solving",
+      "Machine Learning",
+      "System Architecture",
+      "UI/UX Design",
+      "Data Analysis"
+    ],
+    "Abilities": [
+      "Learning Strategies",
+      "Decision Making",
+      "Oral Expression",
+      "Time Management",
+      "System Evaluation"
+    ],
+    "WorkStyles": [
+      "Integrity",
+      "Independence",
+      "Leadership",
+      "Persistence",
+      "Cooperation"
+    ]
+  },
+  "Product Designer": {
+    "Skills": [
+      "Agile Methodology",
+      "Problem Solving",
+      "System Architecture",
+      "UI/UX Design",
+      "Python Programming",
+      "Mobile Development",
+      "Version Control (Git)",
+      "API Integration",
+      "Communication",
+      "Linux Administration"
+    ],
+    "Abilities": [
+      "Time Management",
+      "Analytical Thinking",
+      "Written Comprehension",
+      "Oral Expression",
+      "Creativity"
+    ],
+    "WorkStyles": [
+      "Initiative",
+      "Independence",
+      "Adaptability",
+      "Dependability",
+      "Stress Tolerance"
+    ]
+  },
+  "Visual Designer": {
+    "Skills": [
+      "Python Programming",
+      "Critical Thinking",
+      "JavaScript",
+      "Cybersecurity Fundamentals",
+      "Version Control (Git)",
+      "Mobile Development",
+      "Linux Administration",
+      "Cloud Computing",
+      "Machine Learning",
+      "DevOps Practices"
+    ],
+    "Abilities": [
+      "Oral Expression",
+      "System Evaluation",
+      "Written Comprehension",
+      "Attention to Detail",
+      "Creativity"
+    ],
+    "WorkStyles": [
+      "Initiative",
+      "Integrity",
+      "Adaptability",
+      "Stress Tolerance",
+      "Dependability"
+    ]
+  },
+  "UX Researcher": {
+    "Skills": [
+      "Communication",
+      "Team Collaboration",
+      "Data Analysis",
+      "Cybersecurity Fundamentals",
+      "System Architecture",
+      "Problem Solving",
+      "Agile Methodology",
+      "Database Management",
+      "Python Programming",
+      "Mobile Development"
+    ],
+    "Abilities": [
+      "Attention to Detail",
+      "Oral Expression",
+      "Written Comprehension",
+      "Decision Making",
+      "Time Management"
+    ],
+    "WorkStyles": [
+      "Independence",
+      "Innovation",
+      "Leadership",
+      "Cooperation",
+      "Dependability"
+    ]
+  },
+  "Design Systems Specialist": {
+    "Skills": [
+      "DevOps Practices",
+      "Data Analysis",
+      "Communication",
+      "Problem Solving",
+      "Critical Thinking",
+      "UI/UX Design",
+      "Testing and Debugging",
+      "Python Programming",
+      "JavaScript",
+      "Machine Learning"
+    ],
+    "Abilities": [
+      "Learning Strategies",
+      "Analytical Thinking",
+      "Decision Making",
+      "Logical Reasoning",
+      "Written Comprehension"
+    ],
+    "WorkStyles": [
+      "Stress Tolerance",
+      "Integrity",
+      "Initiative",
+      "Adaptability",
+      "Dependability"
+    ]
+  },
+  "Accessibility Designer": {
+    "Skills": [
+      "Problem Solving",
+      "Linux Administration",
+      "Data Analysis",
+      "Critical Thinking",
+      "Mobile Development",
+      "Cloud Computing",
+      "Communication",
+      "UI/UX Design",
+      "Python Programming",
+      "API Integration"
+    ],
+    "Abilities": [
+      "Decision Making",
+      "System Evaluation",
+      "Time Management",
+      "Oral Expression",
+      "Analytical Thinking"
+    ],
+    "WorkStyles": [
+      "Adaptability",
+      "Integrity",
+      "Leadership",
+      "Cooperation",
+      "Dependability"
+    ]
+  },
+  "Data Analyst": {
+    "Skills": [
+      "Cybersecurity Fundamentals",
+      "JavaScript",
+      "Machine Learning",
+      "Linux Administration",
+      "Agile Methodology",
+      "Cloud Computing",
+      "Database Management",
+      "Testing and Debugging",
+      "Version Control (Git)",
+      "DevOps Practices"
+    ],
+    "Abilities": [
+      "Decision Making",
+      "Oral Expression",
+      "Written Comprehension",
+      "Attention to Detail",
+      "Creativity"
+    ],
+    "WorkStyles": [
+      "Stress Tolerance",
+      "Leadership",
+      "Adaptability",
+      "Initiative",
+      "Dependability"
+    ]
+  },
+  "Data Scientist": {
+    "Skills": [
+      "Problem Solving",
+      "Team Collaboration",
+      "Linux Administration",
+      "Communication",
+      "JavaScript",
+      "Database Management",
+      "Cloud Computing",
+      "Critical Thinking",
+      "Mobile Development",
+      "Testing and Debugging"
+    ],
+    "Abilities": [
+      "System Evaluation",
+      "Learning Strategies",
+      "Time Management",
+      "Oral Expression",
+      "Written Comprehension"
+    ],
+    "WorkStyles": [
+      "Cooperation",
+      "Innovation",
+      "Dependability",
+      "Independence",
+      "Initiative"
+    ]
+  },
+  "Business Intelligence Analyst": {
+    "Skills": [
+      "Agile Methodology",
+      "Cybersecurity Fundamentals",
+      "Critical Thinking",
+      "Data Analysis",
+      "System Architecture",
+      "API Integration",
+      "Python Programming",
+      "Version Control (Git)",
+      "Testing and Debugging",
+      "JavaScript"
+    ],
+    "Abilities": [
+      "Analytical Thinking",
+      "Oral Expression",
+      "Attention to Detail",
+      "Decision Making",
+      "Logical Reasoning"
+    ],
+    "WorkStyles": [
+      "Dependability",
+      "Innovation",
+      "Stress Tolerance",
+      "Integrity",
+      "Independence"
+    ]
+  },
+  "Quantitative Analyst": {
+    "Skills": [
+      "Agile Methodology",
+      "Data Analysis",
+      "Machine Learning",
+      "Critical Thinking",
+      "API Integration",
+      "Team Collaboration",
+      "Cloud Computing",
+      "System Architecture",
+      "Version Control (Git)",
+      "Database Management"
+    ],
+    "Abilities": [
+      "Time Management",
+      "System Evaluation",
+      "Learning Strategies",
+      "Oral Expression",
+      "Written Comprehension"
+    ],
+    "WorkStyles": [
+      "Stress Tolerance",
+      "Independence",
+      "Cooperation",
+      "Dependability",
+      "Innovation"
+    ]
+  },
+  "Statistician": {
+    "Skills": [
+      "System Architecture",
+      "Cybersecurity Fundamentals",
+      "UI/UX Design",
+      "JavaScript",
+      "API Integration",
+      "Team Collaboration",
+      "Testing and Debugging",
+      "Cloud Computing",
+      "Critical Thinking",
+      "Agile Methodology"
+    ],
+    "Abilities": [
+      "Attention to Detail",
+      "Written Comprehension",
+      "Learning Strategies",
+      "Oral Expression",
+      "Logical Reasoning"
+    ],
+    "WorkStyles": [
+      "Cooperation",
+      "Stress Tolerance",
+      "Independence",
+      "Dependability",
+      "Adaptability"
+    ]
+  },
+  "Research Scientist": {
+    "Skills": [
+      "Version Control (Git)",
+      "Machine Learning",
+      "Critical Thinking",
+      "Python Programming",
+      "Mobile Development",
+      "Linux Administration",
+      "Cybersecurity Fundamentals",
+      "Database Management",
+      "JavaScript",
+      "Agile Methodology"
+    ],
+    "Abilities": [
+      "Time Management",
+      "System Evaluation",
+      "Oral Expression",
+      "Decision Making",
+      "Logical Reasoning"
+    ],
+    "WorkStyles": [
+      "Leadership",
+      "Innovation",
+      "Initiative",
+      "Adaptability",
+      "Persistence"
+    ]
+  },
+  "Customer Insights Analyst": {
+    "Skills": [
+      "Critical Thinking",
+      "API Integration",
+      "Problem Solving",
+      "Python Programming",
+      "Communication",
+      "JavaScript",
+      "Cloud Computing",
+      "Version Control (Git)",
+      "Team Collaboration",
+      "Machine Learning"
+    ],
+    "Abilities": [
+      "Time Management",
+      "Written Comprehension",
+      "Attention to Detail",
+      "Analytical Thinking",
+      "Logical Reasoning"
+    ],
+    "WorkStyles": [
+      "Adaptability",
+      "Innovation",
+      "Cooperation",
+      "Persistence",
+      "Independence"
+    ]
+  },
+  "Data Storyteller": {
+    "Skills": [
+      "UI/UX Design",
+      "Machine Learning",
+      "Linux Administration",
+      "Cybersecurity Fundamentals",
+      "Problem Solving",
+      "System Architecture",
+      "Database Management",
+      "Critical Thinking",
+      "Communication",
+      "JavaScript"
+    ],
+    "Abilities": [
+      "Oral Expression",
+      "Decision Making",
+      "Learning Strategies",
+      "Written Comprehension",
+      "Time Management"
+    ],
+    "WorkStyles": [
+      "Cooperation",
+      "Integrity",
+      "Persistence",
+      "Stress Tolerance",
+      "Initiative"
+    ]
+  },
+  "Machine Learning Engineer": {
+    "Skills": [
+      "JavaScript",
+      "Problem Solving",
+      "DevOps Practices",
+      "Testing and Debugging",
+      "Version Control (Git)",
+      "Machine Learning",
+      "Team Collaboration",
+      "Communication",
+      "Linux Administration",
+      "Python Programming"
+    ],
+    "Abilities": [
+      "Oral Expression",
+      "Analytical Thinking",
+      "Learning Strategies",
+      "Written Comprehension",
+      "Logical Reasoning"
+    ],
+    "WorkStyles": [
+      "Integrity",
+      "Persistence",
+      "Cooperation",
+      "Independence",
+      "Dependability"
+    ]
+  },
+  "AI Researcher": {
+    "Skills": [
+      "System Architecture",
+      "Agile Methodology",
+      "Database Management",
+      "Data Analysis",
+      "JavaScript",
+      "Version Control (Git)",
+      "Testing and Debugging",
+      "Python Programming",
+      "Communication",
+      "Team Collaboration"
+    ],
+    "Abilities": [
+      "Decision Making",
+      "Oral Expression",
+      "Time Management",
+      "Learning Strategies",
+      "Attention to Detail"
+    ],
+    "WorkStyles": [
+      "Initiative",
+      "Independence",
+      "Adaptability",
+      "Innovation",
+      "Stress Tolerance"
+    ]
+  },
+  "NLP Engineer": {
+    "Skills": [
+      "Critical Thinking",
+      "Communication",
+      "Testing and Debugging",
+      "UI/UX Design",
+      "DevOps Practices",
+      "API Integration",
+      "Data Analysis",
+      "Team Collaboration",
+      "Cybersecurity Fundamentals",
+      "System Architecture"
+    ],
+    "Abilities": [
+      "Attention to Detail",
+      "Creativity",
+      "Analytical Thinking",
+      "System Evaluation",
+      "Written Comprehension"
+    ],
+    "WorkStyles": [
+      "Cooperation",
+      "Innovation",
+      "Adaptability",
+      "Leadership",
+      "Persistence"
+    ]
+  },
+  "Computer Vision Engineer": {
+    "Skills": [
+      "Problem Solving",
+      "Communication",
+      "Database Management",
+      "Version Control (Git)",
+      "Testing and Debugging",
+      "JavaScript",
+      "Team Collaboration",
+      "API Integration",
+      "Critical Thinking",
+      "Cloud Computing"
+    ],
+    "Abilities": [
+      "Attention to Detail",
+      "Learning Strategies",
+      "Decision Making",
+      "Creativity",
+      "Oral Expression"
+    ],
+    "WorkStyles": [
+      "Leadership",
+      "Independence",
+      "Adaptability",
+      "Integrity",
+      "Stress Tolerance"
+    ]
+  },
+  "Deep Learning Engineer": {
+    "Skills": [
+      "System Architecture",
+      "Agile Methodology",
+      "JavaScript",
+      "Database Management",
+      "Communication",
+      "Linux Administration",
+      "Data Analysis",
+      "Cloud Computing",
+      "UI/UX Design",
+      "Machine Learning"
+    ],
+    "Abilities": [
+      "Oral Expression",
+      "Logical Reasoning",
+      "Decision Making",
+      "Learning Strategies",
+      "Attention to Detail"
+    ],
+    "WorkStyles": [
+      "Innovation",
+      "Dependability",
+      "Leadership",
+      "Persistence",
+      "Cooperation"
+    ]
+  },
+  "AI Product Manager": {
+    "Skills": [
+      "Mobile Development",
+      "System Architecture",
+      "Team Collaboration",
+      "Cloud Computing",
+      "Data Analysis",
+      "Python Programming",
+      "Cybersecurity Fundamentals",
+      "Database Management",
+      "Version Control (Git)",
+      "Problem Solving"
+    ],
+    "Abilities": [
+      "Attention to Detail",
+      "Decision Making",
+      "Analytical Thinking",
+      "Time Management",
+      "Oral Expression"
+    ],
+    "WorkStyles": [
+      "Innovation",
+      "Independence",
+      "Initiative",
+      "Leadership",
+      "Stress Tolerance"
+    ]
+  },
+  "ML Ops Engineer": {
+    "Skills": [
+      "Mobile Development",
+      "Cloud Computing",
+      "Machine Learning",
+      "Cybersecurity Fundamentals",
+      "DevOps Practices",
+      "Agile Methodology",
+      "Python Programming",
+      "Database Management",
+      "Linux Administration",
+      "Critical Thinking"
+    ],
+    "Abilities": [
+      "Learning Strategies",
+      "Attention to Detail",
+      "Analytical Thinking",
+      "Written Comprehension",
+      "Time Management"
+    ],
+    "WorkStyles": [
+      "Dependability",
+      "Stress Tolerance",
+      "Leadership",
+      "Initiative",
+      "Cooperation"
+    ]
+  },
+  "Recommendation Systems Engineer": {
+    "Skills": [
+      "Problem Solving",
+      "Database Management",
+      "Critical Thinking",
+      "Version Control (Git)",
+      "UI/UX Design",
+      "Cybersecurity Fundamentals",
+      "Data Analysis",
+      "Team Collaboration",
+      "Cloud Computing",
+      "Machine Learning"
+    ],
+    "Abilities": [
+      "System Evaluation",
+      "Written Comprehension",
+      "Learning Strategies",
+      "Creativity",
+      "Attention to Detail"
+    ],
+    "WorkStyles": [
+      "Innovation",
+      "Adaptability",
+      "Persistence",
+      "Stress Tolerance",
+      "Cooperation"
+    ]
+  },
+  "Big Data Engineer": {
+    "Skills": [
+      "Critical Thinking",
+      "DevOps Practices",
+      "Mobile Development",
+      "Database Management",
+      "Problem Solving",
+      "Testing and Debugging",
+      "Machine Learning",
+      "System Architecture",
+      "API Integration",
+      "JavaScript"
+    ],
+    "Abilities": [
+      "Decision Making",
+      "Learning Strategies",
+      "Analytical Thinking",
+      "Logical Reasoning",
+      "Creativity"
+    ],
+    "WorkStyles": [
+      "Dependability",
+      "Integrity",
+      "Cooperation",
+      "Initiative",
+      "Independence"
+    ]
+  },
+  "Data Engineer": {
+    "Skills": [
+      "Problem Solving",
+      "Critical Thinking",
+      "Communication",
+      "Testing and Debugging",
+      "Team Collaboration",
+      "Linux Administration",
+      "DevOps Practices",
+      "Agile Methodology",
+      "JavaScript",
+      "Database Management"
+    ],
+    "Abilities": [
+      "System Evaluation",
+      "Time Management",
+      "Analytical Thinking",
+      "Logical Reasoning",
+      "Learning Strategies"
+    ],
+    "WorkStyles": [
+      "Integrity",
+      "Persistence",
+      "Stress Tolerance",
+      "Initiative",
+      "Adaptability"
+    ]
+  },
+  "ETL Developer": {
+    "Skills": [
+      "Cybersecurity Fundamentals",
+      "System Architecture",
+      "Agile Methodology",
+      "Version Control (Git)",
+      "Testing and Debugging",
+      "JavaScript",
+      "Problem Solving",
+      "Communication",
+      "Python Programming",
+      "Machine Learning"
+    ],
+    "Abilities": [
+      "Written Comprehension",
+      "Attention to Detail",
+      "Learning Strategies",
+      "Decision Making",
+      "System Evaluation"
+    ],
+    "WorkStyles": [
+      "Independence",
+      "Initiative",
+      "Leadership",
+      "Persistence",
+      "Cooperation"
+    ]
+  },
+  "Data Pipeline Architect": {
+    "Skills": [
+      "Team Collaboration",
+      "DevOps Practices",
+      "Database Management",
+      "JavaScript",
+      "Critical Thinking",
+      "Testing and Debugging",
+      "API Integration",
+      "System Architecture",
+      "Mobile Development",
+      "Data Analysis"
+    ],
+    "Abilities": [
+      "Decision Making",
+      "Oral Expression",
+      "Analytical Thinking",
+      "Learning Strategies",
+      "Logical Reasoning"
+    ],
+    "WorkStyles": [
+      "Cooperation",
+      "Innovation",
+      "Initiative",
+      "Stress Tolerance",
+      "Persistence"
+    ]
+  },
+  "Hadoop Developer": {
+    "Skills": [
+      "Mobile Development",
+      "Python Programming",
+      "JavaScript",
+      "Database Management",
+      "Agile Methodology",
+      "Machine Learning",
+      "Version Control (Git)",
+      "Problem Solving",
+      "Data Analysis",
+      "Linux Administration"
+    ],
+    "Abilities": [
+      "Time Management",
+      "Written Comprehension",
+      "Attention to Detail",
+      "System Evaluation",
+      "Decision Making"
+    ],
+    "WorkStyles": [
+      "Innovation",
+      "Dependability",
+      "Stress Tolerance",
+      "Adaptability",
+      "Integrity"
+    ]
+  },
+  "Spark Engineer": {
+    "Skills": [
+      "Testing and Debugging",
+      "Linux Administration",
+      "DevOps Practices",
+      "Database Management",
+      "Critical Thinking",
+      "Cybersecurity Fundamentals",
+      "Version Control (Git)",
+      "Data Analysis",
+      "Mobile Development",
+      "Team Collaboration"
+    ],
+    "Abilities": [
+      "Oral Expression",
+      "Creativity",
+      "Logical Reasoning",
+      "Attention to Detail",
+      "Decision Making"
+    ],
+    "WorkStyles": [
+      "Independence",
+      "Initiative",
+      "Persistence",
+      "Innovation",
+      "Integrity"
+    ]
+  },
+  "DataOps Engineer": {
+    "Skills": [
+      "Database Management",
+      "UI/UX Design",
+      "DevOps Practices",
+      "Testing and Debugging",
+      "JavaScript",
+      "API Integration",
+      "Team Collaboration",
+      "Data Analysis",
+      "Linux Administration",
+      "Problem Solving"
+    ],
+    "Abilities": [
+      "Attention to Detail",
+      "Logical Reasoning",
+      "Creativity",
+      "Decision Making",
+      "Oral Expression"
+    ],
+    "WorkStyles": [
+      "Innovation",
+      "Cooperation",
+      "Adaptability",
+      "Integrity",
+      "Initiative"
+    ]
+  },
+  "Cloud Data Engineer": {
+    "Skills": [
+      "Communication",
+      "UI/UX Design",
+      "JavaScript",
+      "Team Collaboration",
+      "Problem Solving",
+      "Testing and Debugging",
+      "Agile Methodology",
+      "Database Management",
+      "Linux Administration",
+      "Version Control (Git)"
+    ],
+    "Abilities": [
+      "System Evaluation",
+      "Attention to Detail",
+      "Learning Strategies",
+      "Analytical Thinking",
+      "Logical Reasoning"
+    ],
+    "WorkStyles": [
+      "Initiative",
+      "Cooperation",
+      "Integrity",
+      "Leadership",
+      "Adaptability"
+    ]
+  },
+  "Security Analyst": {
+    "Skills": [
+      "Testing and Debugging",
+      "DevOps Practices",
+      "API Integration",
+      "Communication",
+      "Python Programming",
+      "Cloud Computing",
+      "Machine Learning",
+      "Agile Methodology",
+      "Team Collaboration",
+      "Database Management"
+    ],
+    "Abilities": [
+      "System Evaluation",
+      "Oral Expression",
+      "Decision Making",
+      "Time Management",
+      "Creativity"
+    ],
+    "WorkStyles": [
+      "Persistence",
+      "Adaptability",
+      "Leadership",
+      "Integrity",
+      "Independence"
+    ]
+  },
+  "Penetration Tester": {
+    "Skills": [
+      "Linux Administration",
+      "Critical Thinking",
+      "Python Programming",
+      "Problem Solving",
+      "Team Collaboration",
+      "UI/UX Design",
+      "JavaScript",
+      "Version Control (Git)",
+      "Cloud Computing",
+      "System Architecture"
+    ],
+    "Abilities": [
+      "System Evaluation",
+      "Learning Strategies",
+      "Creativity",
+      "Analytical Thinking",
+      "Attention to Detail"
+    ],
+    "WorkStyles": [
+      "Adaptability",
+      "Stress Tolerance",
+      "Leadership",
+      "Integrity",
+      "Independence"
+    ]
+  },
+  "Security Engineer": {
+    "Skills": [
+      "Cybersecurity Fundamentals",
+      "Communication",
+      "Version Control (Git)",
+      "JavaScript",
+      "DevOps Practices",
+      "Cloud Computing",
+      "Problem Solving",
+      "UI/UX Design",
+      "Python Programming",
+      "API Integration"
+    ],
+    "Abilities": [
+      "Oral Expression",
+      "Written Comprehension",
+      "Logical Reasoning",
+      "Analytical Thinking",
+      "Learning Strategies"
+    ],
+    "WorkStyles": [
+      "Integrity",
+      "Persistence",
+      "Dependability",
+      "Initiative",
+      "Cooperation"
+    ]
+  },
+  "Security Architect": {
+    "Skills": [
+      "Cloud Computing",
+      "Linux Administration",
+      "Cybersecurity Fundamentals",
+      "Agile Methodology",
+      "Mobile Development",
+      "Data Analysis",
+      "API Integration",
+      "Problem Solving",
+      "Machine Learning",
+      "JavaScript"
+    ],
+    "Abilities": [
+      "Oral Expression",
+      "Written Comprehension",
+      "Logical Reasoning",
+      "Creativity",
+      "Analytical Thinking"
+    ],
+    "WorkStyles": [
+      "Cooperation",
+      "Persistence",
+      "Dependability",
+      "Independence",
+      "Leadership"
+    ]
+  },
+  "Cyber Threat Intelligence Analyst": {
+    "Skills": [
+      "System Architecture",
+      "UI/UX Design",
+      "Problem Solving",
+      "Cybersecurity Fundamentals",
+      "JavaScript",
+      "Communication",
+      "Version Control (Git)",
+      "Cloud Computing",
+      "Data Analysis",
+      "Testing and Debugging"
+    ],
+    "Abilities": [
+      "Decision Making",
+      "Learning Strategies",
+      "System Evaluation",
+      "Creativity",
+      "Attention to Detail"
+    ],
+    "WorkStyles": [
+      "Adaptability",
+      "Initiative",
+      "Innovation",
+      "Dependability",
+      "Independence"
+    ]
+  },
+  "SOC Analyst": {
+    "Skills": [
+      "Agile Methodology",
+      "UI/UX Design",
+      "Communication",
+      "JavaScript",
+      "Critical Thinking",
+      "Testing and Debugging",
+      "Version Control (Git)",
+      "Python Programming",
+      "Cybersecurity Fundamentals",
+      "Team Collaboration"
+    ],
+    "Abilities": [
+      "Time Management",
+      "Analytical Thinking",
+      "Attention to Detail",
+      "Logical Reasoning",
+      "Oral Expression"
+    ],
+    "WorkStyles": [
+      "Leadership",
+      "Adaptability",
+      "Integrity",
+      "Innovation",
+      "Independence"
+    ]
+  },
+  "Incident Response Specialist": {
+    "Skills": [
+      "API Integration",
+      "Linux Administration",
+      "Python Programming",
+      "System Architecture",
+      "Critical Thinking",
+      "Database Management",
+      "Cloud Computing",
+      "Machine Learning",
+      "Cybersecurity Fundamentals",
+      "Agile Methodology"
+    ],
+    "Abilities": [
+      "Time Management",
+      "Analytical Thinking",
+      "Decision Making",
+      "Learning Strategies",
+      "Creativity"
+    ],
+    "WorkStyles": [
+      "Dependability",
+      "Integrity",
+      "Innovation",
+      "Leadership",
+      "Adaptability"
+    ]
+  },
+  "Compliance Analyst": {
+    "Skills": [
+      "Cybersecurity Fundamentals",
+      "Database Management",
+      "Testing and Debugging",
+      "Version Control (Git)",
+      "UI/UX Design",
+      "Problem Solving",
+      "Team Collaboration",
+      "DevOps Practices",
+      "Communication",
+      "API Integration"
+    ],
+    "Abilities": [
+      "Oral Expression",
+      "Written Comprehension",
+      "Creativity",
+      "Attention to Detail",
+      "Logical Reasoning"
+    ],
+    "WorkStyles": [
+      "Leadership",
+      "Initiative",
+      "Stress Tolerance",
+      "Persistence",
+      "Dependability"
+    ]
+  },
+  "Cloud Engineer": {
+    "Skills": [
+      "UI/UX Design",
+      "Critical Thinking",
+      "Database Management",
+      "System Architecture",
+      "Mobile Development",
+      "Communication",
+      "Agile Methodology",
+      "Data Analysis",
+      "Linux Administration",
+      "JavaScript"
+    ],
+    "Abilities": [
+      "Logical Reasoning",
+      "Written Comprehension",
+      "Oral Expression",
+      "Learning Strategies",
+      "System Evaluation"
+    ],
+    "WorkStyles": [
+      "Innovation",
+      "Independence",
+      "Initiative",
+      "Cooperation",
+      "Adaptability"
+    ]
+  },
+  "Cloud Architect": {
+    "Skills": [
+      "Version Control (Git)",
+      "UI/UX Design",
+      "API Integration",
+      "Mobile Development",
+      "Team Collaboration",
+      "Cybersecurity Fundamentals",
+      "Agile Methodology",
+      "Cloud Computing",
+      "Critical Thinking",
+      "Problem Solving"
+    ],
+    "Abilities": [
+      "Oral Expression",
+      "Time Management",
+      "Analytical Thinking",
+      "Written Comprehension",
+      "Creativity"
+    ],
+    "WorkStyles": [
+      "Persistence",
+      "Dependability",
+      "Independence",
+      "Adaptability",
+      "Initiative"
+    ]
+  },
+  "Cloud Administrator": {
+    "Skills": [
+      "Team Collaboration",
+      "UI/UX Design",
+      "Communication",
+      "Problem Solving",
+      "Critical Thinking",
+      "System Architecture",
+      "JavaScript",
+      "API Integration",
+      "Machine Learning",
+      "Cloud Computing"
+    ],
+    "Abilities": [
+      "Creativity",
+      "Attention to Detail",
+      "Oral Expression",
+      "System Evaluation",
+      "Time Management"
+    ],
+    "WorkStyles": [
+      "Stress Tolerance",
+      "Leadership",
+      "Innovation",
+      "Adaptability",
+      "Integrity"
+    ]
+  },
+  "Cloud Security Specialist": {
+    "Skills": [
+      "System Architecture",
+      "Testing and Debugging",
+      "JavaScript",
+      "Machine Learning",
+      "Mobile Development",
+      "DevOps Practices",
+      "Data Analysis",
+      "Version Control (Git)",
+      "API Integration",
+      "Communication"
+    ],
+    "Abilities": [
+      "Learning Strategies",
+      "Time Management",
+      "Oral Expression",
+      "Creativity",
+      "System Evaluation"
+    ],
+    "WorkStyles": [
+      "Persistence",
+      "Dependability",
+      "Stress Tolerance",
+      "Leadership",
+      "Independence"
+    ]
+  },
+  "DevOps Cloud Engineer": {
+    "Skills": [
+      "JavaScript",
+      "Critical Thinking",
+      "UI/UX Design",
+      "Communication",
+      "Cloud Computing",
+      "Team Collaboration",
+      "Agile Methodology",
+      "Data Analysis",
+      "System Architecture",
+      "Cybersecurity Fundamentals"
+    ],
+    "Abilities": [
+      "Oral Expression",
+      "Time Management",
+      "Attention to Detail",
+      "Logical Reasoning",
+      "Decision Making"
+    ],
+    "WorkStyles": [
+      "Stress Tolerance",
+      "Initiative",
+      "Cooperation",
+      "Dependability",
+      "Integrity"
+    ]
+  },
+  "Cloud Solutions Consultant": {
+    "Skills": [
+      "Data Analysis",
+      "Cloud Computing",
+      "Version Control (Git)",
+      "Team Collaboration",
+      "UI/UX Design",
+      "JavaScript",
+      "System Architecture",
+      "Mobile Development",
+      "Database Management",
+      "DevOps Practices"
+    ],
+    "Abilities": [
+      "System Evaluation",
+      "Written Comprehension",
+      "Learning Strategies",
+      "Analytical Thinking",
+      "Time Management"
+    ],
+    "WorkStyles": [
+      "Persistence",
+      "Independence",
+      "Integrity",
+      "Leadership",
+      "Stress Tolerance"
+    ]
+  },
+  "AWS/GCP/Azure Specialist": {
+    "Skills": [
+      "Cloud Computing",
+      "API Integration",
+      "UI/UX Design",
+      "DevOps Practices",
+      "Testing and Debugging",
+      "JavaScript",
+      "System Architecture",
+      "Machine Learning",
+      "Critical Thinking",
+      "Communication"
+    ],
+    "Abilities": [
+      "System Evaluation",
+      "Written Comprehension",
+      "Learning Strategies",
+      "Creativity",
+      "Time Management"
+    ],
+    "WorkStyles": [
+      "Dependability",
+      "Initiative",
+      "Independence",
+      "Cooperation",
+      "Persistence"
+    ]
+  },
+  "Cloud Operations Manager": {
+    "Skills": [
+      "Database Management",
+      "Agile Methodology",
+      "Testing and Debugging",
+      "Critical Thinking",
+      "DevOps Practices",
+      "API Integration",
+      "JavaScript",
+      "Data Analysis",
+      "Cloud Computing",
+      "Linux Administration"
+    ],
+    "Abilities": [
+      "Learning Strategies",
+      "Creativity",
+      "Oral Expression",
+      "Time Management",
+      "Attention to Detail"
+    ],
+    "WorkStyles": [
+      "Initiative",
+      "Integrity",
+      "Cooperation",
+      "Stress Tolerance",
+      "Persistence"
+    ]
+  },
+  "DevOps Engineer": {
+    "Skills": [
+      "DevOps Practices",
+      "UI/UX Design",
+      "Linux Administration",
+      "System Architecture",
+      "Problem Solving",
+      "Python Programming",
+      "Critical Thinking",
+      "Communication",
+      "Machine Learning",
+      "Cybersecurity Fundamentals"
+    ],
+    "Abilities": [
+      "Learning Strategies",
+      "Time Management",
+      "System Evaluation",
+      "Analytical Thinking",
+      "Decision Making"
+    ],
+    "WorkStyles": [
+      "Innovation",
+      "Leadership",
+      "Dependability",
+      "Persistence",
+      "Adaptability"
+    ]
+  },
+  "Site Reliability Engineer": {
+    "Skills": [
+      "Communication",
+      "Problem Solving",
+      "Database Management",
+      "UI/UX Design",
+      "Cybersecurity Fundamentals",
+      "Data Analysis",
+      "Agile Methodology",
+      "Testing and Debugging",
+      "Mobile Development",
+      "Cloud Computing"
+    ],
+    "Abilities": [
+      "Written Comprehension",
+      "Decision Making",
+      "Attention to Detail",
+      "Time Management",
+      "Learning Strategies"
+    ],
+    "WorkStyles": [
+      "Dependability",
+      "Initiative",
+      "Leadership",
+      "Cooperation",
+      "Independence"
+    ]
+  },
+  "Release Engineer": {
+    "Skills": [
+      "Agile Methodology",
+      "Team Collaboration",
+      "Database Management",
+      "UI/UX Design",
+      "Linux Administration",
+      "Critical Thinking",
+      "Communication",
+      "API Integration",
+      "DevOps Practices",
+      "Problem Solving"
+    ],
+    "Abilities": [
+      "Attention to Detail",
+      "Logical Reasoning",
+      "Learning Strategies",
+      "Time Management",
+      "Written Comprehension"
+    ],
+    "WorkStyles": [
+      "Initiative",
+      "Adaptability",
+      "Leadership",
+      "Independence",
+      "Cooperation"
+    ]
+  },
+  "Infrastructure Automation Engineer": {
+    "Skills": [
+      "Team Collaboration",
+      "System Architecture",
+      "Agile Methodology",
+      "DevOps Practices",
+      "Machine Learning",
+      "Database Management",
+      "Testing and Debugging",
+      "Linux Administration",
+      "Version Control (Git)",
+      "Data Analysis"
+    ],
+    "Abilities": [
+      "Decision Making",
+      "Time Management",
+      "System Evaluation",
+      "Creativity",
+      "Learning Strategies"
+    ],
+    "WorkStyles": [
+      "Independence",
+      "Dependability",
+      "Cooperation",
+      "Integrity",
+      "Initiative"
+    ]
+  },
+  "Platform Engineer": {
+    "Skills": [
+      "UI/UX Design",
+      "Problem Solving",
+      "DevOps Practices",
+      "Agile Methodology",
+      "System Architecture",
+      "Database Management",
+      "JavaScript",
+      "Data Analysis",
+      "Communication",
+      "Testing and Debugging"
+    ],
+    "Abilities": [
+      "Written Comprehension",
+      "Logical Reasoning",
+      "System Evaluation",
+      "Oral Expression",
+      "Time Management"
+    ],
+    "WorkStyles": [
+      "Adaptability",
+      "Innovation",
+      "Persistence",
+      "Cooperation",
+      "Leadership"
+    ]
+  },
+  "Build and Release Engineer": {
+    "Skills": [
+      "Critical Thinking",
+      "Python Programming",
+      "Machine Learning",
+      "Version Control (Git)",
+      "System Architecture",
+      "Cybersecurity Fundamentals",
+      "DevOps Practices",
+      "API Integration",
+      "Cloud Computing",
+      "Agile Methodology"
+    ],
+    "Abilities": [
+      "Learning Strategies",
+      "Creativity",
+      "Logical Reasoning",
+      "Written Comprehension",
+      "Decision Making"
+    ],
+    "WorkStyles": [
+      "Initiative",
+      "Leadership",
+      "Independence",
+      "Dependability",
+      "Adaptability"
+    ]
+  },
+  "CI/CD Engineer": {
+    "Skills": [
+      "Cloud Computing",
+      "Data Analysis",
+      "Problem Solving",
+      "Machine Learning",
+      "Communication",
+      "Agile Methodology",
+      "Linux Administration",
+      "Mobile Development",
+      "Python Programming",
+      "Cybersecurity Fundamentals"
+    ],
+    "Abilities": [
+      "Analytical Thinking",
+      "System Evaluation",
+      "Time Management",
+      "Decision Making",
+      "Oral Expression"
+    ],
+    "WorkStyles": [
+      "Leadership",
+      "Cooperation",
+      "Initiative",
+      "Persistence",
+      "Dependability"
+    ]
+  },
+  "Monitoring Specialist": {
+    "Skills": [
+      "Communication",
+      "Machine Learning",
+      "Cybersecurity Fundamentals",
+      "Problem Solving",
+      "Testing and Debugging",
+      "UI/UX Design",
+      "Team Collaboration",
+      "DevOps Practices",
+      "System Architecture",
+      "Version Control (Git)"
+    ],
+    "Abilities": [
+      "Logical Reasoning",
+      "Learning Strategies",
+      "Attention to Detail",
+      "System Evaluation",
+      "Written Comprehension"
+    ],
+    "WorkStyles": [
+      "Persistence",
+      "Cooperation",
+      "Dependability",
+      "Adaptability",
+      "Stress Tolerance"
+    ]
+  },
+  "Network Engineer": {
+    "Skills": [
+      "Linux Administration",
+      "Version Control (Git)",
+      "Machine Learning",
+      "Critical Thinking",
+      "Database Management",
+      "Communication",
+      "Data Analysis",
+      "Problem Solving",
+      "DevOps Practices",
+      "UI/UX Design"
+    ],
+    "Abilities": [
+      "Creativity",
+      "Analytical Thinking",
+      "Written Comprehension",
+      "Attention to Detail",
+      "Decision Making"
+    ],
+    "WorkStyles": [
+      "Dependability",
+      "Cooperation",
+      "Innovation",
+      "Initiative",
+      "Independence"
+    ]
+  },
+  "Infrastructure Engineer": {
+    "Skills": [
+      "Cybersecurity Fundamentals",
+      "Critical Thinking",
+      "Problem Solving",
+      "UI/UX Design",
+      "API Integration",
+      "Communication",
+      "JavaScript",
+      "System Architecture",
+      "Python Programming",
+      "Mobile Development"
+    ],
+    "Abilities": [
+      "Logical Reasoning",
+      "Creativity",
+      "Learning Strategies",
+      "Time Management",
+      "Written Comprehension"
+    ],
+    "WorkStyles": [
+      "Innovation",
+      "Initiative",
+      "Dependability",
+      "Adaptability",
+      "Leadership"
+    ]
+  },
+  "Network Security Engineer": {
+    "Skills": [
+      "UI/UX Design",
+      "API Integration",
+      "Python Programming",
+      "Machine Learning",
+      "Mobile Development",
+      "Database Management",
+      "Communication",
+      "Linux Administration",
+      "Data Analysis",
+      "Critical Thinking"
+    ],
+    "Abilities": [
+      "Time Management",
+      "Analytical Thinking",
+      "System Evaluation",
+      "Written Comprehension",
+      "Logical Reasoning"
+    ],
+    "WorkStyles": [
+      "Cooperation",
+      "Dependability",
+      "Leadership",
+      "Adaptability",
+      "Initiative"
+    ]
+  },
+  "Wireless Network Specialist": {
+    "Skills": [
+      "Problem Solving",
+      "Python Programming",
+      "Cybersecurity Fundamentals",
+      "Mobile Development",
+      "Testing and Debugging",
+      "Team Collaboration",
+      "System Architecture",
+      "Agile Methodology",
+      "Linux Administration",
+      "API Integration"
+    ],
+    "Abilities": [
+      "Oral Expression",
+      "Learning Strategies",
+      "Decision Making",
+      "Time Management",
+      "Written Comprehension"
+    ],
+    "WorkStyles": [
+      "Dependability",
+      "Innovation",
+      "Persistence",
+      "Adaptability",
+      "Independence"
+    ]
+  },
+  "Infrastructure Architect": {
+    "Skills": [
+      "Communication",
+      "Team Collaboration",
+      "Cybersecurity Fundamentals",
+      "Testing and Debugging",
+      "Agile Methodology",
+      "API Integration",
+      "Data Analysis",
+      "Linux Administration",
+      "Version Control (Git)",
+      "Cloud Computing"
+    ],
+    "Abilities": [
+      "Learning Strategies",
+      "Oral Expression",
+      "Logical Reasoning",
+      "Creativity",
+      "Attention to Detail"
+    ],
+    "WorkStyles": [
+      "Initiative",
+      "Cooperation",
+      "Independence",
+      "Innovation",
+      "Stress Tolerance"
+    ]
+  },
+  "IT Infrastructure Analyst": {
+    "Skills": [
+      "DevOps Practices",
+      "System Architecture",
+      "Machine Learning",
+      "Mobile Development",
+      "Team Collaboration",
+      "Data Analysis",
+      "UI/UX Design",
+      "Linux Administration",
+      "API Integration",
+      "Problem Solving"
+    ],
+    "Abilities": [
+      "Written Comprehension",
+      "Learning Strategies",
+      "System Evaluation",
+      "Oral Expression",
+      "Decision Making"
+    ],
+    "WorkStyles": [
+      "Dependability",
+      "Independence",
+      "Adaptability",
+      "Leadership",
+      "Initiative"
+    ]
+  },
+  "Network Administrator": {
+    "Skills": [
+      "Machine Learning",
+      "Team Collaboration",
+      "Critical Thinking",
+      "Testing and Debugging",
+      "Python Programming",
+      "Version Control (Git)",
+      "UI/UX Design",
+      "Mobile Development",
+      "DevOps Practices",
+      "Linux Administration"
+    ],
+    "Abilities": [
+      "Creativity",
+      "Written Comprehension",
+      "System Evaluation",
+      "Oral Expression",
+      "Decision Making"
+    ],
+    "WorkStyles": [
+      "Stress Tolerance",
+      "Independence",
+      "Integrity",
+      "Dependability",
+      "Persistence"
+    ]
+  },
+  "SDN Engineer": {
+    "Skills": [
+      "DevOps Practices",
+      "API Integration",
+      "Cybersecurity Fundamentals",
+      "Machine Learning",
+      "Problem Solving",
+      "Critical Thinking",
+      "Database Management",
+      "Communication",
+      "Cloud Computing",
+      "UI/UX Design"
+    ],
+    "Abilities": [
+      "Oral Expression",
+      "Creativity",
+      "Decision Making",
+      "Written Comprehension",
+      "Logical Reasoning"
+    ],
+    "WorkStyles": [
+      "Integrity",
+      "Independence",
+      "Persistence",
+      "Cooperation",
+      "Stress Tolerance"
+    ]
+  },
+  "IT Support Specialist": {
+    "Skills": [
+      "Problem Solving",
+      "Communication",
+      "Linux Administration",
+      "Critical Thinking",
+      "Python Programming",
+      "Testing and Debugging",
+      "Cybersecurity Fundamentals",
+      "DevOps Practices",
+      "Team Collaboration",
+      "JavaScript"
+    ],
+    "Abilities": [
+      "Decision Making",
+      "Creativity",
+      "Analytical Thinking",
+      "Learning Strategies",
+      "System Evaluation"
+    ],
+    "WorkStyles": [
+      "Leadership",
+      "Dependability",
+      "Innovation",
+      "Integrity",
+      "Independence"
+    ]
+  },
+  "System Administrator": {
+    "Skills": [
+      "Team Collaboration",
+      "Machine Learning",
+      "Data Analysis",
+      "System Architecture",
+      "Mobile Development",
+      "Python Programming",
+      "Cybersecurity Fundamentals",
+      "Critical Thinking",
+      "Communication",
+      "API Integration"
+    ],
+    "Abilities": [
+      "Analytical Thinking",
+      "Logical Reasoning",
+      "Time Management",
+      "Learning Strategies",
+      "Creativity"
+    ],
+    "WorkStyles": [
+      "Adaptability",
+      "Dependability",
+      "Cooperation",
+      "Initiative",
+      "Independence"
+    ]
+  },
+  "Helpdesk Technician": {
+    "Skills": [
+      "Critical Thinking",
+      "API Integration",
+      "Cybersecurity Fundamentals",
+      "UI/UX Design",
+      "Data Analysis",
+      "Machine Learning",
+      "System Architecture",
+      "Agile Methodology",
+      "Version Control (Git)",
+      "Problem Solving"
+    ],
+    "Abilities": [
+      "System Evaluation",
+      "Decision Making",
+      "Time Management",
+      "Attention to Detail",
+      "Oral Expression"
+    ],
+    "WorkStyles": [
+      "Persistence",
+      "Initiative",
+      "Adaptability",
+      "Independence",
+      "Dependability"
+    ]
+  },
+  "IT Technician": {
+    "Skills": [
+      "UI/UX Design",
+      "Database Management",
+      "System Architecture",
+      "Machine Learning",
+      "Version Control (Git)",
+      "Testing and Debugging",
+      "Agile Methodology",
+      "Cybersecurity Fundamentals",
+      "JavaScript",
+      "Cloud Computing"
+    ],
+    "Abilities": [
+      "Analytical Thinking",
+      "Logical Reasoning",
+      "Decision Making",
+      "Written Comprehension",
+      "Creativity"
+    ],
+    "WorkStyles": [
+      "Innovation",
+      "Initiative",
+      "Independence",
+      "Cooperation",
+      "Leadership"
+    ]
+  },
+  "Technical Support Engineer": {
+    "Skills": [
+      "API Integration",
+      "UI/UX Design",
+      "System Architecture",
+      "Version Control (Git)",
+      "Mobile Development",
+      "DevOps Practices",
+      "Team Collaboration",
+      "Testing and Debugging",
+      "Python Programming",
+      "Critical Thinking"
+    ],
+    "Abilities": [
+      "Logical Reasoning",
+      "System Evaluation",
+      "Oral Expression",
+      "Learning Strategies",
+      "Attention to Detail"
+    ],
+    "WorkStyles": [
+      "Leadership",
+      "Independence",
+      "Cooperation",
+      "Initiative",
+      "Persistence"
+    ]
+  },
+  "Desktop Support Specialist": {
+    "Skills": [
+      "API Integration",
+      "Communication",
+      "Python Programming",
+      "Cybersecurity Fundamentals",
+      "Version Control (Git)",
+      "Cloud Computing",
+      "Database Management",
+      "UI/UX Design",
+      "Agile Methodology",
+      "Data Analysis"
+    ],
+    "Abilities": [
+      "Attention to Detail",
+      "Learning Strategies",
+      "Oral Expression",
+      "Logical Reasoning",
+      "System Evaluation"
+    ],
+    "WorkStyles": [
+      "Stress Tolerance",
+      "Initiative",
+      "Dependability",
+      "Innovation",
+      "Leadership"
+    ]
+  },
+  "IT Operations Analyst": {
+    "Skills": [
+      "Machine Learning",
+      "Python Programming",
+      "Cybersecurity Fundamentals",
+      "Version Control (Git)",
+      "Mobile Development",
+      "Database Management",
+      "Team Collaboration",
+      "Problem Solving",
+      "Communication",
+      "Critical Thinking"
+    ],
+    "Abilities": [
+      "Written Comprehension",
+      "Oral Expression",
+      "Logical Reasoning",
+      "Analytical Thinking",
+      "Creativity"
+    ],
+    "WorkStyles": [
+      "Initiative",
+      "Dependability",
+      "Persistence",
+      "Integrity",
+      "Innovation"
+    ]
+  },
+  "Network Support Specialist": {
+    "Skills": [
+      "System Architecture",
+      "Critical Thinking",
+      "API Integration",
+      "Mobile Development",
+      "UI/UX Design",
+      "Testing and Debugging",
+      "Python Programming",
+      "Linux Administration",
+      "Communication",
+      "Database Management"
+    ],
+    "Abilities": [
+      "Analytical Thinking",
+      "Logical Reasoning",
+      "Learning Strategies",
+      "Creativity",
+      "Attention to Detail"
+    ],
+    "WorkStyles": [
+      "Independence",
+      "Integrity",
+      "Leadership",
+      "Stress Tolerance",
+      "Dependability"
+    ]
+  },
+  "Database Administrator": {
+    "Skills": [
+      "Database Management",
+      "Cybersecurity Fundamentals",
+      "Agile Methodology",
+      "JavaScript",
+      "Version Control (Git)",
+      "UI/UX Design",
+      "System Architecture",
+      "API Integration",
+      "Cloud Computing",
+      "Machine Learning"
+    ],
+    "Abilities": [
+      "Time Management",
+      "Logical Reasoning",
+      "System Evaluation",
+      "Written Comprehension",
+      "Learning Strategies"
+    ],
+    "WorkStyles": [
+      "Leadership",
+      "Dependability",
+      "Cooperation",
+      "Innovation",
+      "Independence"
+    ]
+  },
+  "Data Warehouse Specialist": {
+    "Skills": [
+      "API Integration",
+      "Python Programming",
+      "Data Analysis",
+      "Agile Methodology",
+      "JavaScript",
+      "Problem Solving",
+      "Linux Administration",
+      "Testing and Debugging",
+      "Cybersecurity Fundamentals",
+      "Communication"
+    ],
+    "Abilities": [
+      "Written Comprehension",
+      "Oral Expression",
+      "Creativity",
+      "Time Management",
+      "Logical Reasoning"
+    ],
+    "WorkStyles": [
+      "Innovation",
+      "Initiative",
+      "Adaptability",
+      "Cooperation",
+      "Integrity"
+    ]
+  },
+  "Database Developer": {
+    "Skills": [
+      "DevOps Practices",
+      "Team Collaboration",
+      "Version Control (Git)",
+      "Data Analysis",
+      "Testing and Debugging",
+      "Database Management",
+      "Machine Learning",
+      "System Architecture",
+      "Cloud Computing",
+      "Mobile Development"
+    ],
+    "Abilities": [
+      "Written Comprehension",
+      "Oral Expression",
+      "Creativity",
+      "Analytical Thinking",
+      "Learning Strategies"
+    ],
+    "WorkStyles": [
+      "Persistence",
+      "Cooperation",
+      "Adaptability",
+      "Innovation",
+      "Leadership"
+    ]
+  },
+  "SQL Specialist": {
+    "Skills": [
+      "DevOps Practices",
+      "Data Analysis",
+      "Critical Thinking",
+      "Database Management",
+      "Testing and Debugging",
+      "JavaScript",
+      "Linux Administration",
+      "Python Programming",
+      "Version Control (Git)",
+      "Cloud Computing"
+    ],
+    "Abilities": [
+      "Logical Reasoning",
+      "Creativity",
+      "Attention to Detail",
+      "Learning Strategies",
+      "Time Management"
+    ],
+    "WorkStyles": [
+      "Leadership",
+      "Integrity",
+      "Persistence",
+      "Dependability",
+      "Cooperation"
+    ]
+  },
+  "NoSQL Database Expert": {
+    "Skills": [
+      "Critical Thinking",
+      "Problem Solving",
+      "Cybersecurity Fundamentals",
+      "Agile Methodology",
+      "Communication",
+      "System Architecture",
+      "Python Programming",
+      "Linux Administration",
+      "Cloud Computing",
+      "Version Control (Git)"
+    ],
+    "Abilities": [
+      "Attention to Detail",
+      "Creativity",
+      "Time Management",
+      "Oral Expression",
+      "Written Comprehension"
+    ],
+    "WorkStyles": [
+      "Adaptability",
+      "Initiative",
+      "Cooperation",
+      "Stress Tolerance",
+      "Leadership"
+    ]
+  },
+  "Database Architect": {
+    "Skills": [
+      "Testing and Debugging",
+      "Problem Solving",
+      "Team Collaboration",
+      "System Architecture",
+      "Cloud Computing",
+      "Agile Methodology",
+      "Data Analysis",
+      "Database Management",
+      "Python Programming",
+      "JavaScript"
+    ],
+    "Abilities": [
+      "Decision Making",
+      "Logical Reasoning",
+      "System Evaluation",
+      "Written Comprehension",
+      "Learning Strategies"
+    ],
+    "WorkStyles": [
+      "Persistence",
+      "Leadership",
+      "Dependability",
+      "Adaptability",
+      "Integrity"
+    ]
+  },
+  "Performance Tuning Expert": {
+    "Skills": [
+      "Database Management",
+      "Mobile Development",
+      "Team Collaboration",
+      "API Integration",
+      "Testing and Debugging",
+      "Critical Thinking",
+      "Linux Administration",
+      "JavaScript",
+      "UI/UX Design",
+      "System Architecture"
+    ],
+    "Abilities": [
+      "Attention to Detail",
+      "Written Comprehension",
+      "Logical Reasoning",
+      "Time Management",
+      "Learning Strategies"
+    ],
+    "WorkStyles": [
+      "Adaptability",
+      "Innovation",
+      "Stress Tolerance",
+      "Independence",
+      "Leadership"
+    ]
+  },
+  "Cloud Database Manager": {
+    "Skills": [
+      "Machine Learning",
+      "Cloud Computing",
+      "Version Control (Git)",
+      "System Architecture",
+      "Data Analysis",
+      "Agile Methodology",
+      "Database Management",
+      "Mobile Development",
+      "Communication",
+      "Cybersecurity Fundamentals"
+    ],
+    "Abilities": [
+      "Decision Making",
+      "Attention to Detail",
+      "System Evaluation",
+      "Logical Reasoning",
+      "Analytical Thinking"
+    ],
+    "WorkStyles": [
+      "Adaptability",
+      "Independence",
+      "Innovation",
+      "Stress Tolerance",
+      "Dependability"
+    ]
+  },
+  "Blockchain Developer": {
+    "Skills": [
+      "Machine Learning",
+      "Python Programming",
+      "Problem Solving",
+      "Cybersecurity Fundamentals",
+      "System Architecture",
+      "Communication",
+      "Mobile Development",
+      "Cloud Computing",
+      "Linux Administration",
+      "UI/UX Design"
+    ],
+    "Abilities": [
+      "Creativity",
+      "Attention to Detail",
+      "Written Comprehension",
+      "Oral Expression",
+      "Decision Making"
+    ],
+    "WorkStyles": [
+      "Adaptability",
+      "Leadership",
+      "Independence",
+      "Persistence",
+      "Initiative"
+    ]
+  },
+  "Smart Contract Developer": {
+    "Skills": [
+      "Linux Administration",
+      "Agile Methodology",
+      "Communication",
+      "Testing and Debugging",
+      "Mobile Development",
+      "Problem Solving",
+      "Cybersecurity Fundamentals",
+      "Critical Thinking",
+      "DevOps Practices",
+      "Version Control (Git)"
+    ],
+    "Abilities": [
+      "Learning Strategies",
+      "Logical Reasoning",
+      "Decision Making",
+      "Attention to Detail",
+      "Time Management"
+    ],
+    "WorkStyles": [
+      "Cooperation",
+      "Leadership",
+      "Adaptability",
+      "Independence",
+      "Dependability"
+    ]
+  },
+  "Solidity Engineer": {
+    "Skills": [
+      "Critical Thinking",
+      "Testing and Debugging",
+      "Cybersecurity Fundamentals",
+      "Mobile Development",
+      "Machine Learning",
+      "Communication",
+      "Agile Methodology",
+      "DevOps Practices",
+      "Python Programming",
+      "Version Control (Git)"
+    ],
+    "Abilities": [
+      "Attention to Detail",
+      "System Evaluation",
+      "Written Comprehension",
+      "Time Management",
+      "Logical Reasoning"
+    ],
+    "WorkStyles": [
+      "Cooperation",
+      "Dependability",
+      "Integrity",
+      "Initiative",
+      "Persistence"
+    ]
+  },
+  "Blockchain Architect": {
+    "Skills": [
+      "Version Control (Git)",
+      "Database Management",
+      "Cloud Computing",
+      "Machine Learning",
+      "Linux Administration",
+      "Agile Methodology",
+      "Data Analysis",
+      "DevOps Practices",
+      "Critical Thinking",
+      "API Integration"
+    ],
+    "Abilities": [
+      "Analytical Thinking",
+      "Attention to Detail",
+      "Time Management",
+      "System Evaluation",
+      "Logical Reasoning"
+    ],
+    "WorkStyles": [
+      "Integrity",
+      "Initiative",
+      "Persistence",
+      "Adaptability",
+      "Leadership"
+    ]
+  },
+  "DApp Developer": {
+    "Skills": [
+      "JavaScript",
+      "System Architecture",
+      "Mobile Development",
+      "DevOps Practices",
+      "Problem Solving",
+      "Linux Administration",
+      "UI/UX Design",
+      "Team Collaboration",
+      "Machine Learning",
+      "Communication"
+    ],
+    "Abilities": [
+      "Written Comprehension",
+      "Attention to Detail",
+      "System Evaluation",
+      "Learning Strategies",
+      "Logical Reasoning"
+    ],
+    "WorkStyles": [
+      "Initiative",
+      "Innovation",
+      "Leadership",
+      "Independence",
+      "Integrity"
+    ]
+  },
+  "Blockchain QA Engineer": {
+    "Skills": [
+      "UI/UX Design",
+      "JavaScript",
+      "Problem Solving",
+      "Testing and Debugging",
+      "Agile Methodology",
+      "Cybersecurity Fundamentals",
+      "System Architecture",
+      "Critical Thinking",
+      "Mobile Development",
+      "Version Control (Git)"
+    ],
+    "Abilities": [
+      "Analytical Thinking",
+      "Written Comprehension",
+      "Decision Making",
+      "Creativity",
+      "Logical Reasoning"
+    ],
+    "WorkStyles": [
+      "Initiative",
+      "Cooperation",
+      "Dependability",
+      "Adaptability",
+      "Stress Tolerance"
+    ]
+  },
+  "Crypto Wallet Developer": {
+    "Skills": [
+      "Python Programming",
+      "JavaScript",
+      "Linux Administration",
+      "Agile Methodology",
+      "Version Control (Git)",
+      "Team Collaboration",
+      "Cloud Computing",
+      "Testing and Debugging",
+      "API Integration",
+      "System Architecture"
+    ],
+    "Abilities": [
+      "Time Management",
+      "Learning Strategies",
+      "Logical Reasoning",
+      "Attention to Detail",
+      "Written Comprehension"
+    ],
+    "WorkStyles": [
+      "Cooperation",
+      "Independence",
+      "Leadership",
+      "Adaptability",
+      "Dependability"
+    ]
+  },
+  "Tokenomics Analyst": {
+    "Skills": [
+      "Mobile Development",
+      "Machine Learning",
+      "DevOps Practices",
+      "UI/UX Design",
+      "Communication",
+      "Database Management",
+      "Data Analysis",
+      "Cybersecurity Fundamentals",
+      "Testing and Debugging",
+      "Cloud Computing"
+    ],
+    "Abilities": [
+      "Decision Making",
+      "Analytical Thinking",
+      "Time Management",
+      "Learning Strategies",
+      "System Evaluation"
+    ],
+    "WorkStyles": [
+      "Persistence",
+      "Cooperation",
+      "Integrity",
+      "Adaptability",
+      "Leadership"
+    ]
+  },
+  "Embedded Systems Engineer": {
+    "Skills": [
+      "Database Management",
+      "Testing and Debugging",
+      "Machine Learning",
+      "Team Collaboration",
+      "Python Programming",
+      "Mobile Development",
+      "Data Analysis",
+      "Cloud Computing",
+      "Agile Methodology",
+      "API Integration"
+    ],
+    "Abilities": [
+      "Learning Strategies",
+      "Attention to Detail",
+      "Decision Making",
+      "Time Management",
+      "System Evaluation"
+    ],
+    "WorkStyles": [
+      "Stress Tolerance",
+      "Initiative",
+      "Innovation",
+      "Independence",
+      "Integrity"
+    ]
+  },
+  "IoT Developer": {
+    "Skills": [
+      "Agile Methodology",
+      "Linux Administration",
+      "Python Programming",
+      "JavaScript",
+      "Team Collaboration",
+      "DevOps Practices",
+      "Cybersecurity Fundamentals",
+      "Problem Solving",
+      "Testing and Debugging",
+      "API Integration"
+    ],
+    "Abilities": [
+      "Attention to Detail",
+      "System Evaluation",
+      "Written Comprehension",
+      "Learning Strategies",
+      "Creativity"
+    ],
+    "WorkStyles": [
+      "Cooperation",
+      "Persistence",
+      "Stress Tolerance",
+      "Innovation",
+      "Adaptability"
+    ]
+  },
+  "Firmware Engineer": {
+    "Skills": [
+      "Machine Learning",
+      "Testing and Debugging",
+      "Python Programming",
+      "API Integration",
+      "Mobile Development",
+      "Communication",
+      "Agile Methodology",
+      "Problem Solving",
+      "Cloud Computing",
+      "Critical Thinking"
+    ],
+    "Abilities": [
+      "Attention to Detail",
+      "System Evaluation",
+      "Analytical Thinking",
+      "Learning Strategies",
+      "Logical Reasoning"
+    ],
+    "WorkStyles": [
+      "Initiative",
+      "Persistence",
+      "Adaptability",
+      "Dependability",
+      "Cooperation"
+    ]
+  },
+  "IoT Security Analyst": {
+    "Skills": [
+      "Team Collaboration",
+      "Database Management",
+      "Problem Solving",
+      "Linux Administration",
+      "Critical Thinking",
+      "Cloud Computing",
+      "Machine Learning",
+      "DevOps Practices",
+      "Communication",
+      "Cybersecurity Fundamentals"
+    ],
+    "Abilities": [
+      "Time Management",
+      "System Evaluation",
+      "Oral Expression",
+      "Creativity",
+      "Written Comprehension"
+    ],
+    "WorkStyles": [
+      "Adaptability",
+      "Initiative",
+      "Independence",
+      "Integrity",
+      "Persistence"
+    ]
+  },
+  "Embedded Software Developer": {
+    "Skills": [
+      "System Architecture",
+      "Critical Thinking",
+      "Database Management",
+      "Machine Learning",
+      "Data Analysis",
+      "Python Programming",
+      "Cloud Computing",
+      "API Integration",
+      "Testing and Debugging",
+      "Cybersecurity Fundamentals"
+    ],
+    "Abilities": [
+      "Written Comprehension",
+      "Time Management",
+      "Logical Reasoning",
+      "Decision Making",
+      "Oral Expression"
+    ],
+    "WorkStyles": [
+      "Stress Tolerance",
+      "Adaptability",
+      "Independence",
+      "Integrity",
+      "Innovation"
+    ]
+  },
+  "Hardware-Software Integrator": {
+    "Skills": [
+      "DevOps Practices",
+      "Agile Methodology",
+      "Version Control (Git)",
+      "Database Management",
+      "Data Analysis",
+      "System Architecture",
+      "Problem Solving",
+      "Mobile Development",
+      "Machine Learning",
+      "UI/UX Design"
+    ],
+    "Abilities": [
+      "Logical Reasoning",
+      "Learning Strategies",
+      "System Evaluation",
+      "Analytical Thinking",
+      "Decision Making"
+    ],
+    "WorkStyles": [
+      "Leadership",
+      "Stress Tolerance",
+      "Independence",
+      "Cooperation",
+      "Initiative"
+    ]
+  },
+  "Field Application Engineer": {
+    "Skills": [
+      "Mobile Development",
+      "Problem Solving",
+      "Data Analysis",
+      "System Architecture",
+      "Cybersecurity Fundamentals",
+      "Communication",
+      "DevOps Practices",
+      "Machine Learning",
+      "Agile Methodology",
+      "Testing and Debugging"
+    ],
+    "Abilities": [
+      "Creativity",
+      "Time Management",
+      "Analytical Thinking",
+      "Learning Strategies",
+      "Logical Reasoning"
+    ],
+    "WorkStyles": [
+      "Cooperation",
+      "Stress Tolerance",
+      "Independence",
+      "Dependability",
+      "Persistence"
+    ]
+  },
+  "IoT Product Designer": {
+    "Skills": [
+      "JavaScript",
+      "Linux Administration",
+      "Testing and Debugging",
+      "Communication",
+      "Python Programming",
+      "Critical Thinking",
+      "API Integration",
+      "Data Analysis",
+      "Team Collaboration",
+      "Mobile Development"
+    ],
+    "Abilities": [
+      "System Evaluation",
+      "Learning Strategies",
+      "Oral Expression",
+      "Time Management",
+      "Decision Making"
+    ],
+    "WorkStyles": [
+      "Innovation",
+      "Adaptability",
+      "Initiative",
+      "Dependability",
+      "Persistence"
+    ]
+  },
+  "AR Developer": {
+    "Skills": [
+      "Testing and Debugging",
+      "Mobile Development",
+      "Database Management",
+      "System Architecture",
+      "Critical Thinking",
+      "API Integration",
+      "Team Collaboration",
+      "UI/UX Design",
+      "Machine Learning",
+      "Data Analysis"
+    ],
+    "Abilities": [
+      "System Evaluation",
+      "Analytical Thinking",
+      "Logical Reasoning",
+      "Oral Expression",
+      "Decision Making"
+    ],
+    "WorkStyles": [
+      "Independence",
+      "Leadership",
+      "Innovation",
+      "Dependability",
+      "Adaptability"
+    ]
+  },
+  "VR Developer": {
+    "Skills": [
+      "Data Analysis",
+      "DevOps Practices",
+      "JavaScript",
+      "Python Programming",
+      "Agile Methodology",
+      "Mobile Development",
+      "Machine Learning",
+      "Team Collaboration",
+      "Version Control (Git)",
+      "API Integration"
+    ],
+    "Abilities": [
+      "Time Management",
+      "Decision Making",
+      "Analytical Thinking",
+      "Oral Expression",
+      "Creativity"
+    ],
+    "WorkStyles": [
+      "Independence",
+      "Dependability",
+      "Cooperation",
+      "Stress Tolerance",
+      "Leadership"
+    ]
+  },
+  "XR Designer": {
+    "Skills": [
+      "UI/UX Design",
+      "Python Programming",
+      "Database Management",
+      "Machine Learning",
+      "JavaScript",
+      "Mobile Development",
+      "Agile Methodology",
+      "System Architecture",
+      "Team Collaboration",
+      "DevOps Practices"
+    ],
+    "Abilities": [
+      "Attention to Detail",
+      "Written Comprehension",
+      "Time Management",
+      "Decision Making",
+      "Learning Strategies"
+    ],
+    "WorkStyles": [
+      "Innovation",
+      "Initiative",
+      "Dependability",
+      "Adaptability",
+      "Integrity"
+    ]
+  },
+  "3D Interaction Designer": {
+    "Skills": [
+      "API Integration",
+      "JavaScript",
+      "Communication",
+      "Mobile Development",
+      "Version Control (Git)",
+      "Critical Thinking",
+      "Data Analysis",
+      "System Architecture",
+      "Cybersecurity Fundamentals",
+      "Database Management"
+    ],
+    "Abilities": [
+      "System Evaluation",
+      "Logical Reasoning",
+      "Written Comprehension",
+      "Analytical Thinking",
+      "Attention to Detail"
+    ],
+    "WorkStyles": [
+      "Dependability",
+      "Stress Tolerance",
+      "Cooperation",
+      "Innovation",
+      "Leadership"
+    ]
+  },
+  "Unity AR/VR Engineer": {
+    "Skills": [
+      "System Architecture",
+      "Database Management",
+      "Problem Solving",
+      "Cybersecurity Fundamentals",
+      "Cloud Computing",
+      "Testing and Debugging",
+      "Agile Methodology",
+      "Machine Learning",
+      "UI/UX Design",
+      "Data Analysis"
+    ],
+    "Abilities": [
+      "Learning Strategies",
+      "System Evaluation",
+      "Written Comprehension",
+      "Oral Expression",
+      "Time Management"
+    ],
+    "WorkStyles": [
+      "Innovation",
+      "Leadership",
+      "Dependability",
+      "Persistence",
+      "Cooperation"
+    ]
+  },
+  "Simulation Developer": {
+    "Skills": [
+      "Problem Solving",
+      "Version Control (Git)",
+      "Database Management",
+      "Team Collaboration",
+      "JavaScript",
+      "Data Analysis",
+      "Machine Learning",
+      "Cybersecurity Fundamentals",
+      "Python Programming",
+      "System Architecture"
+    ],
+    "Abilities": [
+      "Learning Strategies",
+      "System Evaluation",
+      "Decision Making",
+      "Written Comprehension",
+      "Time Management"
+    ],
+    "WorkStyles": [
+      "Stress Tolerance",
+      "Dependability",
+      "Adaptability",
+      "Leadership",
+      "Persistence"
+    ]
+  },
+  "AR/VR Tester": {
+    "Skills": [
+      "Cybersecurity Fundamentals",
+      "Agile Methodology",
+      "UI/UX Design",
+      "Machine Learning",
+      "API Integration",
+      "DevOps Practices",
+      "Communication",
+      "Team Collaboration",
+      "JavaScript",
+      "System Architecture"
+    ],
+    "Abilities": [
+      "Analytical Thinking",
+      "Written Comprehension",
+      "Attention to Detail",
+      "Time Management",
+      "Creativity"
+    ],
+    "WorkStyles": [
+      "Dependability",
+      "Independence",
+      "Persistence",
+      "Adaptability",
+      "Innovation"
+    ]
+  },
+  "Spatial Computing Engineer": {
+    "Skills": [
+      "DevOps Practices",
+      "JavaScript",
+      "Database Management",
+      "System Architecture",
+      "UI/UX Design",
+      "Agile Methodology",
+      "Testing and Debugging",
+      "Linux Administration",
+      "Communication",
+      "Cloud Computing"
+    ],
+    "Abilities": [
+      "Decision Making",
+      "System Evaluation",
+      "Logical Reasoning",
+      "Creativity",
+      "Attention to Detail"
+    ],
+    "WorkStyles": [
+      "Adaptability",
+      "Integrity",
+      "Leadership",
+      "Stress Tolerance",
+      "Persistence"
+    ]
+  },
+  "Robotics Engineer": {
+    "Skills": [
+      "Database Management",
+      "Linux Administration",
+      "Mobile Development",
+      "Machine Learning",
+      "Agile Methodology",
+      "System Architecture",
+      "DevOps Practices",
+      "Communication",
+      "JavaScript",
+      "Data Analysis"
+    ],
+    "Abilities": [
+      "System Evaluation",
+      "Decision Making",
+      "Analytical Thinking",
+      "Logical Reasoning",
+      "Oral Expression"
+    ],
+    "WorkStyles": [
+      "Initiative",
+      "Persistence",
+      "Cooperation",
+      "Integrity",
+      "Innovation"
+    ]
+  },
+  "Automation Engineer": {
+    "Skills": [
+      "Team Collaboration",
+      "Mobile Development",
+      "Communication",
+      "Database Management",
+      "Data Analysis",
+      "DevOps Practices",
+      "Python Programming",
+      "JavaScript",
+      "System Architecture",
+      "Critical Thinking"
+    ],
+    "Abilities": [
+      "Time Management",
+      "Logical Reasoning",
+      "Learning Strategies",
+      "System Evaluation",
+      "Written Comprehension"
+    ],
+    "WorkStyles": [
+      "Initiative",
+      "Adaptability",
+      "Innovation",
+      "Persistence",
+      "Integrity"
+    ]
+  },
+  "Mechatronics Engineer": {
+    "Skills": [
+      "System Architecture",
+      "Mobile Development",
+      "Data Analysis",
+      "Testing and Debugging",
+      "API Integration",
+      "Machine Learning",
+      "Cloud Computing",
+      "Python Programming",
+      "Agile Methodology",
+      "JavaScript"
+    ],
+    "Abilities": [
+      "Oral Expression",
+      "Analytical Thinking",
+      "Time Management",
+      "Learning Strategies",
+      "Attention to Detail"
+    ],
+    "WorkStyles": [
+      "Persistence",
+      "Independence",
+      "Innovation",
+      "Adaptability",
+      "Cooperation"
+    ]
+  },
+  "Control Systems Engineer": {
+    "Skills": [
+      "Python Programming",
+      "JavaScript",
+      "Team Collaboration",
+      "Linux Administration",
+      "Problem Solving",
+      "UI/UX Design",
+      "Version Control (Git)",
+      "Mobile Development",
+      "Critical Thinking",
+      "Data Analysis"
+    ],
+    "Abilities": [
+      "Decision Making",
+      "Learning Strategies",
+      "System Evaluation",
+      "Time Management",
+      "Analytical Thinking"
+    ],
+    "WorkStyles": [
+      "Adaptability",
+      "Initiative",
+      "Stress Tolerance",
+      "Persistence",
+      "Innovation"
+    ]
+  },
+  "Robot Software Developer": {
+    "Skills": [
+      "Mobile Development",
+      "Linux Administration",
+      "JavaScript",
+      "Python Programming",
+      "UI/UX Design",
+      "Cybersecurity Fundamentals",
+      "Critical Thinking",
+      "Version Control (Git)",
+      "Machine Learning",
+      "DevOps Practices"
+    ],
+    "Abilities": [
+      "Attention to Detail",
+      "Creativity",
+      "Learning Strategies",
+      "System Evaluation",
+      "Oral Expression"
+    ],
+    "WorkStyles": [
+      "Leadership",
+      "Stress Tolerance",
+      "Initiative",
+      "Persistence",
+      "Independence"
+    ]
+  },
+  "ROS Developer": {
+    "Skills": [
+      "Version Control (Git)",
+      "Mobile Development",
+      "Problem Solving",
+      "Python Programming",
+      "UI/UX Design",
+      "Database Management",
+      "System Architecture",
+      "Linux Administration",
+      "JavaScript",
+      "Data Analysis"
+    ],
+    "Abilities": [
+      "Analytical Thinking",
+      "Oral Expression",
+      "Written Comprehension",
+      "Decision Making",
+      "Time Management"
+    ],
+    "WorkStyles": [
+      "Stress Tolerance",
+      "Initiative",
+      "Cooperation",
+      "Adaptability",
+      "Integrity"
+    ]
+  },
+  "AI Robotics Specialist": {
+    "Skills": [
+      "Communication",
+      "UI/UX Design",
+      "JavaScript",
+      "Cybersecurity Fundamentals",
+      "Critical Thinking",
+      "Version Control (Git)",
+      "Linux Administration",
+      "Testing and Debugging",
+      "DevOps Practices",
+      "Problem Solving"
+    ],
+    "Abilities": [
+      "Decision Making",
+      "Written Comprehension",
+      "Learning Strategies",
+      "System Evaluation",
+      "Time Management"
+    ],
+    "WorkStyles": [
+      "Adaptability",
+      "Integrity",
+      "Initiative",
+      "Dependability",
+      "Leadership"
+    ]
+  },
+  "Industrial Robot Technician": {
+    "Skills": [
+      "Team Collaboration",
+      "Cybersecurity Fundamentals",
+      "UI/UX Design",
+      "Critical Thinking",
+      "Cloud Computing",
+      "Machine Learning",
+      "API Integration",
+      "System Architecture",
+      "JavaScript",
+      "Version Control (Git)"
+    ],
+    "Abilities": [
+      "Written Comprehension",
+      "System Evaluation",
+      "Analytical Thinking",
+      "Decision Making",
+      "Creativity"
+    ],
+    "WorkStyles": [
+      "Dependability",
+      "Independence",
+      "Leadership",
+      "Adaptability",
+      "Persistence"
+    ]
+  },
+  "Product Manager": {
+    "Skills": [
+      "Version Control (Git)",
+      "Linux Administration",
+      "Database Management",
+      "Cloud Computing",
+      "UI/UX Design",
+      "Cybersecurity Fundamentals",
+      "System Architecture",
+      "Critical Thinking",
+      "Agile Methodology",
+      "Team Collaboration"
+    ],
+    "Abilities": [
+      "Analytical Thinking",
+      "Written Comprehension",
+      "Decision Making",
+      "Oral Expression",
+      "Attention to Detail"
+    ],
+    "WorkStyles": [
+      "Persistence",
+      "Initiative",
+      "Dependability",
+      "Integrity",
+      "Stress Tolerance"
+    ]
+  },
+  "Product Owner": {
+    "Skills": [
+      "Machine Learning",
+      "DevOps Practices",
+      "Linux Administration",
+      "Database Management",
+      "Critical Thinking",
+      "Communication",
+      "Data Analysis",
+      "Cloud Computing",
+      "Cybersecurity Fundamentals",
+      "Python Programming"
+    ],
+    "Abilities": [
+      "Time Management",
+      "Attention to Detail",
+      "Oral Expression",
+      "Written Comprehension",
+      "System Evaluation"
+    ],
+    "WorkStyles": [
+      "Independence",
+      "Adaptability",
+      "Stress Tolerance",
+      "Leadership",
+      "Innovation"
+    ]
+  },
+  "Technical Product Manager": {
+    "Skills": [
+      "Data Analysis",
+      "Machine Learning",
+      "Mobile Development",
+      "Linux Administration",
+      "System Architecture",
+      "Database Management",
+      "Critical Thinking",
+      "Testing and Debugging",
+      "UI/UX Design",
+      "JavaScript"
+    ],
+    "Abilities": [
+      "Analytical Thinking",
+      "Attention to Detail",
+      "Learning Strategies",
+      "Creativity",
+      "Written Comprehension"
+    ],
+    "WorkStyles": [
+      "Integrity",
+      "Innovation",
+      "Cooperation",
+      "Adaptability",
+      "Dependability"
+    ]
+  },
+  "Associate Product Manager": {
+    "Skills": [
+      "Cybersecurity Fundamentals",
+      "Data Analysis",
+      "Machine Learning",
+      "Version Control (Git)",
+      "Cloud Computing",
+      "Mobile Development",
+      "Problem Solving",
+      "System Architecture",
+      "Critical Thinking",
+      "Python Programming"
+    ],
+    "Abilities": [
+      "System Evaluation",
+      "Written Comprehension",
+      "Oral Expression",
+      "Analytical Thinking",
+      "Logical Reasoning"
+    ],
+    "WorkStyles": [
+      "Integrity",
+      "Adaptability",
+      "Leadership",
+      "Cooperation",
+      "Stress Tolerance"
+    ]
+  },
+  "Agile Product Manager": {
+    "Skills": [
+      "UI/UX Design",
+      "Communication",
+      "Testing and Debugging",
+      "Critical Thinking",
+      "DevOps Practices",
+      "Team Collaboration",
+      "System Architecture",
+      "Database Management",
+      "Linux Administration",
+      "Mobile Development"
+    ],
+    "Abilities": [
+      "System Evaluation",
+      "Analytical Thinking",
+      "Oral Expression",
+      "Learning Strategies",
+      "Creativity"
+    ],
+    "WorkStyles": [
+      "Leadership",
+      "Adaptability",
+      "Integrity",
+      "Innovation",
+      "Stress Tolerance"
+    ]
+  },
+  "Product Strategist": {
+    "Skills": [
+      "DevOps Practices",
+      "Agile Methodology",
+      "Python Programming",
+      "Linux Administration",
+      "Mobile Development",
+      "System Architecture",
+      "Cloud Computing",
+      "Machine Learning",
+      "Data Analysis",
+      "Critical Thinking"
+    ],
+    "Abilities": [
+      "Creativity",
+      "Decision Making",
+      "System Evaluation",
+      "Learning Strategies",
+      "Time Management"
+    ],
+    "WorkStyles": [
+      "Stress Tolerance",
+      "Initiative",
+      "Independence",
+      "Leadership",
+      "Adaptability"
+    ]
+  },
+  "Platform Product Manager": {
+    "Skills": [
+      "Critical Thinking",
+      "Database Management",
+      "Testing and Debugging",
+      "UI/UX Design",
+      "System Architecture",
+      "Agile Methodology",
+      "Machine Learning",
+      "Cloud Computing",
+      "Problem Solving",
+      "Version Control (Git)"
+    ],
+    "Abilities": [
+      "Creativity",
+      "Attention to Detail",
+      "Written Comprehension",
+      "Decision Making",
+      "System Evaluation"
+    ],
+    "WorkStyles": [
+      "Stress Tolerance",
+      "Independence",
+      "Cooperation",
+      "Integrity",
+      "Persistence"
+    ]
+  },
+  "Customer Experience Manager": {
+    "Skills": [
+      "Machine Learning",
+      "Problem Solving",
+      "Team Collaboration",
+      "Testing and Debugging",
+      "DevOps Practices",
+      "System Architecture",
+      "Linux Administration",
+      "API Integration",
+      "Mobile Development",
+      "Agile Methodology"
+    ],
+    "Abilities": [
+      "Oral Expression",
+      "Time Management",
+      "Analytical Thinking",
+      "Attention to Detail",
+      "Learning Strategies"
+    ],
+    "WorkStyles": [
+      "Adaptability",
+      "Dependability",
+      "Persistence",
+      "Integrity",
+      "Independence"
+    ]
+  },
+  "Startup Founder": {
+    "Skills": [
+      "Version Control (Git)",
+      "Agile Methodology",
+      "Data Analysis",
+      "Cybersecurity Fundamentals",
+      "Linux Administration",
+      "DevOps Practices",
+      "Database Management",
+      "Python Programming",
+      "UI/UX Design",
+      "Communication"
+    ],
+    "Abilities": [
+      "Oral Expression",
+      "Decision Making",
+      "Attention to Detail",
+      "Analytical Thinking",
+      "Learning Strategies"
+    ],
+    "WorkStyles": [
+      "Initiative",
+      "Innovation",
+      "Persistence",
+      "Independence",
+      "Stress Tolerance"
+    ]
+  },
+  "Technical Co-founder": {
+    "Skills": [
+      "Mobile Development",
+      "System Architecture",
+      "UI/UX Design",
+      "Communication",
+      "Testing and Debugging",
+      "Team Collaboration",
+      "Linux Administration",
+      "Agile Methodology",
+      "Python Programming",
+      "Cybersecurity Fundamentals"
+    ],
+    "Abilities": [
+      "Written Comprehension",
+      "System Evaluation",
+      "Learning Strategies",
+      "Creativity",
+      "Analytical Thinking"
+    ],
+    "WorkStyles": [
+      "Cooperation",
+      "Adaptability",
+      "Integrity",
+      "Innovation",
+      "Stress Tolerance"
+    ]
+  },
+  "Innovation Manager": {
+    "Skills": [
+      "Python Programming",
+      "Database Management",
+      "Linux Administration",
+      "Agile Methodology",
+      "Cloud Computing",
+      "Machine Learning",
+      "Mobile Development",
+      "UI/UX Design",
+      "Communication",
+      "Version Control (Git)"
+    ],
+    "Abilities": [
+      "Learning Strategies",
+      "Time Management",
+      "Decision Making",
+      "Logical Reasoning",
+      "System Evaluation"
+    ],
+    "WorkStyles": [
+      "Adaptability",
+      "Dependability",
+      "Initiative",
+      "Independence",
+      "Persistence"
+    ]
+  },
+  "Business Technology Consultant": {
+    "Skills": [
+      "Python Programming",
+      "UI/UX Design",
+      "JavaScript",
+      "DevOps Practices",
+      "Agile Methodology",
+      "Linux Administration",
+      "Mobile Development",
+      "Testing and Debugging",
+      "Machine Learning",
+      "System Architecture"
+    ],
+    "Abilities": [
+      "Learning Strategies",
+      "Creativity",
+      "Analytical Thinking",
+      "Logical Reasoning",
+      "Attention to Detail"
+    ],
+    "WorkStyles": [
+      "Innovation",
+      "Adaptability",
+      "Dependability",
+      "Cooperation",
+      "Initiative"
+    ]
+  },
+  "Growth Hacker": {
+    "Skills": [
+      "Python Programming",
+      "JavaScript",
+      "Agile Methodology",
+      "Data Analysis",
+      "UI/UX Design",
+      "Team Collaboration",
+      "API Integration",
+      "Database Management",
+      "Communication",
+      "System Architecture"
+    ],
+    "Abilities": [
+      "Decision Making",
+      "Logical Reasoning",
+      "Learning Strategies",
+      "System Evaluation",
+      "Oral Expression"
+    ],
+    "WorkStyles": [
+      "Integrity",
+      "Innovation",
+      "Independence",
+      "Cooperation",
+      "Leadership"
+    ]
+  },
+  "Startup CTO": {
+    "Skills": [
+      "Critical Thinking",
+      "API Integration",
+      "Agile Methodology",
+      "Version Control (Git)",
+      "Data Analysis",
+      "Team Collaboration",
+      "Problem Solving",
+      "Cloud Computing",
+      "System Architecture",
+      "Cybersecurity Fundamentals"
+    ],
+    "Abilities": [
+      "Creativity",
+      "Learning Strategies",
+      "Analytical Thinking",
+      "Logical Reasoning",
+      "Attention to Detail"
+    ],
+    "WorkStyles": [
+      "Leadership",
+      "Cooperation",
+      "Innovation",
+      "Integrity",
+      "Persistence"
+    ]
+  },
+  "Venture Builder": {
+    "Skills": [
+      "Version Control (Git)",
+      "Cloud Computing",
+      "Database Management",
+      "System Architecture",
+      "Data Analysis",
+      "UI/UX Design",
+      "Cybersecurity Fundamentals",
+      "Problem Solving",
+      "DevOps Practices",
+      "JavaScript"
+    ],
+    "Abilities": [
+      "Written Comprehension",
+      "Learning Strategies",
+      "Oral Expression",
+      "Time Management",
+      "Attention to Detail"
+    ],
+    "WorkStyles": [
+      "Dependability",
+      "Integrity",
+      "Initiative",
+      "Cooperation",
+      "Stress Tolerance"
+    ]
+  },
+  "Entrepreneur-in-Residence": {
+    "Skills": [
+      "Machine Learning",
+      "DevOps Practices",
+      "API Integration",
+      "Mobile Development",
+      "Testing and Debugging",
+      "Version Control (Git)",
+      "Critical Thinking",
+      "Problem Solving",
+      "System Architecture",
+      "UI/UX Design"
+    ],
+    "Abilities": [
+      "Decision Making",
+      "Written Comprehension",
+      "Analytical Thinking",
+      "Learning Strategies",
+      "Attention to Detail"
+    ],
+    "WorkStyles": [
+      "Initiative",
+      "Independence",
+      "Persistence",
+      "Dependability",
+      "Integrity"
+    ]
+  }
+}
