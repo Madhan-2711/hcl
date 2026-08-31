@@ -30,6 +30,7 @@ export default function Dashboard() {
   const [activeTab, setActiveTab] = useState('overview') // overview | path | skills | recs | chat
   const [loading, setLoading] = useState(true)
   const [recsLoading, setRecsLoading] = useState(false)
+  const [isEditingPath, setIsEditingPath] = useState(false)
 
   useEffect(() => {
     if (userId) loadDashboard()
@@ -195,6 +196,16 @@ export default function Dashboard() {
     setPathItems(prev => prev.map(item =>
       item.id === itemId ? { ...item, status: newStatus } : item
     ))
+  }
+
+  const handleRemoveItem = async (itemId) => {
+    if (!window.confirm("Remove this course from your curriculum path?")) return
+    try {
+      await api.removePathItem(itemId)
+      setPathItems(prev => prev.filter(item => item.id !== itemId))
+    } catch (err) {
+      console.error('Failed to remove item:', err)
+    }
   }
 
   const totalItems = pathItems.length
@@ -520,13 +531,18 @@ export default function Dashboard() {
                       Target: {latestPath.goal_text} · {totalItems} courses · {totalHours}h estimated
                     </p>
                   </div>
-                  <Link to={`/paths/${latestPath.id}`} className="btn-secondary" style={{ padding: '0.55rem 1.25rem', fontSize: '0.85rem' }}>
-                    <Map size={15} /> Full View
-                  </Link>
+                  <div style={{ display: 'flex', gap: '0.75rem' }}>
+                    <button onClick={() => setIsEditingPath(!isEditingPath)} className={isEditingPath ? "btn-primary" : "btn-ghost"} style={{ padding: '0.55rem 1.25rem', fontSize: '0.85rem' }}>
+                      <Edit2 size={15} /> {isEditingPath ? 'Done Editing' : 'Edit Path'}
+                    </button>
+                    <Link to={`/paths/${latestPath.id}`} className="btn-secondary" style={{ padding: '0.55rem 1.25rem', fontSize: '0.85rem' }}>
+                      <Map size={15} /> Full View
+                    </Link>
+                  </div>
                 </div>
               )}
               {pathItems.length > 0 ? (
-                <MilestoneTimeline items={pathItems} onStatusChange={handleStatusChange} />
+                <MilestoneTimeline items={pathItems} onStatusChange={handleStatusChange} onRemoveItem={isEditingPath ? handleRemoveItem : undefined} />
               ) : (
                 <div className="glass-card card-organic-1" style={{ padding: '3.5rem 2rem', textAlign: 'center' }}>
                   <BookOpen size={44} style={{ color: 'var(--primary)', margin: '0 auto 1.25rem', opacity: 0.8 }} />

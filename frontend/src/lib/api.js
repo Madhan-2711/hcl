@@ -71,6 +71,16 @@ export const api = {
     return { updated: true, status }
   },
 
+  /** Remove a path item */
+  removePathItem: async (itemId) => {
+    const { error } = await supabase
+      .from('path_items')
+      .delete()
+      .eq('id', itemId)
+    if (error) throw new Error(error.message)
+    return { deleted: true }
+  },
+
   /** Generate/return explanation for a path item */
   explain: (path_item_id) => invokeFunction('explain-path-item', { path_item_id }),
 
