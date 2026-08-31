@@ -157,7 +157,43 @@ serve(async (req: Request) => {
             const found = skillNames.find(sn => sn.toLowerCase().includes(s.toLowerCase()));
             if (found && !normalizedKnown.has(found)) normalizedWeak.add(found);
         });
+      } else if (lowerGoal.includes("doctor") || lowerGoal.includes("medic") || lowerGoal.includes("health") || lowerGoal.includes("nurs")) {
+        ["Anatomy", "Patient Care", "Medical Ethics", "Physiology"].forEach((s) => {
+            const found = skillNames.find(sn => sn.toLowerCase() === s.toLowerCase());
+            if (found && !normalizedKnown.has(found)) normalizedWeak.add(found);
+        });
+      } else if (lowerGoal.includes("law") || lowerGoal.includes("attorney") || lowerGoal.includes("legal")) {
+        ["Criminal Law", "Contract Law", "Legal Research", "Negotiation"].forEach((s) => {
+            const found = skillNames.find(sn => sn.toLowerCase() === s.toLowerCase());
+            if (found && !normalizedKnown.has(found)) normalizedWeak.add(found);
+        });
+      } else if (lowerGoal.includes("civil") || lowerGoal.includes("mechanical") || lowerGoal.includes("engineer")) {
+        ["AutoCAD", "Structural Analysis", "Thermodynamics", "Project Management"].forEach((s) => {
+            const found = skillNames.find(sn => sn.toLowerCase() === s.toLowerCase());
+            if (found && !normalizedKnown.has(found)) normalizedWeak.add(found);
+        });
+      } else if (lowerGoal.includes("forensic") || lowerGoal.includes("investigat")) {
+        ["Crime Scene Investigation", "DNA Analysis", "Forensic Pathology", "Criminalistics"].forEach((s) => {
+            const found = skillNames.find(sn => sn.toLowerCase() === s.toLowerCase());
+            if (found && !normalizedKnown.has(found)) normalizedWeak.add(found);
+        });
+      } else if (lowerGoal.includes("psychology") || lowerGoal.includes("therap") || lowerGoal.includes("counsel")) {
+        ["Cognitive Psychology", "Counseling", "Behavioral Analysis"].forEach((s) => {
+            const found = skillNames.find(sn => sn.toLowerCase() === s.toLowerCase());
+            if (found && !normalizedKnown.has(found)) normalizedWeak.add(found);
+        });
+      } else if (lowerGoal.includes("market") || lowerGoal.includes("creator") || lowerGoal.includes("social")) {
+        ["Digital Marketing", "SEO", "Content Creation", "Social Media Strategy"].forEach((s) => {
+            const found = skillNames.find(sn => sn.toLowerCase() === s.toLowerCase());
+            if (found && !normalizedKnown.has(found)) normalizedWeak.add(found);
+        });
+      } else if (lowerGoal.includes("business") || lowerGoal.includes("financ") || lowerGoal.includes("entrepren")) {
+        ["Entrepreneurship", "Personal Finance", "Investing"].forEach((s) => {
+            const found = skillNames.find(sn => sn.toLowerCase() === s.toLowerCase());
+            if (found && !normalizedKnown.has(found)) normalizedWeak.add(found);
+        });
       } else {
+        // Fallback for generic tech roles
         ["Git", "SQL"].forEach((s) => {
           if (!normalizedKnown.has(s) && skillMap[s]) normalizedWeak.add(s);
         });
