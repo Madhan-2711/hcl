@@ -552,13 +552,18 @@ export default function Dashboard() {
                       Target: {latestPath.goal_text} · {totalItems} courses · {totalHours}h estimated
                     </p>
                   </div>
-                  <Link to={`/paths/${latestPath.id}`} className="btn-secondary" style={{ padding: '0.55rem 1.25rem', fontSize: '0.85rem' }}>
-                    <Map size={15} /> Full View
-                  </Link>
+                  <div style={{ display: 'flex', gap: '0.75rem' }}>
+                    <button onClick={() => setIsEditingPath(!isEditingPath)} className={isEditingPath ? "btn-primary" : "btn-ghost"} style={{ padding: '0.55rem 1.25rem', fontSize: '0.85rem' }}>
+                      <Edit2 size={15} /> {isEditingPath ? 'Done Editing' : 'Edit Plan'}
+                    </button>
+                    <Link to={`/paths/${latestPath.id}`} className="btn-secondary" style={{ padding: '0.55rem 1.25rem', fontSize: '0.85rem' }}>
+                      <Map size={15} /> Full View
+                    </Link>
+                  </div>
                 </div>
               )}
               {pathItems.length > 0 ? (
-                <MilestoneTimeline items={pathItems} onStatusChange={handleStatusChange} />
+                <MilestoneTimeline items={pathItems} onStatusChange={handleStatusChange} onRemoveItem={isEditingPath ? handleRemoveItem : undefined} />
               ) : (
                 <div className="glass-card card-organic-1" style={{ padding: '3.5rem 2rem', textAlign: 'center' }}>
                   <BookOpen size={44} style={{ color: 'var(--primary)', margin: '0 auto 1.25rem', opacity: 0.8 }} />

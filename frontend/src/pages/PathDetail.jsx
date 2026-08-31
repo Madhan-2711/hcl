@@ -5,13 +5,14 @@ import { api } from '../lib/api'
 import Navbar from '../components/Navbar'
 import MilestoneTimeline from '../components/MilestoneTimeline'
 import ProgressBar from '../components/ProgressBar'
-import { ArrowLeft, Map, Clock, BookOpen, Sparkles, RefreshCw } from 'lucide-react'
+import { ArrowLeft, Map, Clock, BookOpen, Sparkles, RefreshCw, Edit2 } from 'lucide-react'
 
 export default function PathDetail() {
   const { pathId } = useParams()
   const [path, setPath] = useState(null)
   const [items, setItems] = useState([])
   const [loading, setLoading] = useState(true)
+  const [isEditing, setIsEditing] = useState(false)
 
   useEffect(() => {
     loadPath()
@@ -49,6 +50,16 @@ export default function PathDetail() {
     setItems(prev => prev.map(item =>
       item.id === itemId ? { ...item, status: newStatus } : item
     ))
+  }
+
+  const handleRemoveItem = async (itemId) => {
+    if (!window.confirm("Remove this course from your curriculum path?")) return
+    try {
+      await api.removePathItem(itemId)
+      setItems(prev => prev.filter(item => item.id !== itemId))
+    } catch (err) {
+      console.error('Failed to remove item:', err)
+    }
   }
 
   const completed = items.filter(i => i.status === 'completed').length
@@ -114,9 +125,18 @@ export default function PathDetail() {
                 </span>
               </div>
             </div>
-            <button onClick={loadPath} className="btn-ghost" style={{ padding: '0.6rem 1.2rem', fontSize: '0.88rem' }}>
-              <RefreshCw size={14} /> Refresh
-            </button>
+            <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+              <button
+                onClick={() => setIsEditing(!isEditing)}
+                className={isEditing ? "btn-primary" : "btn-ghost"}
+                style={{ padding: '0.6rem 1.2rem', fontSize: '0.88rem' }}
+              >
+                <Edit2 size={14} /> {isEditing ? 'Done Editing' : 'Edit Plan'}
+              </button>
+              <button onClick={loadPath} className="btn-ghost" style={{ padding: '0.6rem 1.2rem', fontSize: '0.88rem' }}>
+                <RefreshCw size={14} /> Refresh
+              </button>
+            </div>
           </div>
         </div>
 
@@ -133,7 +153,11 @@ export default function PathDetail() {
 
         {/* Timeline */}
         <div className="fade-in">
-          <MilestoneTimeline items={items} onStatusChange={handleStatusChange} />
+          <MilestoneTimeline
+            items={items}
+            onStatusChange={handleStatusChange}
+            onRemoveItem={isEditing ? handleRemoveItem : undefined}
+          />
         </div>
       </div>
     </div>
