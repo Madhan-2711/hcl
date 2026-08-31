@@ -19,7 +19,7 @@ ${JSON.stringify(skillsList)}
 Instructions:
 1. "goal": A clear, standard career title (e.g. "Machine Learning Engineer", "Data Scientist", "Data Analyst", "Backend Developer", "Frontend Developer", "Full Stack Developer", "AI Engineer", "MLOps Engineer", "UI/UX Designer", "Mobile Developer", "DevOps Engineer").
 2. "known_skills": Array of canonical skill names the learner explicitly or implicitly knows or has experience with.
-3. "weak_skills": Array of canonical skill names the learner needs to learn, lacks, struggles with, or wants to improve. If none are specified, infer 4-6 essential skills for their goal.
+3. "weak_skills": Array of canonical skill names the learner explicitly needs to learn, lacks, or wants to improve. If none are explicitly specified in the text, leave this array EMPTY. Do NOT guess or infer skills.
 4. "experience_level": One of "beginner", "intermediate", "advanced" based on what they already know.
 5. "timeframe_months": Estimated target months (default 6 if not specified).
 
@@ -64,10 +64,8 @@ function keywordFallback(text: string, skillsList: string[]) {
     }
   }
 
-  // Pick some default weak skills if none found
-  if (weak.size === 0) {
-      skillsList.slice(0, 5).forEach(s => weak.add(s));
-  }
+  // We rely on downstream logic to inject default weak skills if none found
+
 
   return {
     goal,
