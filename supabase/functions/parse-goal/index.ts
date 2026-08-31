@@ -182,6 +182,9 @@ serve(async (req: Request) => {
       interests: finalParsed.known_skills,
     }, { onConflict: "id" });
 
+    // Clear old skills so we don't mix ML Engineer skills with Frontend Engineer skills on re-parse
+    await admin.from("learner_skills").delete().eq("learner_id", user.id);
+
     // Upsert known skills (proficiency 65%)
     for (const skillName of finalParsed.known_skills) {
       const sid = skillMap[skillName];
