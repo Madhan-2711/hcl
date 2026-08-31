@@ -209,12 +209,12 @@ export default function Dashboard() {
   };
 
   const handleRemoveItem = async (itemId) => {
-    if (!window.confirm("Remove this course from your curriculum path?")) return;
+    setPathItems(prev => prev.filter(item => item.id !== itemId));
     try {
       await api.removePathItem(itemId);
-      setPathItems(prev => prev.filter(item => item.id !== itemId));
     } catch (err) {
-      console.error('Failed to remove item:', err);
+      console.error('Failed to remove item from database:', err);
+      loadDashboard(selectedPathId);
     }
   };
 

@@ -180,12 +180,16 @@ function TimelineItem({ item, color, onStatusChange, onRemoveItem }) {
             {onRemoveItem && (
               <button
                 type="button"
-                onClick={() => onRemoveItem(item.id)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  e.preventDefault();
+                  onRemoveItem(item.id);
+                }}
                 style={{
-                  background: 'rgba(168, 84, 72, 0.08)',
-                  border: '1px solid rgba(168, 84, 72, 0.3)',
+                  background: 'rgba(168, 84, 72, 0.12)',
+                  border: '1px solid rgba(168, 84, 72, 0.35)',
                   borderRadius: '9999px',
-                  padding: '0.4rem',
+                  padding: '0.45rem',
                   color: 'var(--destructive)',
                   cursor: 'pointer',
                   display: 'inline-flex',

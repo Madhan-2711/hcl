@@ -53,14 +53,14 @@ export default function PathDetail() {
   }
 
   const handleRemoveItem = async (itemId) => {
-    if (!window.confirm("Remove this course from your curriculum path?")) return
+    setItems(prev => prev.filter(item => item.id !== itemId));
     try {
-      await api.removePathItem(itemId)
-      setItems(prev => prev.filter(item => item.id !== itemId))
+      await api.removePathItem(itemId);
     } catch (err) {
-      console.error('Failed to remove item:', err)
+      console.error('Failed to remove item from database:', err);
+      loadPath();
     }
-  }
+  };
 
   const completed = items.filter(i => i.status === 'completed').length
   const totalHours = items.reduce((sum, i) => sum + (i.course?.duration_hours || 0), 0)
