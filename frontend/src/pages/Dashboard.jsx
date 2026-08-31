@@ -12,7 +12,7 @@ import AIAssistantPanel from '../components/AIAssistantPanel'
 import {
   Brain, TrendingUp, Zap, BookOpen, ArrowRight,
   Sparkles, BarChart2, MessageCircle, Map, RefreshCw,
-  CheckCircle, Clock, PlayCircle, Compass
+  CheckCircle, Clock, PlayCircle, Compass, Edit2
 } from 'lucide-react'
 
 export default function Dashboard() {
