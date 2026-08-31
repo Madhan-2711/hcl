@@ -12,7 +12,7 @@ import AIAssistantPanel from '../components/AIAssistantPanel'
 import {
   Brain, TrendingUp, Zap, BookOpen, ArrowRight,
   Sparkles, BarChart2, MessageCircle, Map, RefreshCw,
-  CheckCircle, Clock, PlayCircle, Compass
+  CheckCircle, Clock, PlayCircle, Compass, Edit2
 } from 'lucide-react'
 
 export default function Dashboard() {
@@ -328,7 +328,7 @@ export default function Dashboard() {
             </div>
             <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
               <Link to="/onboarding" className="btn-secondary" style={{ padding: '0.6rem 1.4rem', fontSize: '0.88rem' }}>
-                <Sparkles size={15} /> New Goal
+                <Edit2 size={15} /> Edit Goal
               </Link>
               <button onClick={loadDashboard} className="btn-ghost" style={{ padding: '0.6rem 1.2rem', fontSize: '0.88rem' }}>
                 <RefreshCw size={15} /> Refresh

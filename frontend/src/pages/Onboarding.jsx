@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { api } from '../lib/api'
+import { supabase } from '../lib/supabaseClient'
 import Navbar from '../components/Navbar'
 import {
   Sparkles, ArrowRight, Edit2, ChevronRight,
@@ -20,6 +21,23 @@ export default function Onboarding() {
   const [goalText, setGoalText] = useState('')
   const [parsed, setParsed] = useState(null)
   const [error, setError] = useState('')
+
+  useEffect(() => {
+    async function loadExistingGoal() {
+      const { data: { user } } = await supabase.auth.getUser()
+      if (!user) return
+      const { data: paths } = await supabase
+        .from('learning_paths')
+        .select('goal_text')
+        .eq('learner_id', user.id)
+        .order('created_at', { ascending: false })
+        .limit(1)
+      if (paths?.length > 0 && paths[0].goal_text) {
+        setGoalText(paths[0].goal_text)
+      }
+    }
+    loadExistingGoal()
+  }, [])
 
   const handleParse = async () => {
     if (!goalText.trim() || goalText.length < 10) {
