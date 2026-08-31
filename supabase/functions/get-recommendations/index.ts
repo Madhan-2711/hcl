@@ -134,8 +134,9 @@ serve(async (req: Request) => {
       };
     });
 
-    scored.sort((a, b) => b.final_score - a.final_score);
-    const recommendations = scored.slice(0, Math.min(top_k, 20));
+    const validScored = scored.filter(c => c.final_score > 0.15);
+    validScored.sort((a, b) => b.final_score - a.final_score);
+    const recommendations = validScored.slice(0, Math.min(top_k, 20));
 
     return jsonResponse({ recommendations });
   } catch (err) {

@@ -200,9 +200,10 @@ serve(async (req: Request) => {
         courseMap
       );
 
-      if (!scored.length) break;
+      const validScored = scored.filter(c => c.final_score > 0.15);
+      if (!validScored.length) break;
 
-      const best = scored[0];
+      const best = validScored[0];
       usedCourseIds.add(best.course_id);
 
       // Simulate completion
