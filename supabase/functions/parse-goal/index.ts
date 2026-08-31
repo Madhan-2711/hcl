@@ -184,6 +184,9 @@ serve(async (req: Request) => {
 
     // Clear old skills so we don't mix ML Engineer skills with Frontend Engineer skills on re-parse
     await admin.from("learner_skills").delete().eq("learner_id", user.id);
+    
+    // Clear old chat history so the AI forgets conversations about the old path
+    await admin.from("chat_history").delete().eq("learner_id", user.id);
 
     // Upsert known skills (proficiency 65%)
     for (const skillName of finalParsed.known_skills) {
