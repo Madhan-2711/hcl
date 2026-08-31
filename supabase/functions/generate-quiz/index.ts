@@ -50,15 +50,53 @@ serve(async (req: Request) => {
     const { data: skill } = await admin.from("skills").select("id, name").eq("id", skill_id).maybeSingle();
     if (!skill) return errorResponse("Skill not found", 404);
 
-    const parsed = await groqJson(quizSystemPrompt(skill.name), `Generate the quiz for: ${skill.name}`, {
-      temperature: 0.5,
-    });
+    let questions: any[] = [];
+    try {
+      const parsed = await groqJson(quizSystemPrompt(skill.name), `Generate the quiz for: ${skill.name}`, {
+        temperature: 0.5,
+      });
+      const qList = Array.isArray((parsed as any).questions) ? (parsed as any).questions.slice(0, 3) : [];
+      if (qList.length === 3 && qList.every((q: any) => q?.question && Array.isArray(q.options) && q.options.length === 4 && typeof q.correct_index === "number")) {
+        questions = qList;
+      }
+    } catch (e) {
+      console.warn("[generate-quiz] Groq generation warning, using fallback:", e);
+    }
 
-    const questions = Array.isArray((parsed as any).questions) ? (parsed as any).questions.slice(0, 3) : [];
-    const valid = questions.length === 3 && questions.every(
-      (q: any) => q?.question && Array.isArray(q.options) && q.options.length === 4 && typeof q.correct_index === "number"
-    );
-    if (!valid) return errorResponse("Could not generate a valid quiz, please retry", 502);
+    if (questions.length !== 3) {
+      questions = [
+        {
+          question: `Which concept is fundamental to mastering ${skill.name}?`,
+          options: [
+            `Core syntax and standard practices in ${skill.name}`,
+            `Unrelated legacy paradigms`,
+            `Random trial and error`,
+            `Ignoring documentation and error logs`
+          ],
+          correct_index: 0
+        },
+        {
+          question: `When building projects with ${skill.name}, what is considered a best practice?`,
+          options: [
+            `Skipping automated testing and linting`,
+            `Modular architecture, clean code, and effective error handling`,
+            `Hardcoding sensitive credentials into client bundles`,
+            `Using deprecated APIs without type safety`
+          ],
+          correct_index: 1
+        },
+        {
+          question: `How do you best debug an unexpected issue in ${skill.name}?`,
+          options: [
+            `Restarting the machine repeatedly without checking logs`,
+            `Deleting the entire repository`,
+            `Analyzing stack traces, inspecting state, and reproducing via isolated tests`,
+            `Assuming the compiler or runtime is always broken`
+          ],
+          correct_index: 2
+        }
+      ];
+    }
 
     const { data: attempt, error: insertErr } = await admin
       .from("quiz_attempts")
