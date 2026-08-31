@@ -56,8 +56,7 @@ INSERT INTO courses (title, description, difficulty, duration_hours) VALUES
   ('Digital Marketing Masterclass', 'Comprehensive guide to SEO, social media, and online growth.', 'beginner', 40),
   ('Content Creation & Video Editing', 'Build an audience through compelling storytelling and video production.', 'intermediate', 30),
   ('Personal Finance & Investing', 'Master wealth building, budgeting, and stock market fundamentals.', 'beginner', 15),
-  ('Modern Entrepreneurship', 'From ideation to launch: building a startup in the 21st century.', 'intermediate', 25)
-ON CONFLICT (title) DO NOTHING;
+  ('Modern Entrepreneurship', 'From ideation to launch: building a startup in the 21st century.', 'intermediate', 25);
 
 INSERT INTO course_skills (course_id, skill_id, is_prerequisite) VALUES
   ((SELECT id FROM courses WHERE title='Introduction to Human Anatomy'), (SELECT id FROM skills WHERE name='Anatomy'), true),

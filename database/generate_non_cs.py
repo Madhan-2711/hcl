@@ -61,7 +61,7 @@ for c in courses:
     d = c["desc"].replace("'", "''")
     course_vals.append(f"  ('{t}', '{d}', '{c['diff']}', {c['hours']})")
 sql += ",\n".join(course_vals)
-sql += "\nON CONFLICT (title) DO NOTHING;\n\n"
+sql += ";\n\n"
 
 sql += "INSERT INTO course_skills (course_id, skill_id, is_prerequisite) VALUES\n"
 cs_vals = []
