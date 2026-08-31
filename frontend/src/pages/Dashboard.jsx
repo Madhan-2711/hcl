@@ -13,7 +13,7 @@ import {
   Brain, TrendingUp, Zap, BookOpen, ArrowRight,
   Sparkles, BarChart2, MessageCircle, Map, RefreshCw,
   CheckCircle, Clock, PlayCircle, Compass, Award,
-  ShieldCheck, FileText, ChevronRight
+  ShieldCheck, FileText, ChevronRight, Edit2
 } from 'lucide-react';
 
 export default function Dashboard() {
@@ -32,6 +32,7 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
   const [recsLoading, setRecsLoading] = useState(false);
   const [assessmentHistory, setAssessmentHistory] = useState([]);
+  const [isEditingPath, setIsEditingPath] = useState(false);
 
   useEffect(() => {
     if (userId) {
@@ -205,6 +206,16 @@ export default function Dashboard() {
     setPathItems(prev => prev.map(item =>
       item.id === itemId ? { ...item, status: newStatus } : item
     ));
+  };
+
+  const handleRemoveItem = async (itemId) => {
+    if (!window.confirm("Remove this course from your curriculum path?")) return;
+    try {
+      await api.removePathItem(itemId);
+      setPathItems(prev => prev.filter(item => item.id !== itemId));
+    } catch (err) {
+      console.error('Failed to remove item:', err);
+    }
   };
 
   const handleStartNewAssessment = (qCount = 5) => {
